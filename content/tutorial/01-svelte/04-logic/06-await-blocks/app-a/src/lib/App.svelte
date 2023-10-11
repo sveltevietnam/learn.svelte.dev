@@ -9,7 +9,7 @@
 </script>
 
 <button on:click={handleClick}>
-	generate random number
+	lấy số ngẫu nhiên
 </button>
 
-<p>...waiting</p>
+<p>...vui lòng đợi</p>

@@ -1,10 +1,10 @@
 ---
-title: Each blocks
+title: Khối Each
 ---
 
-When building user interfaces you'll often find yourself working with lists of data. In this exercise, we've repeated the `<button>` markup multiple times — changing the colour each time — but there's still more to add.
+Khi xây dựng giao diện người dùng, bạn sẽ phải làm việc với những danh sách dữ liệu. Trong bài này, chúng ta đã phải viết markup `<button>` nhiều lần - mỗi lần thay đổi màu sắc - nhưng ta vẫn còn nhiều cái để thêm nữa.
 
-Instead of laboriously copying, pasting and editing, we can get rid of all but the first button, then use an `each` block:
+Thay vì phải sao chép, dán rồi sửa một cách khổ sở, ta có thể bỏ hết trừ nút đầu tiền, rồi sử dụng khối `each`:
 
 ```svelte
 /// file: App.svelte
@@ -20,9 +20,10 @@ Instead of laboriously copying, pasting and editing, we can get rid of all but t
 </div>
 ```
 
-> The expression (`colors`, in this case) can be any array or array-like object (i.e. it has a `length` property). You can loop over generic iterables with `each [...iterable]`.
+<!-- FIXME: làm rõ phần này -->
+> Những biểu thức (điển hình như `colors`) có thể là một mảng hoặc một object dạng mảng (có thuộc tính `length`). Bạn có thể với đi qua từng giá trị của nó với `each [...đoạn lặp]`.
 
-Now we need to use the `color` variable in place of `"red"`:
+Bây giờ ta phải dùng biến `color` thay cho `"red"`:
 
 ```svelte
 /// file: App.svelte
@@ -38,7 +39,7 @@ Now we need to use the `color` variable in place of `"red"`:
 </div>
 ```
 
-You can get the current _index_ as a second argument, like so:
+Ta cũng có thể lấy _số thứ tự_ qua tham số thứ hai như thế này:
 
 ```svelte
 /// file: App.svelte

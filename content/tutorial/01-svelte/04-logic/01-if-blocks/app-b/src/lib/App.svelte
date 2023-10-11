@@ -12,5 +12,5 @@
 </button>
 
 {#if count > 10}
-	<p>{count} is greater than 10</p>
+	<p>{count} lớn hơn 10</p>
 {/if}

@@ -1,14 +1,15 @@
 ---
-title: Keyed each blocks
+title: Khối Each có khoá
 ---
 
-By default, when you modify the value of an `each` block, it will add and remove items at the _end_ of the block, and update any values that have changed. That might not be what you want.
 
-It's easier to show why than to explain. Click the 'Remove first thing' button a few times, and notice what happens: it does not remove the first `<Thing>` component, but rather the _last_ DOM node. Then it updates the `name` value in the remaining DOM nodes, but not the emoji, which is fixed when each `<Thing>` is created.
+Mặc định rằng khi bạn thay đổi giá trị của một khối `each`, nó sẽ thêm và xoá giá trị ở _cuối_ mảng, và cập nhật những giá trị mà có thể đã được thay đổi. Nhưng có thể đây là thứ bạn không muốn.
 
-Instead, we'd like to remove only the first `<Thing>` component and its DOM node, and leave the others unaffected.
+Làm sẽ dễ hơn nói. Hãy bấm vào nút 'Xoá thứ đầu tiên' vài lần, và để ý xem: nó không xoá component `<Thing>` đầu tiên, nhưng lại xoá cái DOM node _ở cuối_. Rồi nó cập nhật giá trị của `name` trong các DOM node còn lại, ngoại trừ các emoji mà đã dính vào mỗi cái `<Thing>` khi nó được tạo.
 
-To do that, we specify a unique identifier (or "key") for the `each` block:
+Thay vào đó, ta muốn chỉ xoá cái component `<Thing>` đầu tiên và DOM node của nó, và không đụng chạm những cái khác.
+
+Để làm thế, ta có thể cho một cái định danh (hoặc là "khoá") cho mỗi khối `each`:
 
 ```svelte
 /// file: App.svelte
@@ -17,6 +18,7 @@ To do that, we specify a unique identifier (or "key") for the `each` block:
 {/each}
 ```
 
-Here, `(thing.id)` is the _key_, which tells Svelte how to figure out which DOM node to change when the component updates.
+Ở đây, `(thing.id)` là _khoá_, nó sẽ bảo Svelte ngẫm ra DOM node nào sẽ thay đổi khi component được cập nhật.
 
-> You can use any object as the key, as Svelte uses a `Map` internally — in other words you could do `(thing)` instead of `(thing.id)`. Using a string or number is generally safer, however, since it means identity persists without referential equality, for example when updating with fresh data from an API server.
+<!-- FIXME: dịch "identity persists without referential equality" như thế nào? -->
+> Bạn có thể dùng bất kì đối tượng nào làm khoá, vì Svelte sử dụng `Map` ở bên trong - cách nói khác là bạn có thể dùng `(thing)` thay cho `(thing.id)`. Dùng dải kí tự hoặc số sẽ an toàn hơn, bởi lẽ danh tính của mỗi cái sẽ được giữ nguyên mà không có sự bình đẳng tham chiếu, ví dụ như khi cập nhật dữ liệu mới nhất từ một máy chủ API.

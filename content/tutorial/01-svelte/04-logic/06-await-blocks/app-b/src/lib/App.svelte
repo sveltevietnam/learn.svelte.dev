@@ -9,13 +9,13 @@
 </script>
 
 <button on:click={handleClick}>
-	generate random number
+	lấy số ngẫu nhiên
 </button>
 
 {#await promise}
-	<p>...waiting</p>
+	<p>...vui lòng đợi</p>
 {:then number}
-	<p>The number is {number}</p>
+	<p>Con số đó là số {number}</p>
 {:catch error}
 	<p style="color: red">{error.message}</p>
 {/await}

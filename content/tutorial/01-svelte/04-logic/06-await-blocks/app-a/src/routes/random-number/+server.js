@@ -10,7 +10,7 @@ export async function GET(req) {
 
 	// fail sometimes
 	if (Math.random() < 0.333) {
-		return new Response(`Failed to generate random number. Please try again`, {
+		return new Response(`Không thể lấy số ngẫu nhiên, xin hãy thử lại`, {
 			status: 400,
 			headers: { 'Access-Control-Allow-Origin': '*' }
 		});
