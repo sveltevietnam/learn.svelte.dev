@@ -1,37 +1,37 @@
 ---
-title: What is SvelteKit?
+title: SvelteKit là gì?
 ---
 
-Whereas Svelte is a _component framework_, SvelteKit is an _app framework_ (or 'metaframework', depending on who you ask) that solves the tricky problems of building something production-ready:
+Trong khi Svelte là một _framework component_ (bộ khung thành phần), SvelteKit là một _app framework_ (bộ khung ứng dụng, chứa các bộ khung thành phần) (hoặc 'metaframework', tùy thuộc vào người bạn hỏi) giải quyết những vấn đề khó khăn khi xây dựng một ứng dụng sẵn sàng để chạy thực tế (ứng dụng sẳn sàng tung ra thị trường cho người dùng sử dụng - production-ready):
 
-- Routing
-- Server-side rendering
-- Data fetching
-- Service workers
-- TypeScript integration
-- Prerendering
-- Single-page apps
-- Library packaging
-- Optimised production builds
-- Deploying to different hosting providers
-- ...and so on
+- Routing (Định tuyến)
+- Server-side rendering (Hiển thị phía máy chủ)
+- Data fetching (Lấy dữ liệu)
+- Service workers (một đoạn mã (script) mà trình duyệt chạy nền (ở dưới background), tách khỏi trang web và giúp thực hiện các tính năng không cần đến trang web, hay tương tác người dùng)
+- TypeScript integration (Tích hợp TypeScript)
+- Prerendering (Trước khi hiển thị (render))
+- Single-page apps (Ứng dụng trang đơn)
+- Library packaging (Đóng gói thư viện)
+- Optimised production builds (Xây dựng tối ưu cho production)
+- Deploying to different hosting providers (Triển khai lên các nhà cung cấp hosting khác nhau)
+- ...và còn nhiều điều khác nữa
 
-SvelteKit apps are server-rendered by default (like traditional 'multi-page apps' or MPAs) for excellent first load performance and SEO characteristics, but can then transition to client-side navigation (like modern 'single-page apps' or SPAs) to avoid jankily reloading everything (including things like third-party analytics code) when the user navigates. They can run anywhere JavaScript runs, though — as we'll see — your users may not need to run any JavaScript at all.
+Ứng dụng SvelteKit được render bởi máy chủ mặc định (giống như 'multi-page apps' truyền thống hoặc MPAs) để có hiệu suất tải lần đầu tốt và đặc tính SEO xuất sắc, nhưng sau đó có thể chuyển sang điều hướng phía máy khách / phía người dùng (giống như 'single-page apps' hiện đại hoặc SPAs) để tránh việc tải lại mọi thứ một cách giật gân, khó chịu với người dùng (bao gồm cả mã phân tích của bên thứ ba như mã của google analytic) khi người dùng điều hướng. Chúng có thể chạy ở bất kỳ nơi nào JavaScript chạy, tuy nhiên — như chúng ta sẽ thấy — có thể người dùng của bạn không cần phải chạy bất kỳ JavaScript nào.
 
-If that sounds complicated, worry not: SvelteKit is the framework that grows with you! Start simple and add new features as you need them.
+Nếu điều này nghe có vẻ phức tạp, đừng lo lắng: SvelteKit là framework (bộ khung - là cấu trúc được dùng để xây dựng phần mềm. Framework sẽ bao gồm các đoạn code được viết sẵn cùng với các thư viện, tệp hình ảnh và tài liệu tham khảo được đóng thành một gói. Gói này có thể sửa đổi để phù hợp với nhu cầu cụ thể của từng dự án) phát triển cùng với bạn! Bắt đầu đơn giản và thêm tính năng mới khi bạn cần chúng.
 
-## Project structure
+## Cấu trúc dự án
 
-On the right, in the file tree viewer, you'll see a handful of files that SvelteKit expects to find in a project.
+Bên phải, trong trình xem (cây) tệp tin, bạn sẽ thấy một số file tệp tin mà SvelteKit mong đợi tìm thấy (cần có) trong một dự án.
 
-`package.json` will be familiar if you've worked with Node.js before. It lists the project's dependencies — including `svelte` and `@sveltejs/kit` — and a variety of `scripts` for interacting with the SvelteKit CLI. (We're currently running `npm run dev` in the bottom window.)
+`package.json` sẽ quen thuộc nếu bạn đã làm việc với Node.js trước đây. Nó liệt kê các dependencies (là những gói (package) bắt buộc phải có trong quá trình chạy sản phẩm, nó sẽ cung cấp các hàm đã được khai báo (khi tiến hành cài đặt package vào dự án) mà chương trình sử dụng) của dự án — bao gồm `svelte` và `@sveltejs/kit` — và một loạt các `scripts` để tương tác với CLI của SvelteKit. (Chúng ta đang chạy `npm run dev` ở cửa sổ dưới cùng.)
 
-> Note that it also specifies `"type": "module"`, which means that `.js` files are treated as native JavaScript modules by default, rather than the legacy CommonJS format.
+> Lưu ý rằng nó cũng chỉ định `"type": "module"`, có nghĩa là các tệp `.js` được xử lý như các mô-đun JavaScript native mặc định, thay vì định dạng CommonJS cũ.
 
-`svelte.config.js` contains your project configuration. We don't need to worry about this file for now, but if you're curious, [visit the documentation](https://kit.svelte.dev/docs/configuration).
+`svelte.config.js` chứa cấu hình dự án của bạn. Bạn không cần lo lắng về tệp này lúc này, nhưng nếu bạn tò mò, [ghé thăm tài liệu](https://kit.svelte.dev/docs/configuration).
 
-`vite.config.js` contains the [Vite](https://vitejs.dev/) configuration. Because SvelteKit uses Vite, you can use [Vite features](https://vitejs.dev/guide/features.html) like hot module replacement, TypeScript support, static asset handling and so on.
+`vite.config.js` chứa cấu hình [Vite](https://vitejs.dev/). Vì SvelteKit sử dụng Vite, bạn có thể sử dụng [các tính năng của Vite](https://vitejs.dev/guide/features.html) như hot module replacement, hỗ trợ TypeScript, xử lý tài nguyên tĩnh và cũng như vậy.
 
-`src` is where your app's source code goes. `src/app.html` is your page template (SvelteKit replaces the `%sveltekit.head%` and `%sveltekit.body%` as appropriate), and `src/routes` defines the [routes](/tutorial/pages) of your app.
+`src` là nơi mã nguồn ứng dụng của bạn được đặt. `src/app.html` là mẫu trang của bạn (SvelteKit thay thế `%sveltekit.head%` và `%sveltekit.body%` khi cần thiết), và `src/routes` định nghĩa [routes](/tutorial/pages) của ứng dụng bạn.
 
-Finally, `static` contains any assets (like a `favicon.png` or a `robots.txt`) that should be included when your app is deployed.
+Cuối cùng, `static` chứa bất kỳ tài nguyên nào (như `favicon.png` hoặc `robots.txt`) nên đã được đi kèm ( included) khi ứng dụng của bạn được triển khai.
