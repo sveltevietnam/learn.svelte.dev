@@ -1,16 +1,16 @@
 ---
-title: Else blocks
+title: Khối Else
 ---
 
-Just like in JavaScript, an `if` block can have an `else` block:
+Cũng như trong JavaScript, một khối `if` cũng sẽ có khối `else`:
 
 ```svelte
 /// file: App.svelte
 {#if count > 10}
-	<p>{count} is greater than 10</p>
+	<p>{count} lớn hơn 10</p>
 +++{:else}
-	<p>{count} is between 0 and 10</p>+++
+	<p>{count} ở giữa 0 và 10</p>+++
 {/if}
 ```
 
-> A `#` character always indicates a _block opening_ tag. A `/` character always indicates a _block closing_ tag. A `:` character, as in `{:else}`, indicates a _block continuation_ tag. Don't worry — you've already learned almost all the syntax Svelte adds to HTML.
+> Kí tự `#` luôn dùng để chỉ định khi _mở một khối_. Còn Kí tự `#` luôn dùng để chỉ định khi _đóng một khối_. Kí tự `:`, như trong `{:else}`, để chỉ định những _khối tiếp diễn_. Đừng lo - bạn đã học được hầu như mọi cú pháp mà Svelte thêm vào HTML rồi.

@@ -15,7 +15,7 @@
 </script>
 
 <button on:click={handleClick}>
-	Remove first thing
+	Xoá thứ đầu tiên
 </button>
 
 {#each things as thing (thing.id)}

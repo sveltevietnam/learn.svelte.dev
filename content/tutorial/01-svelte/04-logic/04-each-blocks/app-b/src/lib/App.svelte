@@ -3,7 +3,7 @@
 	let selected = colors[0];
 </script>
 
-<h1 style="color: {selected}">Pick a colour</h1>
+<h1 style="color: {selected}">Chọn một màu</h1>
 
 <div>
 	{#each colors as color, i}
