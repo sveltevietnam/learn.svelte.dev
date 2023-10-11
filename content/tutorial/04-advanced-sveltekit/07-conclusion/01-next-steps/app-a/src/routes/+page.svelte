@@ -1,4 +1,4 @@
-<span>Kết thúc </span>
+<span>hết</span>
 
 <style>
 	span {
