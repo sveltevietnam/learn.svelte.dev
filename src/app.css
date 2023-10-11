@@ -1,7 +1,10 @@
 /* TODO move all this to site-kit */
+@import url('./lib/stylesheets/inter.font.css');
 
 body {
 	/* --font-mono: Menlo, Monaco, 'Courier New', monospace; */
+	--sk-font: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Roboto Mono', monospace;
 	--h4: 1.6rem;
 
