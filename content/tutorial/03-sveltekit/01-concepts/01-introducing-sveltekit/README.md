@@ -18,7 +18,7 @@ Trong khi Svelte là một _framework component_ (bộ khung thành phần), Sve
 
 SvelteKit sẽ mặc định render ứng dụng từ phía server (giống như 'multi-page apps' (MPA) theo cách truyền thống) để có SEO tốt và có thể load nhanh từ lần đầu tiên (first load), rồi sau đó có thể chuyển sang sử dụng client-side navigation _(điều hướng bên phía client)_ (như 'single-page apps' (SPA)) để tránh bị gián đoạn đường truyền và phải tải lại nhiều thứ (ví dụ như script analytics từ bên thứ ba - ví dụ như Google Analytics). Nơi nào chạy JavaScript được thì sẽ chạy được các ứng dụng này. Có thể những người dùng ấy không nhất thiết phải sử dụng đến JavaScript.
 
-Nếu điều này nghe có vẻ phức tạp, đừng lo lắng: SvelteKit là framework (bộ khung - là cấu trúc được dùng để xây dựng phần mềm. Framework sẽ bao gồm các đoạn code được viết sẵn cùng với các thư viện, tệp hình ảnh và tài liệu tham khảo được đóng thành một gói. Gói này có thể sửa đổi để phù hợp với nhu cầu cụ thể của từng dự án) phát triển cùng với bạn! Bắt đầu đơn giản và thêm tính năng mới khi bạn cần chúng.
+Tuy nghe phức tạp nhưng bạn đừng lo lắng: SvelteKit sẽ đồng hành cùng bạn! Hãy bắt đầu từ những thử đơn giản và thêm dần tính năng khi cần.
 
 ## Cấu trúc dự án
 
