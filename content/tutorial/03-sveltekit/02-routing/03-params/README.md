@@ -1,17 +1,18 @@
 ---
-title: Route parameters
+title: Route parameters (Các tham số định tuyến/tham số đường dẫn)
 path: /blog
 ---
 
-To create routes with dynamic parameters, use square brackets around a valid variable name. For example, a file like `src/routes/blog/[slug]/+page.svelte` will create a route that matches `/blog/one`, `/blog/two`, `/blog/three` and so on.
+Để tạo các routes (định tuyến) với parameters (tham số) động, sử dụng dấu ngoặc vuông xung quanh một tên biến hợp lệ. Ví dụ, một file như `src/routes/blog/[slug]/+page.svelte` sẽ tạo ra một route phù hợp với `/blog/one`, `/blog/two`, `/blog/three` và cứ như vậy.
 
-Let's create that file:
+
+Chúng ta hãy tạo file đó:
 
 ```svelte
 /// file: src/routes/blog/[slug]/+page.svelte
 <h1>blog post</h1>
 ```
 
-We can now navigate from the `/blog` page to individual blog posts. In the next chapter, we'll see how to load their content.
+Bây giờ chúng ta có thể điều hướng từ trang `/blog` đến các bài viết blog cá nhân. Trong chương tiếp theo, chúng ta sẽ biết cách load (tải) nội dung của chúng.
 
-> Multiple route parameters can appear _within_ one URL segment, as long as they are separated by at least one static character: `foo/[bar]x[baz]` is a valid route where `[bar]` and `[baz]` are dynamic parameters.
+> Nhiều route parameters (tham số định tuyến/ tham số đường dẫn) có thể xuất hiện trong một đoạn URL, miễn là chúng được tách ra bởi ít nhất một ký tự tĩnh:`foo/[bar]x[baz]` là một route hợp lệ trong đó `[bar]` và `[baz]` là các dynamic parameters (tham số động).

@@ -1,12 +1,12 @@
 ---
-title: Pages
+title: Pages (Các trang)
 ---
 
-SvelteKit uses filesystem-based routing, which means that the _routes_ of your app — in other words, what the app should do when a user navigates to a particular URL — are defined by the directories in your codebase.
+SvelteKit sử dụng filesystem-based routing (định tuyến dựa trên hệ thống tệp tin), điều này có nghĩa là khi người dùng điều hướng (truy cập) đến một URL cụ thể của ứng dụng của bạn, thì _routes_ (định tuyến, hoặc có thể hiểu là đường dẫn) của ứng dụng của bạn — được xác định bởi các thư mục trong mã nguồn của bạn 
 
-Every `+page.svelte` file inside `src/routes` creates a page in your app. In this app we currently have one page — `src/routes/+page.svelte`, which maps to `/`. If we navigate to `/about`, we'll see a 404 Not Found error.
+Mỗi tệp `+page.svelte` bên trong `src/routes` tạo ra một trang trong ứng dụng của bạn. Trong ứng dụng này, hiện tại chúng ta có một trang — `src/routes/+page.svelte`, tương ứng với đường dẫn `/`. Nếu chúng ta điều hướng đến `/about`, chúng ta sẽ thấy một lỗi 404 Not Found. (404 Không tìm thấy)
 
-Let's fix that. Add a second page, `src/routes/about/+page.svelte`, copy the contents of `src/routes/+page.svelte`, and update it:
+Hãy sửa điều đó. Thêm một trang thứ hai, `src/routes/about/+page.svelte`, sao chép nội dung từ `src/routes/+page.svelte`, và cập nhật nó:
 
 ```svelte
 /// file: src/routes/about/+page.svelte
@@ -16,9 +16,9 @@ Let's fix that. Add a second page, `src/routes/about/+page.svelte`, copy the con
 </nav>
 
 <h1>+++about+++</h1>
-<p>this is the +++about+++ page.</p>
+<p>Đây là trang +++about+++</p>
 ```
 
-We can now navigate between `/` and `/about`.
+Bây giờ chúng ta có thể navigate (điều hướng) giữa `/` và `/about`.
 
-> Unlike traditional multi-page apps, navigating to `/about` and back updates the contents of the current page, like a single-page app. This gives us the best of both worlds — fast server-rendered startup, then instant navigation. (This behaviour can be [configured](https://kit.svelte.dev/docs/page-options).)
+> Khác với các ứng dụng nhiều trang truyền thống, điều hướng đến `/about` và quay lại cập nhật nội dung của trang hiện tại, giống như một single-page app (SPA). Điều này mang lại cho chúng ta lợi về cả hai mặt — server-rendered khởi động nhanh, sau đó điều hướng ngay lập tức. (Việc này có thể được [cấu hình](https://kit.svelte.dev/docs/page-options).)

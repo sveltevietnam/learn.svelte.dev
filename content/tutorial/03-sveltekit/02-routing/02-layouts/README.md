@@ -1,10 +1,10 @@
 ---
-title: Layouts
+title: Layouts (Bố cục)
 ---
 
-Different routes of your app will often share common UI. Instead of repeating it in each `+page.svelte` component, we can use a `+layout.svelte` component that applies to all routes in the same directory.
+Các routes (định tuyến) khác nhau của ứng dụng của bạn thường sẽ chia sẻ giao diện người dùng chung. Thay vì lặp lại nó trong mỗi thành phần `+page.svelte`, chúng ta có thể sử dụng một thành phần `+layout.svelte` áp dụng cho tất cả các routes trong cùng một thư mục.
 
-In this app we have two routes, `src/routes/+page.svelte` and `src/routes/about/+page.svelte`, that contain the same navigation UI. Let's create a new file, `src/routes/+layout.svelte`...
+Trong ứng dụng này, chúng ta có hai routes, `src/routes/+page.svelte` và `src/routes/about/+page.svelte`, chứa giao diện người dùng điều hướng giống nhau. Hãy tạo một file mới, `src/routes/+layout.svelte`...
 
 ```
 src/routes/
@@ -14,7 +14,7 @@ src/routes/
 └ +page.svelte
 ```
 
-...and move the duplicated content from the `+page.svelte` files into the new `+layout.svelte` file. The `<slot />` element is where the page content will be rendered:
+...và di chuyển nội dung trùng lặp từ các file `+page.svelte` vào file mới `+layout.svelte`. Phần tử `<slot />` là nơi nội dung của trang sẽ được render:
 
 ```svelte
 /// file: src/routes/+layout.svelte
@@ -26,4 +26,4 @@ src/routes/
 <slot />
 ```
 
-A `+layout.svelte` file applies to every child route, including the sibling `+page.svelte` (if it exists). You can nest layouts to arbitrary depth.
+Một file `+layout.svelte` áp dụng cho mọi child route (định tuyến con hay rout con), bao gồm cả `+page.svelte` cùng cấp (nếu nó tồn tại). Bạn có thể lồng layouts (các bố cục) theo bất kỳ độ sâu nào.

@@ -4,4 +4,4 @@
 </nav>
 
 <h1>home</h1>
-<p>this is the home page.</p>
+<p>Đây là trang Home.</p>
