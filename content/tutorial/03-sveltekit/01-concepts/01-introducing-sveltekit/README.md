@@ -22,7 +22,7 @@ Nếu điều này nghe có vẻ phức tạp, đừng lo lắng: SvelteKit là 
 
 ## Cấu trúc dự án
 
-Bên phải, trong trình xem (cây) tệp tin, bạn sẽ thấy một số file tệp tin mà SvelteKit mong đợi tìm thấy (cần có) trong một dự án.
+Bên phải, trong cây thư mục, bạn sẽ thấy một số tệp tin thường gặp trong một dự án có sử dụng SvelteKit.
 
 `package.json` sẽ quen thuộc nếu bạn đã làm việc với Node.js trước đây. Nó liệt kê các dependencies (là những gói (package) bắt buộc phải có trong quá trình chạy sản phẩm, nó sẽ cung cấp các hàm đã được khai báo (khi tiến hành cài đặt package vào dự án) mà chương trình sử dụng) của dự án — bao gồm `svelte` và `@sveltejs/kit` — và một loạt các `scripts` để tương tác với CLI của SvelteKit. (Chúng ta đang chạy `npm run dev` ở cửa sổ dưới cùng.)
 
