@@ -34,5 +34,5 @@ Sẽ khá phổ biến với những trường hợp mà thuộc tính sẽ có 
 
 ```svelte
 /// file: App.svelte
-<img +++{src}+++ alt="Một người đang múa." />
+<img +++{src}+++ alt="{name} đang múa." />
 ```
