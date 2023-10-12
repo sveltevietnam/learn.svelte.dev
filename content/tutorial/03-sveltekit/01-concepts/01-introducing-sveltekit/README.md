@@ -2,7 +2,7 @@
 title: SvelteKit là gì?
 ---
 
-Trong khi Svelte là một _framework component_ (bộ khung thành phần), SvelteKit là một _app framework_ (bộ khung ứng dụng, chứa các bộ khung thành phần) (hoặc 'metaframework', tùy thuộc vào người bạn hỏi) giải quyết những vấn đề khó khăn khi xây dựng một ứng dụng sẵn sàng để chạy thực tế (ứng dụng sẳn sàng tung ra thị trường cho người dùng sử dụng - production-ready):
+Nếu Svelte là một _framework component_ thì SvelteKit là một _app framework_ (hoặc 'metaframework' tùy vào cách định nghĩa). SvelteKit giúp giải quyết nhiều vấn đề phức tạp khi xây dựng một ứng dụng thực tế (production-ready):
 
 - Routing (Định tuyến)
 - Server-side rendering (Hiển thị phía máy chủ)
