@@ -32,6 +32,6 @@ Bên phải, trong cây thư mục, bạn sẽ thấy một số tệp tin thư�
 
 `vite.config.js` chứa cấu hình [Vite](https://vitejs.dev/). Vì SvelteKit sử dụng Vite, bạn có thể sử dụng [các tính năng của Vite](https://vitejs.dev/guide/features.html) như hot module replacement, hỗ trợ TypeScript, xử lý tài nguyên tĩnh (static asset), vân vân
 
-`src` là nơi mã nguồn ứng dụng của bạn được đặt. `src/app.html` là mẫu trang của bạn (SvelteKit thay thế `%sveltekit.head%` và `%sveltekit.body%` khi cần thiết), và `src/routes` định nghĩa [routes](/tutorial/pages) của ứng dụng bạn.
+`src` là nơi mã nguồn ứng dụng của bạn được đặt. `src/app.html` là mẫu trang của bạn (SvelteKit sẽ thay thế `%sveltekit.head%` và `%sveltekit.body%`), và `src/routes` định nghĩa [routes](/tutorial/pages) của ứng dụng bạn.
 
 Cuối cùng, `static` chứa các tài guyên khác (như `favicon.png` hoặc `robots.txt`) và sẽ được giữ nguyên khi deploy.
