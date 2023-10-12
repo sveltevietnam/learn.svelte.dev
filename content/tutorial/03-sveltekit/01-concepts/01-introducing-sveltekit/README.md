@@ -26,7 +26,7 @@ Bên phải, trong trình xem (cây) tệp tin, bạn sẽ thấy một số fil
 
 `package.json` sẽ quen thuộc nếu bạn đã làm việc với Node.js trước đây. Nó liệt kê các dependencies (là những gói (package) bắt buộc phải có trong quá trình chạy sản phẩm, nó sẽ cung cấp các hàm đã được khai báo (khi tiến hành cài đặt package vào dự án) mà chương trình sử dụng) của dự án — bao gồm `svelte` và `@sveltejs/kit` — và một loạt các `scripts` để tương tác với CLI của SvelteKit. (Chúng ta đang chạy `npm run dev` ở cửa sổ dưới cùng.)
 
-> Lưu ý rằng nó cũng chỉ định `"type": "module"`, có nghĩa là các tệp `.js` được xử lý như các mô-đun JavaScript native mặc định, thay vì định dạng CommonJS cũ.
+> Lưu ý rằng nó cũng bao gồm dòng `"type": "module"`, có nghĩa là các tệp `.js` sẽ được mặc định xử lý như các mô-đun thuần JavaScript, thay vì định dạng CommonJS thời cũ.
 
 `svelte.config.js` chứa cấu hình dự án của bạn. Bạn không cần lo lắng về tệp này lúc này, nhưng nếu bạn tò mò, [ghé thăm tài liệu](https://kit.svelte.dev/docs/configuration).
 
