@@ -34,4 +34,4 @@ Bên phải, trong cây thư mục, bạn sẽ thấy một số tệp tin thư�
 
 `src` là nơi mã nguồn ứng dụng của bạn được đặt. `src/app.html` là mẫu trang của bạn (SvelteKit thay thế `%sveltekit.head%` và `%sveltekit.body%` khi cần thiết), và `src/routes` định nghĩa [routes](/tutorial/pages) của ứng dụng bạn.
 
-Cuối cùng, `static` chứa bất kỳ tài nguyên nào (như `favicon.png` hoặc `robots.txt`) nên đã được đi kèm ( included) khi ứng dụng của bạn được triển khai.
+Cuối cùng, `static` chứa các tài guyên khác (như `favicon.png` hoặc `robots.txt`) và sẽ được giữ nguyên khi deploy.
