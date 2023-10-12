@@ -30,7 +30,7 @@ Bên phải, trong trình xem (cây) tệp tin, bạn sẽ thấy một số fil
 
 `svelte.config.js` chứa cấu hình dự án của bạn. Bạn không cần lo lắng về tệp này lúc này, nhưng nếu bạn tò mò, [ghé thăm tài liệu](https://kit.svelte.dev/docs/configuration).
 
-`vite.config.js` chứa cấu hình [Vite](https://vitejs.dev/). Vì SvelteKit sử dụng Vite, bạn có thể sử dụng [các tính năng của Vite](https://vitejs.dev/guide/features.html) như hot module replacement, hỗ trợ TypeScript, xử lý tài nguyên tĩnh và cũng như vậy.
+`vite.config.js` chứa cấu hình [Vite](https://vitejs.dev/). Vì SvelteKit sử dụng Vite, bạn có thể sử dụng [các tính năng của Vite](https://vitejs.dev/guide/features.html) như hot module replacement, hỗ trợ TypeScript, xử lý tài nguyên tĩnh (static asset), vân vân
 
 `src` là nơi mã nguồn ứng dụng của bạn được đặt. `src/app.html` là mẫu trang của bạn (SvelteKit thay thế `%sveltekit.head%` và `%sveltekit.body%` khi cần thiết), và `src/routes` định nghĩa [routes](/tutorial/pages) của ứng dụng bạn.
 
