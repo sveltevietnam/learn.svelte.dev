@@ -2,7 +2,7 @@
 title: Khối Each
 ---
 
-Khi xây dựng giao diện người dùng, bạn sẽ phải làm việc với những danh sách dữ liệu. Trong bài này, chúng ta đã phải viết markup `<button>` nhiều lần - mỗi lần thay đổi màu sắc - nhưng ta vẫn còn nhiều cái để thêm nữa.
+Khi xây dựng giao diện người dùng, bạn sẽ phải làm việc với những danh sách dữ liệu. Trong bài này, chúng ta đã viết markup `<button>` nhiều lần - mỗi lần thay đổi một màu - nhưng ta vẫn còn nhiều cái để thêm nữa.
 
 Thay vì phải sao chép, dán rồi sửa một cách khổ sở, ta có thể bỏ hết trừ nút đầu tiền, rồi sử dụng khối `each`:
 
