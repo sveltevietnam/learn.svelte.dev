@@ -1,0 +1,9 @@
+/tutorial/*
+	cross-origin-opener-policy: same-origin
+	cross-origin-embedder-policy: require-corp
+	cross-origin-resource-policy: cross-origin
+
+/_app/immutable/workers/*
+	cross-origin-opener-policy: same-origin
+	cross-origin-embedder-policy: require-corp
+	cross-origin-resource-policy: cross-origin
