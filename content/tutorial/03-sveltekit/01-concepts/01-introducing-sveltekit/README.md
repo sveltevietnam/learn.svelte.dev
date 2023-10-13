@@ -4,16 +4,16 @@ title: SvelteKit là gì?
 
 Nếu Svelte là một _framework component_ thì SvelteKit là một _app framework_ (hoặc 'metaframework' tùy vào cách định nghĩa). SvelteKit giúp giải quyết nhiều vấn đề phức tạp khi xây dựng một ứng dụng thực tế (production-ready):
 
-- Routing (Định tuyến)
-- Server-side rendering (Hiển thị phía máy chủ)
-- Data fetching (Lấy dữ liệu)
-- Service workers (một đoạn mã (script) mà trình duyệt chạy nền (ở dưới background), tách khỏi trang web và giúp thực hiện các tính năng không cần đến trang web, hay tương tác người dùng)
-- TypeScript integration (Tích hợp TypeScript)
-- Prerendering (Trước khi hiển thị (render))
-- Single-page apps (Ứng dụng trang đơn)
+- Routing
+- Server-side rendering
+- Data fetching
+- Service workers
+- TypeScript integration
+- Prerendering
+- Single-page apps
 - Library packaging (Đóng gói thư viện)
-- Optimised production builds (Xây dựng tối ưu cho production)
-- Deploying to different hosting providers (Triển khai lên các nhà cung cấp hosting khác nhau)
+- Optimised production builds (Tối ưu hóa bản build cho production)
+- Deploying to different hosting providers (Deploy lên các nhà cung cấp hosting khác nhau)
 - ...và còn nhiều điều khác nữa
 
 SvelteKit sẽ mặc định render ứng dụng từ phía server (giống như 'multi-page apps' (MPA) theo cách truyền thống) để có SEO tốt và có thể load nhanh từ lần đầu tiên (first load), rồi sau đó có thể chuyển sang sử dụng client-side navigation _(điều hướng bên phía client)_ (như 'single-page apps' (SPA)) để tránh bị gián đoạn đường truyền và phải tải lại nhiều thứ (ví dụ như script analytics từ bên thứ ba - ví dụ như Google Analytics). Nơi nào chạy JavaScript được thì sẽ chạy được các ứng dụng này. Có thể những người dùng ấy không nhất thiết phải sử dụng đến JavaScript.
