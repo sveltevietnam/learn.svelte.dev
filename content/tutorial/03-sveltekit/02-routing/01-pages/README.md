@@ -1,5 +1,5 @@
 ---
-title: Pages (Các trang)
+title: Pages (Trang)
 ---
 
 SvelteKit sử dụng filesystem-based routing _(định tuyến dựa trên hệ thống tệp tin)_, điều này có nghĩa là khi người dùng truy cập đến một URL cụ thể trong ứng dụng của bạn, thì _routes_ trong ứng dụng của bạn — sẽ được xác định bởi các thư mục trong mã nguồn của bạn.
