@@ -4,7 +4,7 @@ title: Layouts (Bố cục)
 
 Các routes (định tuyến) khác nhau của ứng dụng của bạn thường sẽ chia sẻ giao diện người dùng chung. Thay vì lặp lại nó trong mỗi thành phần `+page.svelte`, chúng ta có thể sử dụng một thành phần `+layout.svelte` áp dụng cho tất cả các routes trong cùng một thư mục.
 
-Trong ứng dụng này, chúng ta có hai routes, `src/routes/+page.svelte` và `src/routes/about/+page.svelte`, chứa giao diện người dùng điều hướng giống nhau. Hãy tạo một file mới, `src/routes/+layout.svelte`...
+Trong ứng dụng này, chúng ta có hai route, `src/routes/+page.svelte` và `src/routes/about/+page.svelte`, chứa thanh điều hướng giống nhau. Vậy nên ta hãy tạo một tệp mới, `src/routes/+layout.svelte`...
 
 ```
 src/routes/
