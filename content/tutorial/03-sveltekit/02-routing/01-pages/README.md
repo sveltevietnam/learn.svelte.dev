@@ -19,6 +19,6 @@ Ta nên giải quyết lỗi đó. Hãy thêm trang thứ hai, `src/routes/about
 <p>Đây là trang +++about+++</p>
 ```
 
-Bây giờ chúng ta có thể navigate (điều hướng) giữa `/` và `/about`.
+Bây giờ chúng ta có thể chuyển giữa hai trang `/` và `/about`.
 
 > Khác với các ứng dụng nhiều trang truyền thống, điều hướng đến `/about` và quay lại cập nhật nội dung của trang hiện tại, giống như một single-page app (SPA). Điều này mang lại cho chúng ta lợi về cả hai mặt — server-rendered khởi động nhanh, sau đó điều hướng ngay lập tức. (Việc này có thể được [cấu hình](https://kit.svelte.dev/docs/page-options).)
