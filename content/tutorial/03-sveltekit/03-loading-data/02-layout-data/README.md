@@ -1,15 +1,15 @@
 ---
-title: Layout data
+title: Layout data (Dữ liệu bố cục)
 path: /blog
 ---
 
-Just as `+layout.svelte` files create UI for every child route, `+layout.server.js` files load data for every child route.
+Tương tự như các tệp `+layout.svelte` tạo UI _(giao diện người dùng)_ cho mọi child route _(định tuyến con)_, thì các tệp `+layout.server.js` tải dữ liệu cho mọi định tuyến con.
 
-Suppose we'd like to add a 'more posts' sidebar to our blog post page. We _could_ return `summaries` from the `load` function in `src/routes/blog/[slug]/+page.server.js`, like we do in `src/routes/blog/+page.server.js`, but that would be repetitive.
+Giả sử chúng ta muốn thêm một thanh bên 'Xem thêm' vào trang bài viết blog của chúng ta. Chúng ta _có thể_ trả về `summaries` từ hàm `load` trong `src/routes/blog/[slug]/+page.server.js`, giống như chúng ta làm trong `src/routes/blog/+page.server.js`, nhưng như vậy sẽ bị lặp lại.
 
-Instead, let's rename `src/routes/blog/+page.server.js` to `src/routes/blog/+layout.server.js`. Notice that the `/blog` route continues to work — `data.summaries` is still available to the page.
+Thay vào đó, chúng ta hãy đổi tên `src/routes/blog/+page.server.js` thành `src/routes/blog/+layout.server.js`. Lưu ý: đường dẫn `/blog` vẫn hoạt động — `data.summaries` vẫn có sẵn cho trang.
 
-Now, add a sidebar in the layout for the post page:
+Bây giờ, ta hãy thêm một thanh bên trong bố cục cho trang bài viết:
 
 ```svelte
 /// file: src/routes/blog/[slug]/+layout.svelte
@@ -23,7 +23,7 @@ Now, add a sidebar in the layout for the post page:
 	</main>
 
 +++	<aside>
-		<h2>More posts</h2>
+		<h2>Xem thêm</h2>
 		<ul>
 			{#each data.summaries as { slug, title }}
 				<li>
@@ -45,6 +45,6 @@ Now, add a sidebar in the layout for the post page:
 </style>
 ```
 
-The layout (and the page below it) inherits `data.summaries` from the parent `+layout.server.js`.
+Bố cục (và trang dưới nó) kế thừa `data.summaries` từ `+layout.server.js` cha.
 
-When we navigate from one post to another, we only need to load the data for the post itself — the layout data is still valid. See the documentation on [invalidation](https://kit.svelte.dev/docs/load#rerunning-load-functions) to learn more.
+Khi chúng ta chuyển từ một bài viết này sang bài viết khác, chúng ta chỉ cần tải dữ liệu cho bài viết đó — layout data _(dữ liệu bố cục)_ vẫn giữ nguyên. Xem tài liệu về [invalidation _(vô hiệu hóa)_](https://kit.svelte.dev/docs/load#rerunning-load-functions) để biết thêm thông tin.

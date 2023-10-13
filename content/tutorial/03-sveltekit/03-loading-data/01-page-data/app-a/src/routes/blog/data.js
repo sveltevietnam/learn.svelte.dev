@@ -1,21 +1,21 @@
 export const posts = [
 	{
 		slug: 'welcome',
-		title: 'Welcome to the Aperture Science computer-aided enrichment center',
+		title: 'Chào mừng bạn đến Trung tâm Aperture Science',
 		content:
-			'<p>We hope your brief detention in the relaxation vault has been a pleasant one.</p><p>Your specimen has been processed and we are now ready to begin the test proper.</p>'
+			'<p>Chúng tôi hy vọng bạn có một trải nghiệm dễ chịu với thời gian ngắn ở trong phòng nghỉ.</p><p>Mẫu của bạn đã được xử lý và chúng tôi đã sẵn sàng bắt đầu bài kiểm tra đúng cách.</p>'
 	},
 
 	{
 		slug: 'safety',
-		title: 'Safety notice',
+		title: 'Thông báo an toàn',
 		content:
-			'<p>While safety is one of many Enrichment Center Goals, the Aperture Science High Energy Pellet, seen to the left of the chamber, can and has caused permanent disabilities, such as vaporization. Please be careful.</p>'
+			'<p>Mặc dù an toàn là một trong những Mục tiêu của Trung tâm, viên năng lượng cao Aperture Science, nhìn bên trái của buồng, có thể và đã gây ra tình trạng khuyết tật vĩnh viễn, như bay hơi. Xin hãy chú ý.</p>'
 	},
 
 	{
 		slug: 'cake',
-		title: 'This was a triumph',
-		content: "<p>I'm making a note here: HUGE SUCCESS.</p>"
+		title: 'Đây là một thành công lớn',
+		content: "<p>Tôi đang ghi chú ở đây: THÀNH CÔNG LỚN.</p>"
 	}
 ];

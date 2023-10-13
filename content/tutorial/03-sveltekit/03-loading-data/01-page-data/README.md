@@ -1,17 +1,18 @@
 ---
-title: Page data
+title: Page data (Dữ liệu trang)
 path: /blog
 ---
 
 At its core, SvelteKit's job boils down to three things:
+Về cơ bản, những chức năng của SvelteKit có thể tóm gọn thành ba điều:
 
-1. **Routing** — figure out which route matches an incoming request
-2. **Loading** — get the data needed by the route
-3. **Rendering** - generate some HTML (on the server) or update the DOM (in the browser)
+1. **Routing** — xác định route nào phù hợp với một incoming request _(yêu cầu đến)_
+2. **Loading** — lấy dữ liệu cần thiết cho route _(định tuyến)_
+3. **Rendering** - tạo ra một số HTML (trên server _(máy chủ)_) hoặc cập nhật DOM (ở browser _(trình duyệt)_)
 
-We've seen how routing and rendering work. Let's talk about the middle part — loading.
+Chúng ta đã biết cách route và render hoạt động. Bây giờ hãy nói về phần giữa — loading _(tải)_.
 
-Every page of your app can declare a `load` function in a `+page.server.js` file alongside the `+page.svelte` file. As the file name suggests, this module only ever runs on the server, including for client-side navigations. Let's add a `src/routes/blog/+page.server.js` file so that we can replace the hard-coded links in `src/routes/blog/+page.svelte` with actual blog post data:
+Mỗi trang của ứng dụng có thể khai báo một hàm `load` trong tệp `+page.server.js` cùng thư mục với tệp `+page.svelte`. Như tên tệp gợi ý, mô-đun này chỉ chạy trên server, bao gồm cả khi truy cập phía client-side _(máy khách)_. Chúng ta hãy thêm một tệp `src/routes/blog/+page.server.js` để có thể thay thế các hard-coded links _(các liên kết có dữ liệu mẫu)_ trong `src/routes/blog/+page.svelte` bằng dữ liệu thực sự của bài viết blog:
 
 ```js
 /// file: src/routes/blog/+page.server.js
@@ -27,9 +28,10 @@ export function load() {
 }
 ```
 
-> For the sake of the tutorial, we're importing data from `src/routes/blog/data.js`. In a real app, you'd be more likely to load the data from a database or a CMS, but for now we'll do it like this.
+> Vì mục đích hướng dẫn là chính, nên chúng ta sẽ lấy dữ liệu từ `src/routes/blog/data.js`. Trong ứng dụng thực tế, bạn có thể lấy dữ liệu từ một cơ sở dữ liệu hoặc một hệ quản trị nội dung (CMS).
 
 We can access this data in `src/routes/blog/+page.svelte` via the `data` prop:
+Chúng ta có thể truy cập dữ liệu này trong `src/routes/blog/+page.svelte` thông qua prop _(thuộc tính)_ `data`:
 
 ```svelte
 /// file: src/routes/blog/+page.svelte
@@ -49,7 +51,7 @@ We can access this data in `src/routes/blog/+page.svelte` via the `data` prop:
 </ul>
 ```
 
-Now, let's do the same for the post page:
+Bây giờ, chúng ta hãy làm tương tự cho trang bài viết:
 
 ```js
 /// file: src/routes/blog/[slug]/+page.server.js
@@ -75,7 +77,7 @@ export function load({ params }) {
 <div>{@html data.post.content}</div>+++
 ```
 
-There's one last detail we need to take care of — the user might visit an invalid pathname like `/blog/nope`, in which case we'd like to respond with a 404 page:
+Còn một chi tiết cuối cùng chúng ta cần chú ý — người dùng có thể truy cập vào một đường dẫn không tồn tại hoặc không hợp lệ như `/blog/nope`, trong trường hợp này, chúng ta muốn phản hồi với một trang 404:
 
 ```js
 /// file: src/routes/blog/[slug]/+page.server.js
@@ -93,4 +95,4 @@ export function load({ params }) {
 }
 ```
 
-We'll learn more about error handling in later chapters.
+Chúng ta sẽ tìm hiểu thêm về xử lý lỗi trong các chương sau.
