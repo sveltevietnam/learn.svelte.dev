@@ -3,7 +3,7 @@ title: Route parameters (Tham số đường dẫn)
 path: /blog
 ---
 
-Để tạo các routes (định tuyến) với parameters (tham số) động, sử dụng dấu ngoặc vuông xung quanh một tên biến hợp lệ. Ví dụ, một file như `src/routes/blog/[slug]/+page.svelte` sẽ tạo ra một route phù hợp với `/blog/one`, `/blog/two`, `/blog/three` và cứ như vậy.
+Để tạo các route với tham số động, ta có thể cho một tên biến vào trong dấu ngoặc vuông. Ví dụ, một tệp như `src/routes/blog/[slug]/+page.svelte` sẽ tạo ra một route phù hợp với `/blog/one`, `/blog/two`, `/blog/three` và nhiều hơn nữa.
 
 
 Chúng ta hãy tạo file đó:
