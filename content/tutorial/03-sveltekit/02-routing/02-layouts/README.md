@@ -26,4 +26,4 @@ src/routes/
 <slot />
 ```
 
-Một file `+layout.svelte` áp dụng cho mọi child route (định tuyến con hay rout con), bao gồm cả `+page.svelte` cùng cấp (nếu nó tồn tại). Bạn có thể lồng layouts (các bố cục) theo bất kỳ độ sâu nào.
+Một file `+layout.svelte` áp dụng cho mọi child route (định tuyến con hay route con), bao gồm cả `+page.svelte` cùng cấp (nếu nó tồn tại). Bạn có thể lồng layouts (các bố cục) theo bất kỳ độ sâu nào.
