@@ -6,7 +6,7 @@ SvelteKit sử dụng filesystem-based routing _(định tuyến dựa trên h�
 
 Mỗi tệp `+page.svelte` bên trong `src/routes` sẽ tạo ra một trang trong ứng dụng của bạn. Trong ứng dụng này, hiện tại chúng ta có một trang `src/routes/+page.svelte`, tương ứng với đường dẫn `/`. Nếu chúng ta điều hướng đến `/about`, ta sẽ bị lỗi 404 Not Found _(404 Không tìm thấy)_.
 
-Hãy sửa điều đó. Thêm một trang thứ hai, `src/routes/about/+page.svelte`, sao chép nội dung từ `src/routes/+page.svelte`, và cập nhật nó:
+Ta nên giải quyết lỗi đó. Hãy thêm trang thứ hai, `src/routes/about/+page.svelte`, sao chép nội dung từ `src/routes/+page.svelte`, và sửa thành:
 
 ```svelte
 /// file: src/routes/about/+page.svelte
