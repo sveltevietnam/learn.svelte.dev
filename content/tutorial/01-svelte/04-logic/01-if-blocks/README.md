@@ -2,9 +2,9 @@
 title: Khối If 
 ---
 
-HTML không có cách nào để diễn đạt _logic_, như điều kiện và vòng lặp. Nhưng Svelte thì có.
+HTML không thể để diễn đạt logic như điều kiện hay vòng lặp. Nhưng Svelte thì làm được.
 
-Để cho ra những markup có điều kiện, chúng ta sẽ bao nó trong một khối `if`. Sau đó ta hãy thêm vài chữ khi `count` lớn hơn `10`:
+Để hiển thị có điều kiện một đoạn markup, ta bao nó trong một khối `if`. Như bên dưới, ta hiện thị một cụm từ chỉ khi biến `count` lớn hơn `10`:
 
 ```svelte
 /// file: App.svelte
@@ -18,4 +18,4 @@ HTML không có cách nào để diễn đạt _logic_, như điều kiện và 
 {/if}+++
 ```
 
-Thử đi - sửa lại component, và bấm nút.
+Hãy thử sửa lại component và sau đó nhấn nút.
