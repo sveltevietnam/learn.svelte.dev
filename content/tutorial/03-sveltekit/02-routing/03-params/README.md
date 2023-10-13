@@ -1,5 +1,5 @@
 ---
-title: Route parameters (Các tham số định tuyến/tham số đường dẫn)
+title: Route parameters (Tham số đường dẫn)
 path: /blog
 ---
 
