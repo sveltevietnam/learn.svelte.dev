@@ -8,7 +8,7 @@
 	</main>
 
 	<aside>
-		<h2>More posts</h2>
+		<h2>Xem thêm</h2>
 		<ul>
 			{#each data.summaries as { slug, title }}
 				<li>
