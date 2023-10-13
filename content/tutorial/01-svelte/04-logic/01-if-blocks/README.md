@@ -4,7 +4,7 @@ title: Khối If
 
 HTML không thể để diễn đạt logic như điều kiện hay vòng lặp. Nhưng Svelte thì làm được.
 
-Để hiển thị có điều kiện một đoạn markup, ta bao nó trong một khối `if`. Như bên dưới, ta hiện thị một cụm từ chỉ khi biến `count` lớn hơn `10`:
+Để hiển thị có điều kiện một đoạn markup, ta bao nó trong một khối `if`. Như bên dưới, ta hiển thị một cụm từ chỉ khi biến `count` lớn hơn `10`:
 
 ```svelte
 /// file: App.svelte
