@@ -2,7 +2,7 @@
 title: Layouts (Bố cục)
 ---
 
-Các routes (định tuyến) khác nhau của ứng dụng của bạn thường sẽ chia sẻ giao diện người dùng chung. Thay vì lặp lại nó trong mỗi thành phần `+page.svelte`, chúng ta có thể sử dụng một thành phần `+layout.svelte` áp dụng cho tất cả các routes trong cùng một thư mục.
+Các route khác nhau trong ứng dụng của bạn thường có giao diện giống nhau. Thay vì lặp đi lặp lại trong mỗi component `+page.svelte`, ta nên sử dụng component `+layout.svelte` để áp dụng cho tất cả các route trong chính thư mục đó.
 
 Trong ứng dụng này, chúng ta có hai route, `src/routes/+page.svelte` và `src/routes/about/+page.svelte`, chứa thanh điều hướng giống nhau. Vậy nên ta hãy tạo một tệp mới, `src/routes/+layout.svelte`...
 
