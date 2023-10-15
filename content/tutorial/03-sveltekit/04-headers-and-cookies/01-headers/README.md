@@ -1,10 +1,10 @@
 ---
-title: Setting headers
+title: Thiết lập các Header
 ---
 
-Inside a `load` function (as well as in [form actions](the-form-element), [hooks](handle) and [API routes](get-handlers), which we'll learn about later) you have access to a `setHeaders` function, which — unsurprisingly — can be used to set headers on the response.
+Bên trong một hàm `load` (cũng như trong [form actions](the-form-element), [hooks](handle) và [đường dẫn API](get-handlers), chúng ta sẽ tìm hiểu sau) bạn có quyền truy cập vào một hàm `setHeaders`, hàm này có thể được sử dụng để thiết lập các header _(tiêu đề)_ trên phản hồi.
 
-Most commonly, you'd use it to customise caching behaviour with the [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) response header, but for the sake of this tutorial we'll do something less advisable and more dramatic:
+Phổ biến nhất, bạn sẽ sử dụng nó để tùy chỉnh caching với [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control), nhưng trong bài hướng dẫn này, chúng ta sẽ làm một số điều ít được khuyến khích và nhiều kịch tính hơn:
 
 ```js
 /// file: src/routes/+page.server.js
@@ -15,4 +15,4 @@ export function load(+++{ setHeaders }+++) {
 }
 ```
 
-(You may need to reload the iframe to see the effect.)
+(Bạn có thể cần tải lại iframe để thấy tác dụng.)
