@@ -3,7 +3,7 @@ title: Layout data (Dữ liệu bố cục)
 path: /blog
 ---
 
-Tương tự như các tệp `+layout.svelte` tạo UI _(giao diện người dùng)_ cho mọi child route _(định tuyến con)_, thì các tệp `+layout.server.js` tải dữ liệu cho mọi định tuyến con.
+Tương tự như các tệp `+layout.svelte` tạo UI _(giao diện người dùng)_ cho mỗi child route _(định tuyến con)_, thì các tệp `+layout.server.js` tải dữ liệu cho mỗi định tuyến con.
 
 Giả sử chúng ta muốn thêm một cột "bài viết khác" vào trang bài viết blog của chúng ta. Chúng ta _có thể_ trả về `summaries` từ hàm `load` trong `src/routes/blog/[slug]/+page.server.js`, giống như chúng ta làm trong `src/routes/blog/+page.server.js`, nhưng như vậy sẽ bị lặp lại.
 
