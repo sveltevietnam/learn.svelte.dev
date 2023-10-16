@@ -3,7 +3,6 @@ title: Page data (Dữ liệu trang)
 path: /blog
 ---
 
-At its core, SvelteKit's job boils down to three things:
 Về cơ bản, những chức năng của SvelteKit có thể tóm gọn thành ba điều:
 
 1. **Routing** — xác định route nào phù hợp với một incoming request _(yêu cầu đến)_
