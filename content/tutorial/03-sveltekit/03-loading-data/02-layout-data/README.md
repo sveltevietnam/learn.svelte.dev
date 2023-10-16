@@ -9,7 +9,7 @@ Giả sử chúng ta muốn thêm một cột "bài viết khác" vào trang bà
 
 Thay vào đó, chúng ta hãy đổi tên `src/routes/blog/+page.server.js` thành `src/routes/blog/+layout.server.js`. Lưu ý: đường dẫn `/blog` vẫn hoạt động — `data.summaries` vẫn có sẵn cho trang.
 
-Bây giờ, ta hãy thêm một thanh bên trong bố cục cho trang bài viết:
+Bây giờ, ta hãy thêm một cột trong bố cục cho trang bài viết:
 
 ```svelte
 /// file: src/routes/blog/[slug]/+layout.svelte
