@@ -34,7 +34,7 @@ export function load({ cookies }) {
 
 Bây giờ, nếu bạn tải lại iframe, `Chào người lạ!` sẽ trở thành `Chào bạn!`.
 
-Gọi `cookies.set(name, ...)` làm cho tiêu đề `Set-Cookie` được ghi, nhưng nó _cũng_ cập nhật bản đồ nội bộ của cookies, có nghĩa là bất kỳ cuộc gọi tiếp theo nào đến `cookies.get(name)` trong suốt cùng một yêu cầu sẽ trả về giá trị đã được cập nhật. Tiến trình này như sau, API `cookies` sử dụng gói cookie phổ biến — các tùy chọn được truyền vào `cookies.get` và `cookies.set` tương ứng với các tùy chọn `parse` và `serialize` từ `cookie` [tài liệu](https://github.com/jshttp/cookie#api). SvelteKit đặt các giá trị mặc định sau để làm cho cookie của bạn an toàn hơn:
+`cookies.set(name, ...)` làm tiêu đề `Set-Cookie` sẽ được ghi, nhưng nó _cũng_ cập nhật bản đồ nội bộ của cookies, có nghĩa là sau đó nếu `cookies.get(name)` được gọi trong cùng một yêu cầu sẽ trả về giá trị đã được cập nhật. Tiến trình này như sau, API `cookies` sử dụng package `cookie` thường gặp — các tùy chọn được truyền vào `cookies.get` và `cookies.set` tương ứng với các tùy chọn cho `parse` và `serialize` từ [tài liệu](https://github.com/jshttp/cookie#api) của `cookie`. SvelteKit đặt các giá trị mặc định sau để làm cho cookie của bạn an toàn hơn:
 
 ```js
 /// no-file
