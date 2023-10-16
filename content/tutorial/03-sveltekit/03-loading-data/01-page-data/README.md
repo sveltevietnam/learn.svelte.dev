@@ -29,7 +29,6 @@ export function load() {
 
 > Vì mục đích hướng dẫn là chính, nên chúng ta sẽ lấy dữ liệu từ `src/routes/blog/data.js`. Trong ứng dụng thực tế, bạn có thể lấy dữ liệu từ một cơ sở dữ liệu hoặc một hệ quản trị nội dung (CMS).
 
-We can access this data in `src/routes/blog/+page.svelte` via the `data` prop:
 Chúng ta có thể truy cập dữ liệu này trong `src/routes/blog/+page.svelte` thông qua prop _(thuộc tính)_ `data`:
 
 ```svelte
