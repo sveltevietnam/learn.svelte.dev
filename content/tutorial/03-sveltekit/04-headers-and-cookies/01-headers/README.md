@@ -1,5 +1,5 @@
 ---
-title: Thiết lập các Header
+title: Thiết lập các header
 ---
 
 Bên trong một hàm `load` (cũng như trong [form actions](the-form-element), [hooks](handle) và [đường dẫn API](get-handlers), chúng ta sẽ tìm hiểu sau) bạn có quyền truy cập vào một hàm `setHeaders`, hàm này có thể được sử dụng để thiết lập các header _(tiêu đề)_ trên phản hồi.
