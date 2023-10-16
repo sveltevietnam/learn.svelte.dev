@@ -5,7 +5,7 @@ path: /blog
 
 Tương tự như các tệp `+layout.svelte` tạo UI _(giao diện người dùng)_ cho mọi child route _(định tuyến con)_, thì các tệp `+layout.server.js` tải dữ liệu cho mọi định tuyến con.
 
-Giả sử chúng ta muốn thêm một thanh bên 'Xem thêm' vào trang bài viết blog của chúng ta. Chúng ta _có thể_ trả về `summaries` từ hàm `load` trong `src/routes/blog/[slug]/+page.server.js`, giống như chúng ta làm trong `src/routes/blog/+page.server.js`, nhưng như vậy sẽ bị lặp lại.
+Giả sử chúng ta muốn thêm một cột "bài viết khác" vào trang bài viết blog của chúng ta. Chúng ta _có thể_ trả về `summaries` từ hàm `load` trong `src/routes/blog/[slug]/+page.server.js`, giống như chúng ta làm trong `src/routes/blog/+page.server.js`, nhưng như vậy sẽ bị lặp lại.
 
 Thay vào đó, chúng ta hãy đổi tên `src/routes/blog/+page.server.js` thành `src/routes/blog/+layout.server.js`. Lưu ý: đường dẫn `/blog` vẫn hoạt động — `data.summaries` vẫn có sẵn cho trang.
 
