@@ -1,10 +1,10 @@
 ---
-title: Reading and writing cookies
+title: Đọc và ghi cookies
 ---
 
-The [`setHeaders`](headers) function can't be used with the `Set-Cookie` header. Instead, you should use the `cookies` API.
+Hàm [`setHeaders`](headers) không thể được dùng với header `Set-Cookie`. Thay vào đó, bạn nên sử dụng API `cookies`.
 
-In your `load` functions, you can read a cookie with `cookies.get(name, options)`:
+Trong các hàm `load` của bạn, bạn có thể đọc cookie bằng cách sử dụng `cookies.get(name, options)`:
 
 ```js
 /// file: src/routes/+page.server.js
@@ -17,7 +17,7 @@ export function load(+++{ cookies }+++) {
 }
 ```
 
-To set a cookie, use `cookies.set(name, value, options)`. It's strongly recommended that you explicitly configure the `path` when setting a cookie, since browsers' default behaviour — somewhat uselessly — is to set the cookie on the parent of the current path.
+Để đặt một cookie, sử dụng `cookies.set(name, value, options)`. Khuyến khích bạn nên cấu hình rõ `path` _(đường dẫn)_ khi đặt một cookie, vì hành vi mặc định của trình duyệt — hơi vô ích — là đặt cookie ở phần cha của đường dẫn hiện tại.
 
 ```js
 /// file: src/routes/+page.server.js
@@ -32,9 +32,9 @@ export function load({ cookies }) {
 }
 ```
 
-Now, if you reload the iframe, `Hello stranger!` becomes `Hello friend!`.
+Bây giờ, nếu bạn tải lại iframe, `Chào người lạ!` sẽ trở thành `Chào bạn!`.
 
-Calling `cookies.set(name, ...)` causes a `Set-Cookie` header to be written, but it _also_ updates the internal map of cookies, meaning any subsequent calls to `cookies.get(name)` during the same request will return the updated value. Under the hood, the `cookies` API uses the popular `cookie` package — the options passed to `cookies.get` and `cookies.set` correspond to the `parse` and `serialize` options from the `cookie` [documentation](https://github.com/jshttp/cookie#api). SvelteKit sets the following defaults to make your cookies more secure:
+`cookies.set(name, ...)` làm tiêu đề `Set-Cookie` sẽ được ghi, nhưng nó _cũng_ cập nhật bản đồ nội bộ của cookies, có nghĩa là sau đó nếu `cookies.get(name)` được gọi trong cùng một yêu cầu sẽ trả về giá trị đã được cập nhật. Tiến trình này như sau, API `cookies` sử dụng package `cookie` thường gặp — các tùy chọn được truyền vào `cookies.get` và `cookies.set` tương ứng với các tùy chọn cho `parse` và `serialize` từ [tài liệu](https://github.com/jshttp/cookie#api) của `cookie`. SvelteKit đặt các giá trị mặc định sau để làm cho cookie của bạn an toàn hơn:
 
 ```js
 /// no-file
