@@ -1,1 +1,1 @@
-export const message = 'hello from $lib/message';
+export const message = 'Xin chào từ $lib/message';
