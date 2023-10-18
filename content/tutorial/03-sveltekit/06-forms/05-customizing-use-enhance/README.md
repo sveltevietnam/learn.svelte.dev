@@ -1,8 +1,8 @@
 ---
-title: Customizing use:enhance
+title: Tùy chỉnh use:enhance
 ---
 
-With `use:enhance`, we can go further than just emulating the browser's native behaviour. By providing a callback, we can add things like **pending states** and **optimistic UI**. Let's simulate a slow network by adding an artificial delay to our two actions:
+Với `use:enhance`, chúng ta có thể đi xa hơn việc chỉ mô phỏng hành vi tự nhiên của trình duyệt. Bằng cách cung cấp một callback _(hàm gọi lại)_, chúng ta có thể thêm các thứ như **pending states** và **optimistic UI**. Hãy mô phỏng việc mạng chậm bằng cách thêm độ trễ vào hai action của chúng ta:
 
 ```js
 /// file: src/routes/+page.server.js
@@ -19,7 +19,7 @@ export const actions = {
 };
 ```
 
-When we create or delete items, it now takes a full second before the UI updates, leaving the user wondering if they messed up somehow. To solve that, add some local state...
+Khi chúng ta tạo hoặc xóa mục, giờ đây nó mất hết một giây trước khi giao diện người dùng cập nhật, khiến người dùng tự hỏi liệu họ đã làm sai điều gì đó hay không. Để giải quyết vấn đề đó, chúng ta sẽ thêm một số local state _(trạng thái cục bộ)_...
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -35,7 +35,7 @@ When we create or delete items, it now takes a full second before the UI updates
 </script>
 ```
 
-...and toggle `creating` inside the first `use:enhance`:
+...và chuyển đổi `creating` bên trong `use:enhance` đầu tiên:
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -52,7 +52,7 @@ When we create or delete items, it now takes a full second before the UI updates
 	}}+++
 >
 	<label>
-		add a todo:
+		thêm todo:
 		<input
 			+++disabled={creating}+++
 			name="description"
@@ -64,7 +64,7 @@ When we create or delete items, it now takes a full second before the UI updates
 </form>
 ```
 
-We can then show a message while we're saving data:
+Sau đó chúng ta có thể hiển thị một thông báo trong khi chúng ta đang lưu dữ liệu:
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -73,11 +73,11 @@ We can then show a message while we're saving data:
 </ul>
 
 +++{#if creating}
-	<span class="saving">saving...</span>
+	<span class="saving">Đang lưu...</span>
 {/if}+++
 ```
 
-In the case of deletions, we don't really need to wait for the server to validate anything — we can just update the UI immediately:
+Trong trường hợp xóa, thực sự không cần phải đợi máy chủ xác minh bất cứ thứ gì — chúng ta có thể cập nhật giao diện người dùng ngay lập tức:
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -105,4 +105,4 @@ In the case of deletions, we don't really need to wait for the server to validat
 </ul>
 ```
 
-> `use:enhance` is very customizable — you can `cancel()` submissions, handle redirects, control whether the form is reset, and so on. [See the docs](https://kit.svelte.dev/docs/modules#$app-forms-enhance) for full details.
+> `use:enhance` có thể tùy chỉnh rất nhiều — bạn có thể `cancel()` các submission _(lần gửi)_, handle redirects _(xử lý các chuyển hướng)_, kiểm soát xem form có được đặt lại hay không, vân vân... [Xem tài liệu](https://kit.svelte.dev/docs/modules#$app-forms-enhance) để biết chi tiết đầy đủ.

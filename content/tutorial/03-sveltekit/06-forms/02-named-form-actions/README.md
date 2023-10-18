@@ -1,10 +1,10 @@
 ---
-title: Named form actions
+title: form actions được đặt tên
 ---
 
-A page that only has a single action is, in practice, quite rare. Most of the time you'll need to have multiple actions on a page. In this app, creating a todo isn't enough — we'd like to delete them once they're complete.
+Một trang chỉ có một hành động duy nhất thì thực tế là khá hiếm. Hầu hết trường hợp, bạn sẽ cần có nhiều hành động trên một trang. Trong ứng dụng này, việc tạo một todo mới là không đủ — chúng ta muốn xóa chúng sau khi chúng đã hoàn thành.
 
-Begin by replacing our `default` action with named `create` and `delete` actions:
+Bắt đầu bằng cách thay thế hành động `default` của chúng ta bằng các hành động có tên `create` và `delete`:
 
 ```js
 /// file: src/routes/+page.server.js
@@ -21,15 +21,15 @@ export const actions = {
 };
 ```
 
-> Default actions cannot coexist with named actions.
+> Default actions _(Hành động mặc định)_ không thể tồn tại cùng với các hành động có tên.
 
-The `<form>` element has an optional `action` attribute, which is similar to an `<a>` element's `href` attribute. Update the existing form so that it points to the new `create` action:
+Phần tử <form> có một thuộc tính tùy chọn là `action`, tương tự như thuộc tính `href` của phần tử <a>. Chúng ta hãy cập nhật form hiện tại để nó trỏ đến hành động `create` mới:
 
 ```svelte
 /// file: src/routes/+page.svelte
 <form method="POST" +++action="?/create"+++>
 	<label>
-		add a todo:
+		thêm todo:
 		<input
 			name="description"
 			autocomplete="off"
@@ -38,9 +38,9 @@ The `<form>` element has an optional `action` attribute, which is similar to an 
 </form>
 ```
 
-> The `action` attribute can be any URL — if the action was defined on another page, you might have something like `/todos?/create`. Since the action is on _this_ page, we can omit the pathname altogether, hence the leading `?` character.
+> Thuộc tính `action` có thể là bất kỳ URL nào — nếu hành động được xác định trên một trang khác, ví dụ như `/todos?/create`. Vì hành động ở trang này, nên chúng ta có thể bỏ qua toàn bộ đường dẫn và chỉ cần thêm ký tự `?` ở trước.
 
-Next, we want to create a form for each todo, complete with a hidden `<input>` that uniquely identifies it:
+Tiếp theo, chúng ta muốn tạo một form cho mỗi todo, kèm theo một `<input>` ẩn duy nhất để xác định nó:
 
 ```svelte
 /// file: src/routes/+page.svelte
