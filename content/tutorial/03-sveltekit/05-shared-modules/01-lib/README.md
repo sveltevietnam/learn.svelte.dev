@@ -1,12 +1,12 @@
 ---
-title: The $lib alias
+title: Tên gọi $lib
 ---
 
-Because SvelteKit uses directory-based routing, it's easy to place modules and components alongside the routes that use them. A good rule of thumb is 'put code close to where it's used'. 
+Bởi vì SvelteKit sử dụng route _(định tuyến)_ dựa trên thư mục, nên việc đặt các module và components gần các route sử dụng chúng sẽ tiện hơn. Có một quy tắc là 'đặt mã gần nơi sử dụng nó'.
 
-Sometimes, code is used in multiple places. When this happens, it's useful to have a place to put them that can be accessed by all routes without needing to prefix imports with `../../../../`. In SvelteKit, that place is the `src/lib` directory. Anything inside this directory can be accessed by any module in `src` via the `$lib` alias.
+Đôi khi, mã được sử dụng ở nhiều nơi trong dự án. Trong tình huống này, Sẽ tiện hơn nếu ta đặt mã ở một nơi mà tất cả các route có thể truy cập được và không phải thêm `../../../` vào đầu lệnh import. Trong SvelteKit, đó là thư mục `src/lib`. Bất cứ thứ gì bên trong thư mục này có thể được truy cập bởi bất kỳ mô-đun nào trong `src` thông qua tên `$lib`.
 
-Both `+page.svelte` files in this exercise import `src/lib/message.js`. But if you navigate to `/a/deeply/nested/route`, the app breaks, because we got the prefix wrong. Update it to use `$lib/message.js` instead:
+Cả hai tệp `+page.svelte` trong bài tập này đều import `src/lib/message.js`. Nhưng nếu bạn chuyển đến `/a/deeply/nested/route`, ứng dụng sẽ gặp lỗi, vì chúng ta đã điền sai tiền tố. Hãy sửa nó lại thành `$lib/message.js`:
 
 ```svelte
 /// file: src/routes/a/deeply/nested/route/+page.svelte
@@ -14,11 +14,11 @@ Both `+page.svelte` files in this exercise import `src/lib/message.js`. But if y
 	import { message } from +++'$lib/message.js'+++;
 </script>
 
-<h1>a deeply nested route</h1>
+<h1>một route nằm sâu</h1>
 <p>{message}</p>
 ```
 
-Do the same for `src/routes/+page.svelte`:
+Làm tương tự cho `src/routes/+page.svelte`:
 
 ```svelte
 /// file: src/routes/+page.svelte
