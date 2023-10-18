@@ -23,7 +23,6 @@ Chúng ta hãy xây dựng một ứng dụng todo. Chúng ta đã có một cơ
 <ul class="todos">
 ```
 
-If we type something into the `<input>` and hit Enter, the browser makes a POST request (because of the `method="POST"` attribute) to the current page. But that results in an error, because we haven't created a server-side _action_ to handle the POST request. Let's do that now:
 Nếu chúng ta gõ gì đó vào <input> và nhấn Enter, trình duyệt sẽ tạo một yêu cầu POST (vì thuộc tính `method="POST"`) đến trang hiện tại. Nhưng điều đó dẫn đến một lỗi, vì chúng ta chưa tạo một _hành động_ ở phía server để xử lý yêu cầu POST. Hãy làm điều đó ngay bây giờ:
 
 ```js
