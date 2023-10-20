@@ -2,9 +2,9 @@
 title: POST handlers
 ---
 
-You can also add handlers that mutate data, such as `POST`. In most cases, you should use [form actions](the-form-element) instead — you'll end up writing less code, and it'll work without JavaScript, making it more resilient.
+Bạn cũng có thể thêm các handler thay đổi dữ liệu, chẳng hạn như `POST`. Trong hầu hết các trường hợp, bạn nên sử dụng [form actions](the-form-element) — bạn sẽ viết ít mã hơn và ứng dụng sẽ hoạt động mà không cần JavaScript, làm cho nó mạnh mẽ hơn.
 
-Inside the `keydown` event handler of the 'add a todo' `<input>`, let's post some data to the server:
+Bên trong event handler `keydown` của phần tử `<input>` 'thêm todo', chúng ta hãy gửi một số dữ liệu đến server:
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -30,9 +30,9 @@ Inside the `keydown` event handler of the 'add a todo' `<input>`, let's post som
 />
 ```
 
-Here, we're posting some JSON to the `/todo` API route — using a `userid` from the user's cookies — and receiving the `id` of the newly created todo in response.
+Ở đây, chúng ta đang gửi một số JSON đến API route _(đường dẫn API)_ `/todo` — sử dụng một `userid` từ cookies của người dùng — và nhận `id` của todo mới được tạo ra trong response _(phản hồi)_.
 
-Create the `/todo` route by adding a `src/routes/todo/+server.js` file with a `POST` handler that calls `createTodo` in `src/lib/server/database.js`:
+Tạo đường dẫn /todo bằng cách thêm một tệp `src/routes/todo/+server.js` với một `POST` handler gọi `createTodo` trong `src/lib/server/database.js`:
 
 ```js
 /// file: src/routes/todo/+server.js
@@ -48,10 +48,9 @@ export async function POST({ request, cookies }) {
 	return json({ id }, { status: 201 });
 }
 ```
+Tương tự như với các hàm `load` và form actions, `request` là một đối tượng [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) tiêu chuẩn; `await request.json()` trả về dữ liệu mà chúng ta đã gửi từ event handler _(bộ xử lý sự kiện)_.
 
-As with `load` functions and form actions, the `request` is a standard [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) object; `await request.json()` returns the data that we posted from the event handler.
-
-We're returning a response with a [201 Created](https://httpstatusdogs.com/201-created) status and the `id` of the newly generated todo in our database. Back in the event handler, we can use this to update the page:
+Chúng ta đang trả về một phản hồi với trạng thái [201 Created](https://httpstatusdogs.com/201-created) và `id` của todo mới được tạo trong cơ sở dữ liệu của chúng ta. Trong event handler, chúng ta có thể sử dụng nó để cập nhật trang:
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -84,4 +83,4 @@ We're returning a response with a [201 Created](https://httpstatusdogs.com/201-c
 />
 ```
 
-> You should only mutate `data` in such a way that you'd get the same result by reloading the page.
+> Bạn chỉ nên cập nhật `data` hiển thị trên trang nếu biết chắc rằng khi thực hiện tải lại trang kết quả nhận được sẽ như vậy.

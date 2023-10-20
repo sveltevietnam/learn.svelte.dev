@@ -6,7 +6,7 @@
 	<h1>todos</h1>
 
 	<label>
-		add a todo:
+		thêm todo:
 		<input
 			type="text"
 			autocomplete="off"
