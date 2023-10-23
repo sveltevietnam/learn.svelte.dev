@@ -12,7 +12,7 @@
 	</a>
 
 	{#if $navigating}
-		navigating to {$navigating.to.url.pathname}
+		đang chuyển tới {$navigating.to.url.pathname}
 	{/if}
 </nav>
 
@@ -20,10 +20,10 @@
 
 {#if $updated}
 	<p class="toast">
-		A new version of the app is available
+		Ứng dụng có phiên bản mới sẳn sàng để cập nhật
 
 		<button on:click={() => location.reload()}>
-			reload the page
+			Tải lại trang
 		</button>
 	</p>
 {/if}

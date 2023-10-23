@@ -1,20 +1,20 @@
 ---
-title: page
+title: Trang
 ---
 
-As we learned [earlier](writable-stores), Svelte stores are a place to put data that doesn't belong to an individual component.
+Như chúng ta đã học [trước đó](writable-stores), Svelte stores là nơi để lưu dữ liệu không thuộc về một component riêng lẻ nào.
 
-SvelteKit makes three readonly stores available via the `$app/stores` module — `page`, `navigating` and `updated`. The one you'll use most often is [`page`](https://kit.svelte.dev/docs/types#public-types-page), which provides information about the current page:
+SvelteKit cung cấp ba readonly stores thông qua module `$app/stores` — `page`, `navigating` và `updated`. Cái bạn sẽ sử dụng thường xuyên nhất là [`page`](https://kit.svelte.dev/docs/types#public-types-page), nơi cung cấp thông tin về trang hiện tại:
 
-* `url` — the [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) of the current page
-* `params` — the current page's [parameters](params)
-* `route` — an object with an `id` property representing the current route
-* `status` — the HTTP status code of the current page
-* `error` — the error object of the current page, if any (you'll learn more about error handling in [later](error-basics) [exercises](handleerror))
-* `data` — the data for the current page, combining the return values of all `load` functions
-* `form` — the data returned from a [form action](the-form-element)
+* `url` — [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) của trang hiện tại
+* `params` — [parameters](params) của trang hiện tại
+* `route` — một đối tượng với thuộc tính `id` đại diện cho route hiện tại
+* `status` — HTTP status code của trang hiện tại
+* `error` — error object của trang hiện tại, nếu có (bạn sẽ tìm hiểu thêm về error handling _(xử lý lỗi)_ trong [bài tập](handleerror) [sau](error-basics))
+* `data` —  dữ liệu của trang hiện tại, kết hợp các giá trị trả về của tất cả các hàm `load`
+* `form` — dữ liệu được trả về từ một [form action](the-form-element)
 
-As with any other store, you can reference its value in a component by prefixing its name with the `$` symbol. For example, we can access the current pathname as `$page.url.pathname`:
+Tương tự như bất kỳ store nào khác, bạn có thể tham chiếu đến giá trị của nó trong một component bằng cách thêm ký tự `$` trước tên của nó. Ví dụ, chúng ta có thể truy cập đường dẫn hiện tại như `$page.url.pathname`:
 
 ```svelte
 /// file: src/routes/+layout.svelte

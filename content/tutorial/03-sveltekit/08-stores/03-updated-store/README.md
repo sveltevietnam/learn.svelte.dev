@@ -2,11 +2,12 @@
 title: updated
 ---
 
-The `updated` store contains `true` or `false` depending on whether a new version of the app has been deployed since the page was first opened. For this to work, your `svelte.config.js` must specify `kit.version.pollInterval`.
+Store `updated` chứa `true` hoặc `false` tùy thuộc vào việc một phiên bản mới của ứng dụng đã được deploy hay chưa kể từ khi trang được truy cập lần đầu. Để cho việc này chạy được, `svelte.config.js` của bạn phải chỉ định `kit.version.pollInterval`.
 
-Version changes only happens in production, not during development. For that reason, `$updated` will always be `false` in this tutorial.
+Thay đổi phiên bản chỉ xảy ra trong môi trường production, không phải trong quá trình development. Vì lý do đó, `$updated` sẽ luôn là `false` trong hướng dẫn này.
 
-You can manually check for new versions, regardless of `pollInterval`, by calling `updated.check()`.
+Bạn có thể kiểm tra thủ công cho các phiên bản mới, bất kể `pollInterval`, bằng cách gọi `updated.check()`.
+
 
 ```svelte
 /// file: src/routes/+layout.svelte
@@ -24,7 +25,7 @@ You can manually check for new versions, regardless of `pollInterval`, by callin
 	</a>
 
 	{#if $navigating}
-		navigating to {$navigating.to.url.pathname}
+		đang chuyển tới {$navigating.to.url.pathname}
 	{/if}
 </nav>
 
@@ -32,10 +33,10 @@ You can manually check for new versions, regardless of `pollInterval`, by callin
 
 +++{#if $updated}
 	<p class="toast">
-		A new version of the app is available
+		Ứng dụng có phiên bản mới sẳn sàng để cập nhật
 
 		<button on:click={() => location.reload()}>
-			reload the page
+			Tải lại trang
 		</button>
 	</p>
 {/if}+++
