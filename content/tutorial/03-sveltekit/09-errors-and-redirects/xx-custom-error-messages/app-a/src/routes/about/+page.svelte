@@ -1,4 +1,4 @@
 <p>
-	This is the best about page of all time. Sad
-	that you'll never see it because of the error.
+	Đây là trang giới thiệu tốt nhất mọi thời đại. Buồn
+thay bạn sẽ không bao giờ nhìn thấy nó vì lỗi.
 </p>

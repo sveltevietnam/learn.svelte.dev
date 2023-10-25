@@ -1,10 +1,10 @@
 ---
-title: Error pages
+title: Trang lỗi
 ---
 
-When something goes wrong inside a `load` function, SvelteKit renders an error page.
+Khi có điều gì đó không đúng bên trong một hàm `load`, SvelteKit sẽ render một trang lỗi.
 
-The default error page is somewhat bland. We can customize it by creating a `src/routes/+error.svelte` component:
+Trang lỗi mặc định hơi nhạt nhòa. Chúng ta có thể tùy chỉnh nó bằng cách tạo một component `src/routes/+error.svelte`:
 
 ```svelte
 /// file: src/routes/+error.svelte
@@ -19,11 +19,11 @@ The default error page is somewhat bland. We can customize it by creating a `src
 </span>
 ```
 
-Notice that the `+error.svelte` component is rendered inside the root `+layout.svelte`. We can create more granular `+error.svelte` boundaries:
+Chú ý component `+error.svelte` được render bên trong root `+layout.svelte`. Chúng ta có thể tạo ra các trang lỗi `+error.svelte` cụ thể cho từng trang:
 
 ```svelte
 /// file: src/routes/expected/+error.svelte
-<h1>this error was expected</h1>
+<h1>lỗi expected</h1>
 ```
 
-This component will be rendered for `/expected`, while the root `src/routes/+error.svelte` page will be rendered for any other errors that occur.
+Component này sẽ được render cho `/expected`, trong khi trang gốc `src/routes/+error.svelte` sẽ được render cho bất kỳ lỗi nào khác xảy ra.

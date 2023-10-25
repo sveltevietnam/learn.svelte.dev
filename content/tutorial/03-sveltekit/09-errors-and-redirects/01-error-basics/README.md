@@ -1,21 +1,22 @@
 ---
-title: Basics
+title: Cơ bản
 ---
 
-There are two types of errors in SvelteKit — _expected_ errors and _unexpected_ errors.
+Trong SvelteKit, có hai loại lỗi — _expected_ errors và _unexpected_ errors.
 
-An expected error is one that was created with the [`error`](https://kit.svelte.dev/docs/modules#sveltejs-kit-error) helper from `@sveltejs/kit`, as in `src/routes/expected/+page.server.js`:
+Expected error là một lỗi được tạo ra bằng helper [`error`](https://kit.svelte.dev/docs/modules#sveltejs-kit-error) từ `@sveltejs/kit`, như trong `src/routes/expected/+page.server.js`:
+
 
 ```js
 /// file: src/routes/expected/+page.server.js
 import { error } from '@sveltejs/kit';
 
 export function load() {
-	throw error(420, 'Enhance your calm');
+	throw error(420, 'Bình tĩnh');
 }
 ```
 
-Any other error — such as the one in `src/routes/unexpected/+page.server.js` — is treated as unexpected:
+Bất kỳ lỗi nào khác — như trong `src/routes/unexpected/+page.server.js` — được coi là lỗi unexpected:
 
 ```js
 /// file: src/routes/unexpected/+page.server.js
@@ -24,8 +25,8 @@ export function load() {
 }
 ```
 
-When you throw an expected error, you're telling SvelteKit 'don't worry, I know what I'm doing here'. An unexpected error, by contrast, is assumed to be a bug in your app. When an unexpected error is thrown, its message and stack trace will be logged to the console.
+Khi bạn throw một expected error, bạn đang bảo SvelteKit 'đừng lo, tôi biết tôi đang làm gì ở đây'. Ngược lại, một unexpected error được giả định là một lỗi trong ứng dụng của bạn. Khi một unexpected error được throw, message và stack trace của nó sẽ được ghi vào console.
 
-> In a later chapter we'll learn about how to add custom error handling using the `handleError` hook.
+> Trong chương sau, chúng ta sẽ tìm hiểu về cách thêm xử lý lỗi tùy chỉnh bằng cách sử dụng hook `handleError`.
 
-If you click the links in this app, you'll notice an important difference: the expected error message is shown to the user, whereas the unexpected error message is redacted and replaced with a generic 'Internal Error' message and a 500 status code. That's because error messages can contain sensitive data.
+Nếu bạn nhấp vào các liên kết trong ứng dụng này, bạn sẽ nhận thức được một thông báo khác biệt quan trọng: thông điệp expected error được hiển thị cho người dùng, trong khi thông điệp unexpected error bị biên tập lại và được thay thế bằng một thông điệp 'Internal Error' tổng quát và một status code 500. Do thông điệp lỗi có thể chứa dữ liệu nhạy cảm.
