@@ -2,13 +2,14 @@
 title: handleFetch
 ---
 
-The `event` object has a `fetch` method that behaves like the standard [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), but with superpowers:
+`event` object có một phương thức `fetch` hoạt động giống như [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) tiêu chuẩn, nhưng với những tính năng đặc biệt:
 
-- it can be used to make credentialed requests on the server, as it inherits the `cookie` and `authorization` headers from the incoming request
-- it can make relative requests on the server (ordinarily, `fetch` requires a URL with an origin when used in a server context)
-- internal requests (e.g. for `+server.js` routes) go directly to the handler function when running on the server, without the overhead of an HTTP call
+- Nó có thể được sử dụng để thực hiện các yêu cầu có chứng thực trên server, vì nó kế thừa các header `cookie` và `authorization` từ request đầu vào.
+- Nó có thể thực hiện các yêu cầu tương quan trên server (thông thường, `fetch` yêu cầu một URL có nguồn gốc khi được sử dụng trong bối cảnh server).
+- internal requests _(Các yêu cầu nội bộ)_ (ví dụ: đối với route `+server.js`) được chuyển trực tiếp đến hàm handler khi chạy trên server, mà không phải cấu hình gọi HTTP.
 
-Its behaviour can be modified with the `handleFetch` hook, which by default looks like this:
+Hành vi của nó có thể được sửa đổi bằng `handleFetch` hook, mặc định nó trông như thế này:
+
 
 ```js
 /// file: src/hooks.server.js
@@ -17,7 +18,7 @@ export async function handleFetch({ event, request, fetch }) {
 }
 ```
 
-For example, we could respond to requests for `src/routes/a/+server.js` with responses from `src/routes/b/+server.js` instead:
+Ví dụ, thay vì phản hồi các yêu cầu đến `src/routes/a/+server.js` chúng ta có thể sử dụng phản hồi từ `src/routes/b/+server.js`:
 
 ```js
 /// file: src/hooks.server.js
@@ -31,4 +32,4 @@ export async function handleFetch({ event, request, fetch }) {
 }
 ```
 
-Later, when we cover [universal `load` functions](universal-load-functions), we'll see that `event.fetch` can also be called from the browser. In that scenario, `handleFetch` is useful if you have requests to a public URL like `https://api.yourapp.com` from the browser, that should be redirected to an internal URL (bypassing whatever proxies and load balancers sit between the API server and the public internet) when running on the server.
+Sau này, khi chúng ta đề cập đến [universal `load` functions](universal-load-functions), chúng ta sẽ thấy rằng `event.fetch` cũng có thể được gọi từ trình duyệt. Trong tình huống đó, `handleFetch` sẽ hữu ích nếu bạn có các yêu cầu đến một URL công cộng như `https://api.yourapp.com` từ trình duyệt, các yêu cầu này nên được chuyển hướng đến một URL nội bộ (bypass qua bất kỳ proxy và load balancer nào đứng giữa server API và internet công cộng) khi chạy trên server.

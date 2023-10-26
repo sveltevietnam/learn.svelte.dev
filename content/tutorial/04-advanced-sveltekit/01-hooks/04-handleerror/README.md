@@ -2,9 +2,10 @@
 title: handleError
 ---
 
-The `handleError` hook lets you intercept unexpected errors and trigger some behaviour, like pinging a Slack channel or sending data to an error logging service.
+Hook `handleError` giúp bạn chặn các unexpected errors _(lỗi không mong muốn)_ và kích hoạt một số hành vi, như gửi ping tới một kênh Slack hoặc gửi dữ liệu đến một dịch vụ theo dõi lỗi.
 
-As you'll recall from an [earlier exercise](error-basics), an error is _unexpected_ if it wasn't created with the `error` helper from `@sveltejs/kit`. It generally means something in your app needs fixing. The default behaviour is to log the error:
+Như bạn nhớ từ [bài tập trước đó](error-basics), một lỗi là _unexpected_  nếu nó không được tạo ra với helper `error` từ `@sveltejs/kit`. Thông thường, điều này có nghĩa là có điều gì đó trong ứng dụng của bạn cần sửa. Hành vi mặc định là để ghi nhật ký lỗi:
+
 
 ```js
 /// file: src/hooks.server.js
@@ -13,18 +14,18 @@ export function handleError({ event, error }) {
 }
 ```
 
-If you navigate to `/the-bad-place`, you'll see this in action — the error page is shown, and if you open the terminal (using the button to the right of the URL bar), you'll see the message from `src/routes/the-bad-place/+page.server.js`.
+Nếu bạn chuyển đến `/the-bad-place`, bạn sẽ thấy điều này trong action - trang lỗi được hiển thị, và nếu bạn mở terminal (sử dụng nút ở bên phải của thanh URL), bạn sẽ thấy thông báo từ `src/routes/the-bad-place/+page.server.js`.
 
-Notice that we're _not_ showing the error message to the user. That's because error messages can include sensitive information that at best will confuse your users, and at worst could benefit evildoers. Instead, the error object available to your application — represented as `$page.error` in your `+error.svelte` pages, or `%sveltekit.error%` in your `src/error.html` fallback — is just this:
+Lưu ý rằng chúng ta không hiển thị thông báo lỗi cho người dùng. Điều này là do thông báo lỗi có thể bao gồm thông tin nhạy cảm có thể gây hiểu lầm cho người dùng của bạn ở mức tốt nhất, và ở tình huống xấu nhất có thể mang lại lợi ích cho kẻ xấu. Thay vào đó, error object có sẵn cho ứng dụng của bạn - nằm tại `$page.error` trong các trang `+error.svelte` của bạn, hoặc `%sveltekit.error%` trong tệp `src/error.html` dự phòng của bạn - chỉ là như thế này:
 
 ```js
 /// no-file
 {
-	message: 'Internal Error' // or 'Not Found' for a 404
+	message: 'Internal Error' // hoặc 'Not Found' cho 404
 }
 ```
 
-In some situations you may want to customise this object. To do so, you can return an object from `handleError`:
+Trong một số tình huống, bạn có thể muốn tùy chỉnh object này. Để làm điều này, bạn có thể trả về một object từ `handleError`:
 
 ```js
 /// file: src/hooks.server.js
@@ -32,13 +33,13 @@ export function handleError({ event, error }) {
 	console.error(error.stack);
 
 	return {
-		message: 'everything is fine',
+		message: 'mọi thứ đều ổn',
 		code: 'JEREMYBEARIMY'
 	};
 }
 ```
 
-You can now reference properties other than `message` in a custom error page. Create `src/routes/+error.svelte`:
+Bây giờ bạn có thể tìm hiểu các thuộc tính khác ngoài `message` trong trang lỗi tùy chỉnh. Tạo `src/routes/+error.svelte`:
 
 ```svelte
 /// file: src/routes/+error.svelte
