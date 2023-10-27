@@ -42,7 +42,7 @@ export function handleError(+++{ error }+++) {
 ```js
 // hooks.client.js
 export function handleError(+++{ error }+++) {
-    ---return { message: 'Internal Error' }; // implementation mặc định của hook này---
+    ---return { message: 'Internal Error' }; // cấu hình mặc định của hook này---
     +++return { message: error instanceof Error ? error.message : 'Internal Error' };+++
 }
 ```
