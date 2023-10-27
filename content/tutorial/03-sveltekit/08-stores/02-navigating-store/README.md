@@ -2,7 +2,7 @@
 title: navigating
 ---
 
-Store `navigating` đại diện cho quá trình điều hướng hiện tại. Khi một quá trình điều hướng bắt đầu — do việc nhấp vào liên kết, hoặc quá trình điều hướng lùi/điều hướng tiến, hoặc một lệnh chuyển trang `goto` — giá trị của `navigating` sẽ trở thành một object _(đối tượng)_ với các thuộc tính sau:
+Store `navigating` đại diện cho quá trình điều hướng hiện tại. Khi một quá trình điều hướng bắt đầu — do việc nhấp vào liên kết, quá trình điều hướng lùi/tiến, hoặc một lệnh `goto` — giá trị của `navigating` sẽ trở thành một đối tượng với các thuộc tính sau:
 
 - `from` và `to` — các đối tượng với `params`, `route` và thuộc tính `url`
 - `type` — type của điều hướng, ví dụ `link`, `popstate` hay `goto`
