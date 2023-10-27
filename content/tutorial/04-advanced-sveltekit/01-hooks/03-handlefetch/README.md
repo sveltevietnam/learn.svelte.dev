@@ -5,7 +5,7 @@ title: handleFetch
 Đối tượng `event` chứa phương thức `fetch` hoạt động giống như [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) tiêu chuẩn, nhưng với những tính năng đặc biệt:
 
 - có thể thực hiện các yêu cầu có chứng thực trên server, vì nó kế thừa các header `cookie` và `authorization` từ yêu cầu đầu vào.
-- Nó có thể thực hiện các yêu cầu tương quan trên server (thông thường, `fetch` yêu cầu một URL có nguồn gốc khi được sử dụng trong bối cảnh server).
+- có thể thực hiện các yêu cầu với đường dẫn tương đối (relative requests) trên server (thông thường, `fetch` chỉ nhận URL có gốc (origin) khi sử dụng trong bối cảnh server).
 - internal requests _(Các yêu cầu nội bộ)_ (ví dụ: đối với route `+server.js`) được chuyển trực tiếp đến hàm handler khi chạy trên server, mà không phải cấu hình gọi HTTP.
 
 Hành vi của nó có thể được sửa đổi bằng `handleFetch` hook, mặc định nó trông như thế này:
