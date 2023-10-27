@@ -33,7 +33,7 @@ Import hàm `enhance` từ `$app/forms`...
 Vậy là xong! Bây giờ, khi JavaScript được kích hoạt, use:enhance sẽ mô phỏng hành vi tự nhiên của trình duyệt ngoại trừ việc tải lại toàn bộ trang. Nó sẽ:
 
 - cập nhật prop `form`
-- vô hiệu hóa tất cả dữ liệu trên phản hồi thành công, làm cho các hàm `load` chạy lại
+- hủy hiệu lực của dữ liệu khi phản hồi thành công, làm cho các hàm `load` chạy lại
 - chuyển đến trang mới trên redirect response _(phản hồi chuyển hướng)_
 - hiển thị trang lỗi gần nhất nếu có lỗi xảy ra
 
