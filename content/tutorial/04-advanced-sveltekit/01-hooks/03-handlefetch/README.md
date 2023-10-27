@@ -32,4 +32,4 @@ export async function handleFetch({ event, request, fetch }) {
 }
 ```
 
-Sau này, khi chúng ta đề cập đến [universal `load` functions](universal-load-functions), chúng ta sẽ thấy rằng `event.fetch` cũng có thể được gọi từ trình duyệt. Trong tình huống đó, `handleFetch` sẽ hữu ích nếu bạn có các yêu cầu đến một URL công cộng như `https://api.yourapp.com` từ trình duyệt, các yêu cầu này nên được chuyển hướng đến một URL nội bộ (bypass qua bất kỳ proxy và load balancer nào đứng giữa server API và internet công cộng) khi chạy trên server.
+Sau này, khi đề cập đến [universal `load` functions](universal-load-functions), chúng ta sẽ thấy rằng `event.fetch` cũng có thể được gọi từ trình duyệt. Trong tình huống đó, `handleFetch` sẽ hữu ích nếu bạn gởi yêu cầu từ trình duyệt đến một URL công khai như `https://api.yourapp.com` và các yêu cầu này cần được chuyển hướng đến một URL nội bộ (bypass qua bất kỳ proxy và load balancer nào đứng giữa server API và internet công cộng) khi chạy trên server.
