@@ -2,7 +2,7 @@
 title: POST handlers
 ---
 
-Bạn cũng có thể thêm các handler thay đổi dữ liệu, chẳng hạn như `POST`. Trong hầu hết các trường hợp, bạn nên sử dụng [form actions](the-form-element) — bạn sẽ viết ít mã hơn và ứng dụng sẽ hoạt động mà không cần JavaScript, làm cho nó mạnh mẽ hơn.
+Bạn cũng có thể thêm các handler thay đổi dữ liệu, chẳng hạn như `POST`. Trong hầu hết các trường hợp, bạn nên sử dụng [form actions](the-form-element) — bạn sẽ viết ít mã hơn và ứng dụng sẽ hoạt động mà không cần JavaScript, làm cho nó chắc chắn hơn.
 
 Bên trong event handler `keydown` của phần tử `<input>` 'thêm todo', chúng ta hãy gửi một số dữ liệu đến server:
 
