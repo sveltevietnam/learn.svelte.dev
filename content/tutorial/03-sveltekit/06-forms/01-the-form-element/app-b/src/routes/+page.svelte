@@ -7,7 +7,7 @@
 
 	<form method="POST">
 		<label>
-			add a todo:
+			thêm todo:
 			<input
 				name="description"
 				autocomplete="off"

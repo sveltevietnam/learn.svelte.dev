@@ -1,12 +1,13 @@
-// In a real app, this data would live in a database,
-// rather than in memory. But for now, we cheat.
+// Trong một ứng dụng thực tế, dữ liệu này sẽ nằm trong một cơ sở dữ liệu,
+// thay vì ở trong bộ nhớ. Nhưng tạm thời, chúng ta cứ để như vậy.
+
 const db = new Map();
 
 export function getTodos(userid) {
 	if (!db.get(userid)) {
 		db.set(userid, [{
 			id: crypto.randomUUID(),
-			description: 'Learn SvelteKit',
+			description: 'Học SvelteKit',
 			done: false
 		}]);
 	}

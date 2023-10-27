@@ -2,11 +2,11 @@
 title: Progressive enhancement
 ---
 
-Because we're using `<form>`, our app works even if the user doesn't have JavaScript ([which happens more often than you probably think](https://kryogenix.org/code/browser/everyonehasjs.html)). That's great, because it means our app is resilient.
+Bởi vì chúng ta đang dùng `<form>`, ứng dụng vẫn hoạt động ngay cả khi người dùng không có JavaScript ([điều này xảy ra thường xuyên hơn bạn nghĩ](https://kryogenix.org/code/browser/everyonehasjs.html)). Thật tuyệt vời, vì nó có nghĩa là ứng dụng của ta rất chắc chắn.
 
-Most of the time, users _do_ have JavaScript. In those cases, we can _progressively enhance_ the experience, the same way SvelteKit progressively enhances `<a>` elements by using client-side routing.
+Thường thì người dùng vẫn _có_ JavaScript. Khi đó, chúng ta có thể _nâng cao dần_ trải nghiệm, giống như SvelteKit nâng cao dần phần tử `<a>` bằng cách sử dụng định tuyến phía máy khách.
 
-Import the `enhance` function from `$app/forms`...
+Import hàm `enhance` từ `$app/forms`...
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -18,7 +18,7 @@ Import the `enhance` function from `$app/forms`...
 </script>
 ```
 
-...and add the `use:enhance` directive to the `<form>` elements:
+... và thêm chỉ thị `use:enhance` vào các phần tử <form>:
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -30,17 +30,17 @@ Import the `enhance` function from `$app/forms`...
 <form method="POST" action="?/delete" +++use:enhance+++>
 ```
 
-And that's all it takes! Now, when JavaScript is enabled, `use:enhance` will emulate the browser-native behaviour except for the full-page reloads. It will:
+Vậy là xong! Bây giờ, khi JavaScript được kích hoạt, use:enhance sẽ mô phỏng hành vi tự nhiên của trình duyệt ngoại trừ việc tải lại toàn bộ trang. Nó sẽ:
 
-- update the `form` prop
-- invalidate all data on a successful response, causing `load` functions to re-run
-- navigate to the new page on a redirect response
-- render the nearest error page if an error occurs
+- cập nhật prop `form`
+- hủy hiệu lực của dữ liệu khi phản hồi thành công, làm cho các hàm `load` chạy lại
+- chuyển đến trang mới khi có phản hồi chuyển hướng
+- hiển thị trang lỗi gần nhất nếu có lỗi xảy ra
 
-Now that we're updating the page rather than reloading it, we can get fancy with things like transitions:
+Bây giờ chúng ta đang cập nhật trang thay vì tải lại nó, chúng ta có thể làm phức tạp hơn với những thứ như transitions:
 
 ```svelte
-/// file: src/routes/+page.svelte
+/// tệp: src/routes/+page.svelte
 <script>
 	+++import { fly, slide } from 'svelte/transition';+++
 	import { enhance } from '$app/forms';
@@ -51,6 +51,6 @@ Now that we're updating the page rather than reloading it, we can get fancy with
 ```
 
 ```svelte
-/// file: src/routes/+page.svelte
+/// tệp: src/routes/+page.svelte
 <li +++in:fly={{ y: 20 }} out:slide+++>...</li>
 ```

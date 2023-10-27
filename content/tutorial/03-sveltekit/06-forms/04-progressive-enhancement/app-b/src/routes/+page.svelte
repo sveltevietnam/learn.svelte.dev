@@ -15,7 +15,7 @@
 
 	<form method="POST" action="?/create" use:enhance>
 		<label>
-			add a todo:
+			thêm todo:
 			<input
 				name="description"
 				value={form?.description ?? ''}

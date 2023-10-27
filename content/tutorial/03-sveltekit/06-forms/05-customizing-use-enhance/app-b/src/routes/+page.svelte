@@ -29,7 +29,7 @@
 		}}
 	>
 		<label>
-			add a todo:
+			thêm todo:
 			<input
 				disabled={creating}
 				name="description"
@@ -63,7 +63,7 @@
 	</ul>
 
 	{#if creating}
-		<span class="saving">saving...</span>
+		<span class="saving">đang lưu...</span>
 	{/if}
 </div>
 

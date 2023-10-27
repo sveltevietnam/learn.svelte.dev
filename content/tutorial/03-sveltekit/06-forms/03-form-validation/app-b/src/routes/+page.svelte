@@ -12,7 +12,7 @@
 
 	<form method="POST" action="?/create">
 		<label>
-			add a todo:
+			thêm a todo:
 			<input
 				name="description"
 				value={form?.description ?? ''}

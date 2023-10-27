@@ -2,9 +2,9 @@
 title: Validation
 ---
 
-Users are a mischievous bunch, who will submit all kinds of nonsensical data if given the chance. To prevent them from causing chaos, it's important to validate form data.
+Người dùng rất tinh nghịch, họ sẽ gửi mọi loại dữ liệu vô nghĩa nếu có cơ hội. Để ngăn họ gây ra hỗn loạn, việc kiểm tra tính hợp lệ của dữ liệu biểu mẫu là rất quan trọng.
 
-The first line of defense is the browser's [built-in form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation), which makes it easy to, for example, mark an `<input>` as required:
+Lớp kiểm tra đầu tiên là [built-in form validation _(kiểm tra tích hợp trong form)_](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation) của trình duyệt, ví dụ đánh dấu một `<input>` là `required`:
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -20,23 +20,24 @@ The first line of defense is the browser's [built-in form validation](https://de
 </form>
 ```
 
-Try hitting Enter while the `<input>` is empty.
+Hãy thử nhấn Enter khi <input> trống.
 
-This kind of validation is helpful, but insufficient. Some validation rules (e.g. uniqueness) can't be expressed using `<input>` attributes, and in any case, if the user is an elite hacker they might simply delete the attributes using the browser's devtools. To guard against these sorts of shenanigans, you should always use server-side validation.
 
-In `src/lib/server/database.js`, validate that the description exists and is unique:
+Loại kiểm tra này là hữu ích, nhưng không đủ. Một số quy tắc kiểm tra (ví dụ: tính duy nhất) không thể thực hiện được bằng các thuộc tính của <input>. Trong một vài trường hợp, nếu người dùng là một hacker giỏi, họ có thể xóa các thuộc tính bằng cách sử dụng công cụ phát triển của trình duyệt. Để đề phòng những hành vi này, bạn luôn nên kiểm tra tính hợp lệ từ phía server _(server-side validation)_. 
+
+Trong `src/lib/server/database.js`, hãy kiểm tra xem mô tả có tồn tại và là duy nhất không:
 
 ```js
 /// file: src/lib/server/database.js
 export function createTodo(userid, description) {
 +++	if (description === '') {
-		throw new Error('todo must have a description');
+		throw new Error('todo cần có mô tả');
 	}+++
 
 	const todos = db.get(userid);
 
 +++	if (todos.find((todo) => todo.description === description)) {
-		throw new Error('todos must be unique');
+		throw new Error('todo phải là duy nhất');
 	}+++
 
 	todos.push({
@@ -47,9 +48,9 @@ export function createTodo(userid, description) {
 }
 ```
 
-Try submitting a duplicate todo. Yikes! SvelteKit takes us to an unfriendly-looking error page. On the server, we see a 'todos must be unique' error, but SvelteKit hides unexpected error messages from users because they often contain sensitive data.
+Hãy thử gửi một todo trùng lặp. SvelteKit đưa chúng ta đến một trang lỗi trông không thân thiện cho lắm. Trên server, chúng ta thấy lỗi 'todo phải là duy nhất', nhưng SvelteKit giấu những thông báo lỗi không mong muốn khỏi người dùng vì chúng thường chứa dữ liệu nhạy cảm.
 
-It would be much better to stay on the same page and provide an indication of what went wrong so that the user can fix it. To do this, we can use the `fail` function to return data from the action along with an appropriate HTTP status code:
+Tốt hơn là ta giữ người dùng trên cùng một trang, và cung cấp thêm thông tin về lỗi giúp người dùng có thể tự sửa được. Để làm điều này, ta có thể dùng hàm `fail` để trả về dữ liệu từ action cùng với mã trạng thái HTTP phù hợp:
 
 ```js
 /// file: src/routes/+page.server.js
@@ -73,7 +74,7 @@ export const actions = {
 	}
 ```
 
-In `src/routes/+page.svelte`, we can access the returned value via the `form` prop, which is only ever populated after a form submission:
+Trong `src/routes/+page.svelte`, chúng ta có thể truy cập giá trị được trả về qua prop `form` (chỉ tồn tại sau khi form đã được gửi):
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -90,7 +91,7 @@ In `src/routes/+page.svelte`, we can access the returned value via the `form` pr
 
 <form method="POST" action="?/create">
 	<label>
-		add a todo:
+		thêm a todo:
 		<input
 			name="description"
 			+++value={form?.description ?? ''}+++
@@ -101,4 +102,4 @@ In `src/routes/+page.svelte`, we can access the returned value via the `form` pr
 </form>
 ```
 
-> You can also return data from an action _without_ wrapping it in `fail` — for example to show a 'success!' message when data was saved — and it will be available via the `form` prop.
+> Bạn cũng có thể trả về dữ liệu từ một action _mà không cần_ bao nó trong `fail`, ví dụ như để hiển thị một thông báo 'thành công!' khi đã lưu trữ thành công. Ta truy cập dữ liệu này thông qua prop `form`.

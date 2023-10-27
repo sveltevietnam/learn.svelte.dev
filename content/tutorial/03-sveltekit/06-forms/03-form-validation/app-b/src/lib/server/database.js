@@ -6,7 +6,7 @@ export function getTodos(userid) {
 	if (!db.get(userid)) {
 		db.set(userid, [{
 			id: crypto.randomUUID(),
-			description: 'Learn SvelteKit',
+			description: 'Học SvelteKit',
 			done: false
 		}]);
 	}
@@ -16,13 +16,13 @@ export function getTodos(userid) {
 
 export function createTodo(userid, description) {
 	if (description === '') {
-		throw new Error('todo must have a description');
+		throw new Error('todo cần có mô tả');
 	}
 
 	const todos = db.get(userid);
 
 	if (todos.find((todo) => todo.description === description)) {
-		throw new Error('todos must be unique');
+		throw new Error('todo phải là duy nhất');
 	}
 
 	todos.push({
