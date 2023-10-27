@@ -2,7 +2,7 @@
 title: Progressive enhancement
 ---
 
-Bởi vì chúng ta đang dùng `<form>`, ứng dụng của chúng ta vẫn hoạt động ngay cả khi người dùng không có JavaScript ([điều này xảy ra thường xuyên hơn bạn nghĩ](https://kryogenix.org/code/browser/everyonehasjs.html)). Thật tuyệt vời, vì nó có nghĩa là ứng dụng của chúng ta mạnh mẽ.
+Bởi vì chúng ta đang dùng `<form>`, ứng dụng vẫn hoạt động ngay cả khi người dùng không có JavaScript ([điều này xảy ra thường xuyên hơn bạn nghĩ](https://kryogenix.org/code/browser/everyonehasjs.html)). Thật tuyệt vời, vì nó có nghĩa là ứng dụng của ta rất chắc chắn.
 
 Phần lớn, người dùng _có_ JavaScript. Trong những trường hợp đó, chúng ta có thể _nâng cao dần_ trải nghiệm, giống như SvelteKit nâng cao dần phần tử `<a>` bằng cách sử dụng định tuyến phía máy khách.
 
