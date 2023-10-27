@@ -2,7 +2,7 @@
 title: updated
 ---
 
-Store `updated` chứa `true` hoặc `false` tùy thuộc vào việc một phiên bản mới của ứng dụng đã được deploy hay chưa kể từ khi trang được truy cập lần đầu. Để cho việc này chạy được, `svelte.config.js` của bạn phải chỉ định `kit.version.pollInterval`.
+Store `updated` chứa giá trị `true` hoặc `false` tùy thuộc vào việc một phiên bản mới của ứng dụng đã được deploy hay chưa kể từ khi trang được truy cập lần đầu. Để chạy được, `svelte.config.js` của bạn phải chỉ định `kit.version.pollInterval`.
 
 Thay đổi phiên bản chỉ xảy ra trong môi trường production, không phải trong quá trình development. Vì lý do đó, `$updated` sẽ luôn là `false` trong hướng dẫn này.
 
