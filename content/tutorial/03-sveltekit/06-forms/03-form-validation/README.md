@@ -2,9 +2,6 @@
 title: Validation
 ---
 
-Users are a mischievous bunch, who will submit all kinds of nonsensical data if given the chance. To prevent them from causing chaos, it's important to validate form data.
-
-The first line of defense is the browser's [built-in form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation), which makes it easy to, for example, mark an `<input>` as required:
 Người dùng rất tinh nghịch, họ sẽ gửi mọi loại dữ liệu vô nghĩa nếu có cơ hội. Để ngăn họ gây ra hỗn loạn, việc kiểm tra tính hợp lệ của dữ liệu biểu mẫu là rất quan trọng.
 
 Lớp kiểm tra đầu tiên là [built-in form validation _(kiểm tra tích hợp trong form)_](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation) của trình duyệt, ví dụ đánh dấu một `<input>` là `required`:
