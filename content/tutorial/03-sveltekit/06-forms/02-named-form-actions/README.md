@@ -4,7 +4,7 @@ title: Đặt tên cho form actions
 
 Một trang chỉ có một action duy nhất thì thực tế là khá hiếm. Hầu hết trường hợp, bạn sẽ cần có nhiều action trên một trang. Trong ứng dụng này, việc tạo một todo mới là không đủ — chúng ta muốn xóa chúng sau khi đã hoàn thành.
 
-Bắt đầu bằng cách thay thế hành động `default` của chúng ta bằng các hành động có tên `create` và `delete`:
+Bắt đầu bằng cách thay thế action `default` bằng các action có tên `create` và `delete`:
 
 ```js
 /// file: src/routes/+page.server.js
