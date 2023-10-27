@@ -21,7 +21,7 @@ export const actions = {
 };
 ```
 
-> Default actions _(Hành động mặc định)_ không thể tồn tại cùng với các hành động có tên.
+> Action mặc định không thể cùng tồn tại cùng với các hành động có tên.
 
 Phần tử <form> có một thuộc tính tùy chọn là `action`, tương tự như thuộc tính `href` của phần tử <a>. Chúng ta hãy cập nhật form hiện tại để nó trỏ đến hành động `create` mới:
 
