@@ -2,7 +2,7 @@
 title: handleFetch
 ---
 
-`event` object có một phương thức `fetch` hoạt động giống như [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) tiêu chuẩn, nhưng với những tính năng đặc biệt:
+Đối tượng `event` chứa phương thức `fetch` hoạt động giống như [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) tiêu chuẩn, nhưng với những tính năng đặc biệt:
 
 - Nó có thể được sử dụng để thực hiện các yêu cầu có chứng thực trên server, vì nó kế thừa các header `cookie` và `authorization` từ request đầu vào.
 - Nó có thể thực hiện các yêu cầu tương quan trên server (thông thường, `fetch` yêu cầu một URL có nguồn gốc khi được sử dụng trong bối cảnh server).
