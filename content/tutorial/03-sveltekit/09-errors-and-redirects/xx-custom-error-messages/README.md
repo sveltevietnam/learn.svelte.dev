@@ -29,7 +29,7 @@ Trang lỗi trong bài tập trước khá tĩnh. Có thể bạn muốn hiển 
 
 `$page.error.message` luôn chứa "Internal Error" - tại sao vậy? Điều này là do SvelteKit ưu tiên an toàn và ngăn bạn sơ ý để lộ thông tin nhạy cảm.
 
-Để tùy chỉnh nó, triển khai hook `handleError` trong `hooks.server.js` và `hooks.client.js`  sẽ chạy khi một unexpected error được throw trong quá trình tải dữ liệu trên server hoặc client tương ứng.
+Để tùy chỉnh, triển khai hook `handleError` trong `hooks.server.js` và `hooks.client.js`, được chạy khi một lỗi unexpected xảy ra trong quá trình tải dữ liệu trên server hoặc client.
 
 ```js
 // hooks.server.js
