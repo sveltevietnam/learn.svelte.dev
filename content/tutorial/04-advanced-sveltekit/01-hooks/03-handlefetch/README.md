@@ -6,7 +6,7 @@ title: handleFetch
 
 - có thể thực hiện các yêu cầu có chứng thực trên server, vì nó kế thừa các header `cookie` và `authorization` từ yêu cầu đầu vào.
 - có thể thực hiện các yêu cầu với đường dẫn tương đối (relative requests) trên server (thông thường, `fetch` chỉ nhận URL có gốc (origin) khi sử dụng trong bối cảnh server).
-- internal requests _(Các yêu cầu nội bộ)_ (ví dụ: đối với route `+server.js`) được chuyển trực tiếp đến hàm handler khi chạy trên server, mà không phải cấu hình gọi HTTP.
+- internal requests _(yêu cầu nội bộ)_ (ví dụ: đối với route `+server.js`) được chuyển trực tiếp đến hàm handler khi chạy trên server, mà không phải cấu hình gọi HTTP.
 
 Hành vi của nó có thể được sửa đổi bằng `handleFetch` hook, mặc định nó trông như thế này:
 
