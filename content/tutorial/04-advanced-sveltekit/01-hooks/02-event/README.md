@@ -17,7 +17,7 @@ Nó chứa một số thuộc tính hữu ích và phương thức, một số t
 * `setHeaders(...)` — một hàm để [setting HTTP headers](headers) cho response
 * `url` — một [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) object đại diện cho request hiện tại
 
-Một mô hình hữu ích là thêm một số dữ liệu vào `event.locals` trong `handle` để nó có thể được đọc trong các hàm `load` tiếp theo:
+Để thuận tiện, ta có thể thêm dữ liệu vào `event.locals` trong `handle` để truy cập được trong các hàm `load` tiếp theo:
 
 
 ```js
