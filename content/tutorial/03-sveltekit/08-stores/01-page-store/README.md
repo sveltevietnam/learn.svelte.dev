@@ -10,7 +10,7 @@ SvelteKit cung cấp ba readonly stores thông qua module `$app/stores` — `pag
 * `params` — [parameters](params) của trang hiện tại
 * `route` — một đối tượng với thuộc tính `id` đại diện cho route hiện tại
 * `status` — HTTP status code của trang hiện tại
-* `error` — error object của trang hiện tại, nếu có (bạn sẽ tìm hiểu thêm về error handling _(xử lý lỗi)_ trong [bài tập](handleerror) [sau](error-basics))
+* `error` — error object của trang hiện tại, nếu có (bạn sẽ tìm hiểu thêm về [xử lý lỗi](handleerror) trong các [bài tập sau](error-basics))
 * `data` —  dữ liệu của trang hiện tại, kết hợp các giá trị trả về của tất cả các hàm `load`
 * `form` — dữ liệu được trả về từ một [form action](the-form-element)
 
