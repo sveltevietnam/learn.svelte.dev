@@ -2,7 +2,7 @@
 title: The RequestEvent object
 ---
 
-`event` object được truyền vào `handle` là object giống nhau — một instance của [`RequestEvent`](https://kit.svelte.dev/docs/types#public-types-requestevent) — được truyền vào trong [API routes](get-handlers) trong các tệp `+server.js`, [form actions](the-form-element) trong các tệp `+page.server.js`, và các hàm `load` trong các tệp `+page.server.js` và `+layout.server.js`.
+Đối tượng `event` (một instance của [`RequestEvent`](https://kit.svelte.dev/docs/types#public-types-requestevent)) được truyền vào `handle` cũng chính là `event` trong [API routes](get-handlers) ở `+server.js`, [form actions](the-form-element) ở `+page.server.js`, và các hàm `load` trong `+page.server.js` và `+layout.server.js`.
 
 Nó chứa một số thuộc tính hữu ích và phương thức, một số trong số đó chúng ta đã gặp:
 
