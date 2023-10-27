@@ -2,13 +2,13 @@
 title: handle
 ---
 
-SvelteKit provides several _hooks_ — ways to intercept and override the framework's default behaviour.
+SvelteKit cung cấp một vài _hooks_ — là cách để chặn và ghi đè lên hành vi mặc định của framework.
 
-The most elementary hook is `handle`, which lives in `src/hooks.server.js`. It receives an `event` object along with a `resolve` function, and returns a [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response).
+Hook cơ bản nhất là `handle`, nằm trong `src/hooks.server.js`. Nó nhận một đối tượng `event` cùng với một hàm `resolve`, và trả về một [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response).
 
-`resolve` is where the magic happens: SvelteKit matches the incoming request URL to a route of your app, imports the relevant code (`+page.server.js` and `+page.svelte` files and so on), loads the data needed by the route, and generates the response.
+`resolve` là nơi điều kỳ diệu xảy ra: SvelteKit so khớp URL yêu cầu đến với một route của ứng dụng, imports mã tương ứng (`+page.server.js` và các tệp `+page.svelte` vv), tải dữ liệu cần thiết bởi route và tạo ra response _(phản hồi)_.
 
-The default `handle` hook looks like this:
+`handle` hook mặc định trông như thế này:
 
 ```js
 /// file: src/hooks.server.js
@@ -17,7 +17,7 @@ export async function handle({ event, resolve }) {
 }
 ```
 
-For pages (as opposed to [API routes](get-handlers)), you can modify the generated HTML with `transformPageChunk`:
+Đối với trang (trái ngược với[API routes](get-handlers)), bạn có thể sửa đổi HTML được tạo ra bằng `transformPageChunk`:
 
 ```js
 /// file: src/hooks.server.js
@@ -31,7 +31,7 @@ export async function handle({ event, resolve }) {
 }
 ```
 
-You can also create entirely new routes:
+Bạn cũng có thể tạo ra các route hoàn toàn mới:
 
 ```js
 /// file: src/hooks.server.js
