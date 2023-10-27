@@ -34,7 +34,7 @@ Vậy là xong! Bây giờ, khi JavaScript được kích hoạt, use:enhance s�
 
 - cập nhật prop `form`
 - hủy hiệu lực của dữ liệu khi phản hồi thành công, làm cho các hàm `load` chạy lại
-- chuyển đến trang mới trên redirect response _(phản hồi chuyển hướng)_
+- chuyển đến trang mới khi có phản hồi chuyển hướng
 - hiển thị trang lỗi gần nhất nếu có lỗi xảy ra
 
 Bây giờ chúng ta đang cập nhật trang thay vì tải lại nó, chúng ta có thể làm phức tạp hơn với những thứ như transitions:
