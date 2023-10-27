@@ -105,4 +105,4 @@ Trong trường hợp xóa, thực sự không cần phải đợi máy chủ x�
 </ul>
 ```
 
-> `use:enhance` có thể tùy chỉnh rất nhiều — bạn có thể `cancel()` các submission _(lần gửi)_, handle redirects _(xử lý các chuyển hướng)_, kiểm soát xem form có được đặt lại hay không, vân vân... [Xem tài liệu](https://kit.svelte.dev/docs/modules#$app-forms-enhance) để biết chi tiết đầy đủ.
+> `use:enhance` có thể tùy chỉnh rất nhiều — bạn có thể `cancel()` đơn gởi, xử lý chuyển hướng, kiểm soát xem form có được đặt lại hay không, vân vân... [Xem tài liệu](https://kit.svelte.dev/docs/modules#$app-forms-enhance) để biết chi tiết đầy đủ.
