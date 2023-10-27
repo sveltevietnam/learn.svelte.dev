@@ -1,5 +1,5 @@
 ---
-title: form actions được đặt tên
+title: Đặt tên cho form actions
 ---
 
 Một trang chỉ có một hành động duy nhất thì thực tế là khá hiếm. Hầu hết trường hợp, bạn sẽ cần có nhiều hành động trên một trang. Trong ứng dụng này, việc tạo một todo mới là không đủ — chúng ta muốn xóa chúng sau khi chúng đã hoàn thành.
