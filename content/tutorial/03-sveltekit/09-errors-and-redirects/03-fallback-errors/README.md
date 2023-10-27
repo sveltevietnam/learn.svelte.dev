@@ -25,4 +25,4 @@ Bạn có thể tùy chỉnh trang fallback error. Tạo một tệp `src/error.
 Tệp này có thể bao gồm:
 
 - `%sveltekit.status%` — mã trạng thái HTTP
-- `%sveltekit.error.message%` — thông điệp lỗi
+- `%sveltekit.error.message%` — thông báo lỗi
