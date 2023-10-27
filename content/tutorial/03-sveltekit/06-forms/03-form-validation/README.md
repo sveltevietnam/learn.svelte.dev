@@ -22,7 +22,6 @@ Lớp kiểm tra đầu tiên là [built-in form validation _(kiểm tra tích h
 
 Hãy thử nhấn Enter khi <input> trống.
 
-This kind of validation is helpful, but insufficient. Some validation rules (e.g. uniqueness) can't be expressed using `<input>` attributes, and in any case, if the user is an elite hacker they might simply delete the attributes using the browser's devtools. To guard against these sorts of shenanigans, you should always use server-side validation.
 
 In `src/lib/server/database.js`, validate that the description exists and is unique:
 Loại kiểm tra này là hữu ích, nhưng không đủ. Một số quy tắc kiểm tra (ví dụ: tính duy nhất) không thể thực hiện được bằng các thuộc tính của <input>. Trong một vài trường hợp, nếu người dùng là một hacker giỏi, họ có thể xóa các thuộc tính bằng cách sử dụng công cụ phát triển của trình duyệt. Để đề phòng những hành vi này, bạn luôn nên kiểm tra tính hợp lệ từ phía server _(server-side validation)_. 
