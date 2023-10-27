@@ -28,7 +28,7 @@ Hãy thử nhấn Enter khi <input> trống.
 This kind of validation is helpful, but insufficient. Some validation rules (e.g. uniqueness) can't be expressed using `<input>` attributes, and in any case, if the user is an elite hacker they might simply delete the attributes using the browser's devtools. To guard against these sorts of shenanigans, you should always use server-side validation.
 
 In `src/lib/server/database.js`, validate that the description exists and is unique:
-Loại kiểm tra này hữu ích, nhưng không đủ. Một số quy tắc kiểm tra (ví dụ: sự độc nhất) không thể được biểu diễn bằng cách sử dụng các thuộc tính <input>, và trong một vài trường hợp, nếu người dùng là một hacker giỏi, họ có thể đơn giản xóa các thuộc tính bằng cách sử dụng công cụ phát triển của trình duyệt. Để đề phòng những trò chơi này, bạn luôn nên sử dụng kiểm tra tính hợp lệ từ phía server _(server-side validation)_. 
+Loại kiểm tra này là hữu ích, nhưng không đủ. Một số quy tắc kiểm tra (ví dụ: tính duy nhất) không thể thực hiện được bằng các thuộc tính của <input>. Trong một vài trường hợp, nếu người dùng là một hacker giỏi, họ có thể xóa các thuộc tính bằng cách sử dụng công cụ phát triển của trình duyệt. Để đề phòng những hành vi này, bạn luôn nên kiểm tra tính hợp lệ từ phía server _(server-side validation)_. 
 
 Trong `src/lib/server/database.js`, hãy kiểm tra xem mô tả có tồn tại và là duy nhất không:
 
