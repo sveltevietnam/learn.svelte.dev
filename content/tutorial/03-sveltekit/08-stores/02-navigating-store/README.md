@@ -2,14 +2,15 @@
 title: navigating
 ---
 
-The `navigating` store represents the current navigation. When a navigation starts — because of a link click, or a back/forward navigation, or a programmatic `goto` — the value of `navigation` will become an object with the following properties:
+Store `navigating` đại diện cho quá trình điều hướng hiện tại. Khi một quá trình điều hướng bắt đầu — do việc nhấp vào liên kết, quá trình điều hướng lùi/tiến, hoặc một lệnh `goto` — giá trị của `navigating` sẽ trở thành một đối tượng với các thuộc tính sau:
 
-- `from` and `to` — objects with `params`, `route` and `url` properties
-- `type` — the type of navigation, e.g. `link`, `popstate` or `goto`
+- `from` và `to` — các đối tượng với thuộc tính `params`, `route` và `url`
+- `type` — type của điều hướng, ví dụ `link`, `popstate` hay `goto`
 
-> For complete type information visit the [`Navigation`](https://kit.svelte.dev/docs/types#public-types-navigation) documentation.
+> Để biết thông tin đầy đủ về type, hãy truy cập tài liệu [`Navigation`](https://kit.svelte.dev/docs/types#public-types-navigation).
 
-It can be used to show a loading indicator for long-running navigations. In this exercise, `src/routes/+page.server.js` and `src/routes/about/+page.server.js` both have an artificial delay. Inside `src/routes/+layout.svelte`, import the `navigating` store and add a message to the nav bar:
+`navigating` store có thể được sử dụng để hiển thị loading indicator cho những quá trình chuyển trang kéo dài. Trong bài tập này, `src/routes/+page.server.js` và `src/routes/about/+page.server.js` đều có một độ trễ được cố tình tạo ra. Bên trong `src/routes/+layout.svelte`, import store `navigating` và thêm một thông báo vào thanh điều hướng:
+
 
 ```svelte
 /// file: src/routes/+layout.svelte
@@ -27,7 +28,7 @@ It can be used to show a loading indicator for long-running navigations. In this
 	</a>
 
 +++	{#if $navigating}
-		navigating to {$navigating.to.url.pathname}
+		đang chuyển tới {$navigating.to.url.pathname}
 	{/if}+++
 </nav>
 

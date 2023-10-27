@@ -12,7 +12,7 @@
 	</a>
 
 	{#if $navigating}
-		navigating to {$navigating.to.url.pathname}
+		đang chuyển tới {$navigating.to.url.pathname}
 	{/if}
 </nav>
 
