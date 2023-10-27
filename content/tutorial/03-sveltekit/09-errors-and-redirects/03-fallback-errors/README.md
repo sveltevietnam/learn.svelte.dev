@@ -2,7 +2,7 @@
 title: Fallback errors
 ---
 
-Nếu mọi thứ diễn ra _thực sự_ sai — như một lỗi xảy ra trong khi tải root layout data _(dữ liệu gốc của bố cục)_, hoặc trong khi render trang lỗi — SvelteKit sẽ chuyển sang một trang lỗi tĩnh.
+Khi có lỗi xảy ra trong quá trình tải dữ liệu ở root layout hoăc trong khi render trang lỗi - SvelteKit sẽ chuyển sang một trang lỗi tĩnh.
 
 Thêm một tệp mới `src/routes/+layout.server.js` để thấy điều này diễn ra:
 
