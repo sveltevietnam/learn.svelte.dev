@@ -4,7 +4,7 @@ title: handle
 
 SvelteKit cung cấp một vài _hooks_ — là cách để chặn và ghi đè lên hành vi mặc định của framework.
 
-Hook cơ bản nhất là `handle`, nằm trong `src/hooks.server.js`. Nó nhận một`event` object cùng với một hàm `resolve`, và trả về một [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response).
+Hook cơ bản nhất là `handle`, nằm trong `src/hooks.server.js`. Nó nhận một đối tượng `event` cùng với một hàm `resolve`, và trả về một [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response).
 
 `resolve` là nơi điều kỳ diệu xảy ra: SvelteKit so khớp URL yêu cầu đến với một route của ứng dụng, imports mã tương ứng (`+page.server.js` và các tệp `+page.svelte` vv), tải dữ liệu cần thiết bởi route và tạo ra response _(phản hồi)_.
 
