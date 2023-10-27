@@ -1,5 +1,5 @@
 ---
-title: Trang
+title: page
 ---
 
 Như chúng ta đã học [trước đó](writable-stores), Svelte stores là nơi để lưu dữ liệu không thuộc về một component riêng lẻ nào.
