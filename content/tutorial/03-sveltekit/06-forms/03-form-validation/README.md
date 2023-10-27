@@ -23,7 +23,6 @@ Lớp kiểm tra đầu tiên là [built-in form validation _(kiểm tra tích h
 Hãy thử nhấn Enter khi <input> trống.
 
 
-In `src/lib/server/database.js`, validate that the description exists and is unique:
 Loại kiểm tra này là hữu ích, nhưng không đủ. Một số quy tắc kiểm tra (ví dụ: tính duy nhất) không thể thực hiện được bằng các thuộc tính của <input>. Trong một vài trường hợp, nếu người dùng là một hacker giỏi, họ có thể xóa các thuộc tính bằng cách sử dụng công cụ phát triển của trình duyệt. Để đề phòng những hành vi này, bạn luôn nên kiểm tra tính hợp lệ từ phía server _(server-side validation)_. 
 
 Trong `src/lib/server/database.js`, hãy kiểm tra xem mô tả có tồn tại và là duy nhất không:
