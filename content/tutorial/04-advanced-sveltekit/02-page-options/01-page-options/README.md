@@ -1,16 +1,16 @@
 ---
-title: Basics
+title: Cơ bản
 ---
 
-In the chapter on [loading data](/tutorial/page-data), we saw how you can export `load` functions from `+page.js`, `+page.server.js`, `+layout.js` and `+layout.server.js` files. We can also export various **page options** from these modules:
+Trong chương về [tải dữ liệu](/tutorial/page-data), chúng ta đã thấy làm thế nào bạn có thể xuất các hàm `load` từ các tệp `+page.js`, `+page.server.js`, `+layout.js` và `+layout.server.js`. Chúng ta cũng có thể xuất các **tùy chọn trang** từ những module này:
 
-- `ssr` — whether or not pages should be server-rendered
-- `csr` — whether to load the SvelteKit client
-- `prerender` — whether to prerender pages at build time, instead of per-request
-- `trailingSlash` — whether to strip, add, or ignore trailing slashes in URLs
+- `ssr` — nên hoặc không nên render trang trên server
+- `csr` — có nên tải SvelteKit client hay không
+- `prerender` — có nên prerender trang vào thời điểm build, thay vì mỗi request
+- `trailingSlash` — có nên loại bỏ, thêm hoặc bỏ qua dấu gạch chéo sau cùng trong URL
 
-In the following exercises, we'll learn about each of these in turn.
+Trong các bài tập tiếp theo, chúng ta sẽ tìm hiểu về từng tùy chọn này một cách chi tiết.
 
-Page options can apply to individual pages (if exported from `+page.js` or `+page.server.js`), or groups of pages (if exported from `+layout.js` or `+layout.server.js`). To define an option for the whole app, export it from the root layout. Child layouts and pages override values set in parent layouts, so — for example — you can enable prerendering for your entire app then disable it for pages that need to be dynamically rendered.
+Các tùy chọn trang có thể áp dụng cho từng trang cụ thể (nếu được xuất từ `+page.js` hoặc `+page.server.js`), hoặc nhóm các trang (nếu được xuất từ `+layout.js` hoặc `+layout.server.js`). Để xác định một tùy chọn cho toàn bộ ứng dụng, hãy xuất nó từ layout gốc. Layout con và trang sẽ ghi đè các giá trị được đặt trong các layout cha, vì vậy - ví dụ - bạn có thể bật prerender cho toàn bộ ứng dụng của mình, sau đó tắt nó cho các trang cần được render động.
 
-You can mix and match these options in different areas of your app — you could prerender your marketing pages, dynamically server-render your data-driven pages, and treat your admin pages as a client-rendered SPA. This makes SvelteKit very versatile.
+Bạn có thể pha trộn và kết hợp các tùy chọn này trong các khu vực khác nhau của ứng dụng của bạn - bạn có thể prerender các trang tiếp thị, render động trên server các trang dựa trên dữ liệu, và xem xét các trang quản trị của mình như là một SPA có thể render trên client. Điều này làm cho SvelteKit rất linh hoạt.

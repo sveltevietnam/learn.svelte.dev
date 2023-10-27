@@ -2,24 +2,24 @@
 title: trailingSlash
 ---
 
-Two URLs like `/foo` and `/foo/` might look the same, but they're actually different. A relative URL like `./bar` will resolve to `/bar` in the first case and `/foo/bar` in the second, and search engines will treat them as separate entries, harming your SEO.
+Hai URL như `/foo` và `/foo/` có vẻ giống nhau, nhưng thực sự chúng khác nhau. Một URL tương tự như `./bar` sẽ trở thành `/bar` trong trường hợp đầu tiên và `/foo/bar` trong trường hợp thứ hai, và các công cụ tìm kiếm sẽ xem xét chúng như các mục riêng biệt, ảnh hưởng đến SEO của bạn.
 
-In short, being loosey-goosey about trailing slashes is a bad idea. By default, SvelteKit strips trailing slashes, meaning that a request for `/foo/` will result in a redirect to `/foo`.
+Nói một cách ngắn gọn, việc thoải mái thêm dấu gạch chéo ở cuối là một ý tưởng tồi. Theo mặc định, SvelteKit loại bỏ dấu gạch chéo ở cuối, có nghĩa là một yêu cầu cho `/foo/` sẽ dẫn đến một chuyển hướng đến `/foo`.
 
-If you instead want to ensure that a trailing slash is always present, you can specify the `trailingSlash` option accordingly:
+Nếu bạn muốn thêm một dấu gạch chéo ở cuối, bạn có thể chỉ định tùy chọn `trailingSlash` như sau:
 
 ```js
 /// file: src/routes/always/+page.server.js
 export const trailingSlash = 'always';
 ```
 
-To accommodate both cases (this is not recommended!), use `'ignore'`:
+Để điều chỉnh cả hai trường hợp (điều này không được khuyến khích!), sử dụng `'ignore'`:
 
 ```js
 /// file: src/routes/ignore/+page.server.js
 export const trailingSlash = 'ignore';
 ```
 
-The default value is `'never'`.
+Giá trị mặc định là `'never'`.
 
-Whether or not trailing slashes are applied affects prerendering. A URL like `/always/` will be saved to disk as `always/index.html` whereas a URL like `/never` will be saved as `never.html`.
+Việc áp dụng hay không dấu gạch chéo ở cuối ảnh hưởng đến quá trình prerendering. Một URL như `/always/` sẽ được lưu vào ổ đĩa dưới dạng `always/index.html` trong khi một URL như `/never` sẽ được lưu dưới dạng `never.html`.
