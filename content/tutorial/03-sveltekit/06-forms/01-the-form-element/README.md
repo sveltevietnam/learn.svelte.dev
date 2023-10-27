@@ -23,7 +23,7 @@ Hãy cùng xây dựng một ứng dụng todo. Chúng ta đã có một cơ s�
 <ul class="todos">
 ```
 
-Nếu chúng ta gõ gì đó vào <input> và nhấn Enter, trình duyệt sẽ tạo một yêu cầu POST (vì thuộc tính `method="POST"`) đến trang hiện tại. Nhưng điều đó dẫn đến một lỗi, vì chúng ta chưa tạo một _hành động_ ở phía server để xử lý yêu cầu POST. Hãy làm điều đó ngay bây giờ:
+Nếu chúng ta gõ gì đó vào <input> và nhấn Enter, trình duyệt sẽ tạo một yêu cầu POST (nhờ thuộc tính `method="POST"`) đến trang hiện tại. Nhưng sẽ có lỗi vì ta chưa tạo một _action_ (hành động) ở phía server để xử lý yêu cầu POST. Hãy làm điều đó ngay bây giờ:
 
 ```js
 /// file: src/routes/+page.server.js
