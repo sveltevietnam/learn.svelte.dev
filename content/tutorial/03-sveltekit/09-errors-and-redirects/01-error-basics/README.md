@@ -29,4 +29,4 @@ Khi bạn throw một lỗi expected, bạn đang bảo SvelteKit 'đừng lo, t
 
 > Trong chương sau, chúng ta sẽ tìm hiểu về cách sử dụng `handleError` để tùy chỉnh việc xử lý lỗi.
 
-Nếu bạn nhấp vào các liên kết trong ứng dụng này, bạn sẽ nhận thức được một thông báo khác biệt quan trọng: thông điệp expected error được hiển thị cho người dùng, trong khi thông điệp unexpected error bị biên tập lại và được thay thế bằng một thông điệp 'Internal Error' tổng quát và một status code 500. Do thông điệp lỗi có thể chứa dữ liệu nhạy cảm.
+Nếu bạn nhấp vào các liên kết trong ứng dụng này, bạn sẽ thấy một khác biệt quan trọng: thông báo lỗi expected được hiển thị cho người dùng, trong khi thông báo của lỗi unexpected được thay thế bằng một thông báo tổng quát là 'Internal Error' và một mã trạng thái 500. Đây là vì thông baó lỗi có thể chứa dữ liệu nhạy cảm.
