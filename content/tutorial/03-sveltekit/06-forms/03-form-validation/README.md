@@ -53,7 +53,7 @@ export function createTodo(userid, description) {
 }
 ```
 
-Hãy thử gửi một todo trùng lặp. Ôi chết! SvelteKit đưa chúng ta đến một trang lỗi trông không thân thiện cho lắm. Trên server, chúng ta thấy một lỗi 'todo phải là duy nhất', nhưng SvelteKit giấu những thông báo lỗi không mong muốn khỏi người dùng vì chúng thường chứa dữ liệu nhạy cảm.
+Hãy thử gửi một todo trùng lặp. SvelteKit đưa chúng ta đến một trang lỗi trông không thân thiện cho lắm. Trên server, chúng ta thấy lỗi 'todo phải là duy nhất', nhưng SvelteKit giấu những thông báo lỗi không mong muốn khỏi người dùng vì chúng thường chứa dữ liệu nhạy cảm.
 
 Sẽ tốt hơn nếu cung cấp một chỉ báo về điều gì đã sai để người dùng có thể sửa chữa trên cùng một trang. Để làm điều này, chúng ta có thể sử dụng hàm `fail` để trả về dữ liệu từ action cùng với một mã trạng thái HTTP phù hợp:
 
