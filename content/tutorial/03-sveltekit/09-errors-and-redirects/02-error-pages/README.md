@@ -2,7 +2,7 @@
 title: Trang lỗi
 ---
 
-Khi có điều gì đó không đúng bên trong một hàm `load`, SvelteKit sẽ render một trang lỗi.
+Khi xảy ra vấn đề trong hàm `load`, SvelteKit sẽ render một trang lỗi.
 
 Trang lỗi mặc định hơi nhạt nhòa. Chúng ta có thể tùy chỉnh nó bằng cách tạo một component `src/routes/+error.svelte`:
 
