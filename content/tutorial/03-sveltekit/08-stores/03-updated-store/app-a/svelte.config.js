@@ -1,7 +1,7 @@
 export default {
 	kit: {
 		version: {
-			// Nên dùng cái tên mang tính deterministic _(chắc chắn, chuẩn xác)_ là tốt nhất
+			// Tốt nhất nên dùng giá trị dễ nhận biết
 			// giống như output của `git rev-parse HEAD`
 			name: Date.now().toString(),
 
