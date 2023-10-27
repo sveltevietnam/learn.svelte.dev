@@ -7,7 +7,7 @@ Store `navigating` đại diện cho quá trình điều hướng hiện tại. 
 - `from` và `to` — các đối tượng với thuộc tính `params`, `route` và `url`
 - `type` — type của điều hướng, ví dụ `link`, `popstate` hay `goto`
 
-> Để biết thông tin về type đầy đủ, hãy truy cập tài liệu [`Navigation`](https://kit.svelte.dev/docs/types#public-types-navigation).
+> Để biết thông tin đầy đủ về type, hãy truy cập tài liệu [`Navigation`](https://kit.svelte.dev/docs/types#public-types-navigation).
 
 `navigating` store có thể được sử dụng để hiển thị loading indicator cho những quá trình chuyển trang kéo dài. Trong bài tập này, `src/routes/+page.server.js` và `src/routes/about/+page.server.js` đều có một độ trễ được cố tình tạo ra. Bên trong `src/routes/+layout.svelte`, import store `navigating` và thêm một thông báo vào thanh điều hướng:
 
