@@ -25,7 +25,7 @@ export function load() {
 }
 ```
 
-Khi bạn throw một expected error, bạn đang bảo SvelteKit 'đừng lo, tôi biết tôi đang làm gì ở đây'. Ngược lại, một unexpected error được giả định là một lỗi trong ứng dụng của bạn. Khi một unexpected error được throw, message và stack trace của nó sẽ được ghi vào console.
+Khi bạn throw một lỗi expected, bạn đang bảo SvelteKit 'đừng lo, tôi biết tôi đang làm gì ở đây'. Ngược lại, một lỗi unexpected được giả định là một lỗi trong ứng dụng của bạn. Khi một lỗi unexpected xảy ra, message và stack trace của nó sẽ được ghi vào console.
 
 > Trong chương sau, chúng ta sẽ tìm hiểu về cách thêm xử lý lỗi tùy chỉnh bằng cách sử dụng hook `handleError`.
 
