@@ -51,4 +51,4 @@ Bạn cũng có thể gọi dịch vụ báo cáo lỗi của mình trong nhữn
 
 Lưu ý rằng bạn có thể trả về nhiều hơn một thông báo lỗi nếu bạn muốn. Bất kỳ object shape nào bạn trả về sẽ có sẵn trong `$page.error`, yêu cầu duy nhất là có một thuộc tính `message`. Bạn có thể đọc thêm về điều này (và làm cho nó type-safe!) trong [error docs](https://kit.svelte.dev/docs/errors).
 
-> Khi xử lý lỗi, hãy cẩn thận để không giả định rằng đó là một `Error` object, bất cứ thứ gì cũng có thể được throw. Ngoài ra, hãy đảm bảo bạn không để lộ dữ liệu nhạy cảm bằng cách chuyển tiếp quá nhiều thông tin
+> Khi xử lý lỗi, hãy cẩn thận và không nên giả định rằng đó là một đối tượng `Error` vì bất cứ thứ gì cũng có thể throw được. Ngoài ra, hãy đảm bảo bạn không để lộ dữ liệu nhạy cảm bằng cách chuyển tiếp quá nhiều thông tin.
