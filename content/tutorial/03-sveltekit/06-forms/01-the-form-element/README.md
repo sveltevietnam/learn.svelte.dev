@@ -41,7 +41,7 @@ export function load({ cookies }) {
 };+++
 ```
 
-`request` là một đối tượng [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) tiêu chuẩn; `await request.formData()` trả về một [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) instance.
+`request` là một đối tượng [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) tiêu chuẩn; `await request.formData()` trả về một [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData).
 
 Khi chúng ta nhấn Enter, cơ sở dữ liệu được cập nhật và trang tải lại với dữ liệu mới.
 
