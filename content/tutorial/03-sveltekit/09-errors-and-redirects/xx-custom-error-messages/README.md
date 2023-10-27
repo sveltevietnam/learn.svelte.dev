@@ -2,7 +2,7 @@
 title: Tùy chỉnh thông báo lỗi
 ---
 
-Trang lỗi trong bài tập trước đó khá tĩnh. Có thể bạn muốn hiển thị thông báo lỗi để bạn có thể giúp đỡ người dùng nhanh hơn trong kênh hỗ trợ của bạn.
+Trang lỗi trong bài tập trước khá tĩnh. Có thể bạn muốn hiển thị thông báo lỗi để giúp người dùng có thể tìm đến các kênh hỗ trợ nhanh hơn.
 
 Đối với điều này, SvelteKit cung cấp cho bạn `$page.error` và `$page.status`, chứa thông tin về lỗi và status code _(mã trạng thái)_. Hãy thêm nó vào `+error.svelte`:
 
