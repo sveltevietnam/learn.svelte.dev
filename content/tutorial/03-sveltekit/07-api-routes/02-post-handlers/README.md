@@ -30,7 +30,7 @@ Bên trong event handler `keydown` của phần tử `<input>` 'thêm todo', ch�
 />
 ```
 
-Ở đây, chúng ta đang gửi một số JSON đến API route _(đường dẫn API)_ `/todo` — sử dụng một `userid` từ cookies của người dùng — và nhận `id` của todo mới được tạo ra trong response _(phản hồi)_.
+Ở đây, chúng ta đang gửi JSON đến API `/todo` — sử dụng một `userid` từ cookies của người dùng — và nhận `id` của todo mới được tạo ra trong phản hồi.
 
 Tạo đường dẫn /todo bằng cách thêm một tệp `src/routes/todo/+server.js` với một `POST` handler gọi `createTodo` trong `src/lib/server/database.js`:
 
