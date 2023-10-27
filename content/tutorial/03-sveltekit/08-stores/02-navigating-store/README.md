@@ -4,7 +4,7 @@ title: navigating
 
 Store `navigating` đại diện cho quá trình điều hướng hiện tại. Khi một quá trình điều hướng bắt đầu — do việc nhấp vào liên kết, quá trình điều hướng lùi/tiến, hoặc một lệnh `goto` — giá trị của `navigating` sẽ trở thành một đối tượng với các thuộc tính sau:
 
-- `from` và `to` — các đối tượng với `params`, `route` và thuộc tính `url`
+- `from` và `to` — các đối tượng với thuộc tính `params`, `route` và `url`
 - `type` — type của điều hướng, ví dụ `link`, `popstate` hay `goto`
 
 > Để biết thông tin về type đầy đủ, hãy truy cập tài liệu [`Navigation`](https://kit.svelte.dev/docs/types#public-types-navigation).
