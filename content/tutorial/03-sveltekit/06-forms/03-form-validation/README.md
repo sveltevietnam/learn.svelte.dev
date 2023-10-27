@@ -80,7 +80,7 @@ export const actions = {
 ```
 
 In `src/routes/+page.svelte`, we can access the returned value via the `form` prop, which is only ever populated after a form submission:
-Trong `src/routes/+page.svelte`, chúng ta có thể truy cập giá trị được trả về qua prop `form`, chỉ được điền sau khi một form được gửi:
+Trong `src/routes/+page.svelte`, chúng ta có thể truy cập giá trị được trả về qua prop `form` (chỉ tồn tại sau khi form đã được gửi):
 
 ```svelte
 /// file: src/routes/+page.svelte
