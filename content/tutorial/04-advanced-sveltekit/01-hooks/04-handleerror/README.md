@@ -25,7 +25,7 @@ Lưu ý rằng chúng ta không hiển thị thông báo lỗi cho người dùn
 }
 ```
 
-Trong một số tình huống, bạn có thể muốn tùy chỉnh object này. Để làm điều này, bạn có thể trả về một object từ `handleError`:
+Trong một số tình huống, bạn có thể muốn tùy chỉnh đối tượng này. Để làm điều đó, bạn có thể trả về một đối tượng từ `handleError`:
 
 ```js
 /// file: src/hooks.server.js
