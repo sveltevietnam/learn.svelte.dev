@@ -14,7 +14,7 @@ export function handleError({ event, error }) {
 }
 ```
 
-Nếu bạn chuyển đến `/the-bad-place`, bạn sẽ thấy điều này trong action - trang lỗi được hiển thị, và nếu bạn mở terminal (sử dụng nút ở bên phải của thanh URL), bạn sẽ thấy thông báo từ `src/routes/the-bad-place/+page.server.js`.
+Nếu bạn chuyển đến `/the-bad-place`, bạn sẽ thấy điều này diễn ra - trang lỗi được hiển thị, và nếu bạn mở terminal (sử dụng nút ở bên phải của thanh URL), bạn sẽ thấy thông báo từ `src/routes/the-bad-place/+page.server.js`.
 
 Lưu ý rằng chúng ta không hiển thị thông báo lỗi cho người dùng. Điều này là do thông báo lỗi có thể bao gồm thông tin nhạy cảm có thể gây hiểu lầm cho người dùng của bạn ở mức tốt nhất, và ở tình huống xấu nhất có thể mang lại lợi ích cho kẻ xấu. Thay vào đó, error object có sẵn cho ứng dụng của bạn - nằm tại `$page.error` trong các trang `+error.svelte` của bạn, hoặc `%sveltekit.error%` trong tệp `src/error.html` dự phòng của bạn - chỉ là như thế này:
 
