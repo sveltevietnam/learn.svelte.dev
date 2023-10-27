@@ -4,7 +4,7 @@ title: Phần tử <form>
 
 Trong [chương về tải dữ liệu](page-data), chúng ta đã thấy cách lấy dữ liệu từ server tới trình duyệt. Đôi khi, bạn cần gửi dữ liệu theo hướng ngược lại, và đó là lúc `<form>` — cách mà nền tảng web gửi dữ liệu — xuất hiện.
 
-Chúng ta hãy xây dựng một ứng dụng todo. Chúng ta đã có một cơ sở dữ liệu trong bộ nhớ được thiết lập trong `src/lib/server/database.js`, và hàm `load` trong `src/routes/+page.server.js` sử dụng API [`cookies`](https://kit.svelte.dev/docs/load#cookies) để chúng ta có thể có danh sách công việc cụ thể cho từng người dùng, nhưng chúng ta cần thêm một `<form>` để tạo todo mới:
+Hãy cùng xây dựng một ứng dụng todo. Chúng ta đã có một cơ sở dữ liệu trên bộ nhớ được thiết lập trong `src/lib/server/database.js`, và hàm `load` trong `src/routes/+page.server.js` sử dụng API [`cookies`](https://kit.svelte.dev/docs/load#cookies) để mỗi người dùng có một danh sách todo riêng, nhưng ta cần thêm một `<form>` để tạo todo mới:
 
 ```svelte
 /// file: src/routes/+page.svelte
