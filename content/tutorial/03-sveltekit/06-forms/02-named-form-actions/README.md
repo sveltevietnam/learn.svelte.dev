@@ -38,7 +38,7 @@ Phần tử <form> có một thuộc tính tùy chọn là `action`, tương t�
 </form>
 ```
 
-> Thuộc tính `action` có thể là bất kỳ URL nào — nếu hành động được xác định trên một trang khác, ví dụ như `/todos?/create`. Vì hành động ở trang này, nên chúng ta có thể bỏ qua toàn bộ đường dẫn và chỉ cần thêm ký tự `?` ở trước.
+> Thuộc tính `action` có thể là bất kỳ URL nào. Ví dụ nếu action `create` được thiết lập ở trang `/todos`, ta sẽ dùng `/todos?/create`. Vì action ở trang này, nên chúng ta có thể bỏ qua toàn bộ đường dẫn và chỉ cần thêm ký tự `?` ở trước.
 
 Tiếp theo, chúng ta muốn tạo một form cho mỗi todo, kèm theo một `<input>` ẩn duy nhất để xác định nó:
 
