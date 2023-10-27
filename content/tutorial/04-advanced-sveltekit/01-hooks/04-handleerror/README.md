@@ -2,7 +2,7 @@
 title: handleError
 ---
 
-Hook `handleError` giúp bạn chặn các unexpected errors _(lỗi không mong muốn)_ và kích hoạt một số hành vi, như gửi ping tới một kênh Slack hoặc gửi dữ liệu đến một dịch vụ theo dõi lỗi.
+Hook `handleError` giúp bạn chặn các lỗi không mong muốn _(unexpected errors)_ và kích hoạt một số hành vi, như gửi ping tới một kênh Slack hoặc gửi dữ liệu đến một dịch vụ theo dõi lỗi.
 
 Như bạn nhớ từ [bài tập trước đó](error-basics), một lỗi là _unexpected_  nếu nó không được tạo ra với helper `error` từ `@sveltejs/kit`. Thông thường, điều này có nghĩa là có điều gì đó trong ứng dụng của bạn cần sửa. Hành vi mặc định là để ghi nhật ký lỗi:
 
