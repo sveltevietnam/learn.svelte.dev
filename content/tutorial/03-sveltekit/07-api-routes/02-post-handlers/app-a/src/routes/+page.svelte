@@ -6,7 +6,7 @@
 	<h1>todos</h1>
 
 	<label>
-		add a todo:
+		thêm todo:
 		<input
 			type="text"
 			autocomplete="off"
@@ -15,7 +15,7 @@
 					const input = e.currentTarget;
 					const description = input.value;
 					
-					// TODO handle submit
+					// xử lý TODO submit
 
 					input.value = '';
 				}
@@ -33,14 +33,14 @@
 						on:change={async (e) => {
 							const done = e.currentTarget.checked;
 
-							// TODO handle change
+							// xử lý TODO change
 						}}
 					/>
 					<span>{todo.description}</span>
 					<button
 						aria-label="Mark as complete"
 						on:click={async (e) => {
-							// TODO handle delete
+							// xử lý TODO delete
 						}}
 					/>
 				</label>

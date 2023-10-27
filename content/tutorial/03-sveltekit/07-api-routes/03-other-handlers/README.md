@@ -2,7 +2,7 @@
 title: Other handlers
 ---
 
-Similarly, we can add handlers for other HTTP verbs. Add a `/todo/[id]` route by creating a `src/routes/todo/[id]/+server.js` file with `PUT` and `DELETE` handlers for toggling and removing todos, using the `toggleTodo` and `deleteTodo` functions in `src/lib/server/database.js`:
+Tương tự, chúng ta cũng có thể thêm các handler cho các phương thức HTTP khác. Thêm một đường dẫn `/todo/[id]` bằng cách tạo một tệp `src/routes/todo/[id]/+server.js` với các handler `PUT` và `DELETE` để chuyển đổi và xóa các công việc, sử dụng các hàm `toggleTodo` và `deleteTodo` trong `src/lib/server/database.js`:
 
 ```js
 /// file: src/routes/todo/[id]/+server.js
@@ -24,9 +24,9 @@ export async function DELETE({ params, cookies }) {
 }
 ```
 
-Since we don't need to return any actual data to the browser, we're returning an empty [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) with a [204 No Content](https://httpstatusdogs.com/204-no-content) status.
+Vì không cần trả về dữ liệu gì cho trình duyệt, chúng ta sẽ trả về một [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) trống với trạng thái [204 No Content](https://httpstatusdogs.com/204-no-content).
 
-We can now interact with this endpoint inside our event handlers:
+Bây giờ, chúng ta có thể tương tác với endpoint này trong các event handlers:
 
 ```svelte
 /// file: src/routes/+page.svelte
