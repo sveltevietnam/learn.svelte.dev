@@ -108,4 +108,4 @@ Trong `src/routes/+page.svelte`, chúng ta có thể truy cập giá trị đư�
 </form>
 ```
 
-> Bạn cũng có thể trả về dữ liệu từ một action _mà không cần_ bao nó trong `fail` — ví dụ để hiển thị một thông báo 'thành công!' khi dữ liệu đã được lưu — và nó sẽ được truy cập qua prop `form`.
+> Bạn cũng có thể trả về dữ liệu từ một action _mà không cần_ bao nó trong `fail`, ví dụ như để hiển thị một thông báo 'thành công!' khi đã lưu trữ thành công. Ta truy cập dữ liệu này thông qua prop `form`.
