@@ -2,9 +2,9 @@
 title: Preloading
 ---
 
-In this exercise, the `/slow-a` and `/slow-b` routes both have artificial delays in their `load` functions, meaning it takes a long time to navigate to them.
+Trong bài tập này, cả hai đường dẫn `/slow-a` và `/slow-b` đều được tạo một độ trễ trong các hàm `load` của chúng, điều này có nghĩa là mất nhiều thời gian để chuyển hướng đến chúng.
 
-You can't always make your data load more quickly — sometimes it's out of your control — but SvelteKit can speed up navigations by _anticipating_ them. When an `<a>` element has a `data-sveltekit-preload-data` attribute, SvelteKit will begin the navigation as soon as the user hovers over the link (on desktop) or taps it (on mobile). Try adding it to the first link:
+Bạn không thể luôn làm cho dữ liệu của mình tải nhanh hơn — đôi khi điều đó nằm ngoài tầm kiểm soát của bạn — nhưng SvelteKit có thể tăng tốc độ chuyển hướng bằng cách _dự đoán_ chúng. Khi một phần tử `<a>` có thuộc tính `data-sveltekit-preload-data`, SvelteKit sẽ bắt đầu chuyển hướng ngay khi người dùng di chuột qua liên kết (trên máy tính để bàn) hoặc chạm vào nó (trên điện thoại di động). Hãy thử thêm nó vào liên kết đầu tiên:
 
 ```svelte
 /// file: src/routes/+layout.svelte
@@ -15,9 +15,9 @@ You can't always make your data load more quickly — sometimes it's out of your
 </nav>
 ```
 
-Navigating to `/slow-a` will now be noticeably faster. Starting navigation on hover or tap (rather than waiting for a `click` event to be registered) might not sound like it makes much difference, but in practice it typically saves 200ms or more. That's enough to be the difference between sluggish and snappy.
+Việc chuyển hướng đến `/slow-a` sẽ nhanh hơn đáng kể. Bắt đầu chuyển hướng khi di chuột qua hoặc chạm vào (thay vì chờ sự kiện click được đăng ký) có lẽ không tạo ra sự khác biệt lớn, nhưng thực tế thường tiết kiệm 200ms hoặc hơn. Đó là đủ để thấy sự khác biệt giữa chậm và nhanh.
 
-You can put the attribute on individual links, or on any element that _contains_ links. The default project template includes the attribute on the `<body>` element:
+Bạn có thể đặt thuộc tính này trên từng liên kết hoặc trên bất kỳ phần tử nào _chứa_ liên kết. Mẫu dự án mặc định chứa thuộc tính trên phần tử <body>:
 
 ```html
 /// no-file
@@ -26,29 +26,29 @@ You can put the attribute on individual links, or on any element that _contains_
 </body>
 ```
 
-You can customise the behaviour further by specifying one of the following values for the attribute:
+Bạn có thể tùy chỉnh hành vi thêm bằng cách chỉ định một trong các giá trị sau cho thuộc tính:
 
-- `"hover"` (default, falls back to `"tap"` on mobile)
-- `"tap"` — only begin preloading on tap
-- `"off"` — disable preloading
+- `"hover"` (mặc định, fallback thành `"tap"` trên di động)
+- `"tap"` — chỉ bắt đầu preload khi chạm
+- `"off"` — tắt preload
 
-Using `data-sveltekit-preload-data` may sometimes result in false positives - i.e. loading data in anticipation of a navigation that doesn't then happen — which might be undesirable. As an alternative, `data-sveltekit-preload-code` allows you to preload the JavaScript needed by a given route without eagerly loading its data. This attribute can have the following values:
+Việc sử dụng `data-sveltekit-preload-data` đôi khi có thể dẫn đến những kết quả không chính xác - tức là tải dữ liệu trước nhưng sau đó chuyển hướng không xảy ra — điều này không ai muốn. Có một phương án khác, `data-sveltekit-preload-code` cho phép bạn preload JavaScript cần thiết cho một đường dẫn nhất định mà không cần tải trước dữ liệu của nó. Thuộc tính này có thể có một trong những giá trị sau:
 
-- `"eager"` — preload everything on the page following a navigation
-- `"viewport"` — preload everything as it appears in the viewport
-- `"hover"` (default) as above
-- `"tap"` — as above
-- `"off"` — as above
+- `"eager"` — preload mọi thứ trên trang sau mỗi chuyển hướng
+- `"viewport"` — preload mọi thứ khi nó xuất hiện trong viewport
+- `"hover"` (mặc định) như ở trên
+- `"tap"` — như ở trên
+- `"off"` — như ở trên
 
-You can also initiate preloading programmatically with `preloadCode` and `preloadData` imported from `$app/navigation`:
+Bạn cũng có thể khởi chạy việc preload với `preloadCode` và `preloadData` được imported từ `$app/navigation`:
 
 ```js
 /// no-file
 import { preloadCode, preloadData } from '$app/navigation';
 
-// preload the code and data needed to navigate to /foo
+// preload code và data cần thiết để chuyển hướng đến /foo
 preloadData('/foo');
 
-// preload the code needed to navigate to /bar, but not the data
+// preload code cần thiết để chuyển hướng đến /bar, nhưng không preload data
 preloadCode('/bar');
 ```

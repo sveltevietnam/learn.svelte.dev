@@ -21,4 +21,4 @@
 
 <slot />
 
-<p>the page has been open for {seconds} seconds</p>
+<p>trang đã mở trong {seconds} giây</p>
