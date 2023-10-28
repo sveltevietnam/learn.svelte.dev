@@ -1,3 +1,3 @@
 export function handleError() {
-	return { message: 'Internal Error' }; // implementation mặc định của hook này
+	return { message: 'Internal Error' }; // cấu hình mặc định của hook này
 }
