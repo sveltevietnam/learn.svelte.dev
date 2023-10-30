@@ -8,7 +8,7 @@
 {#if $page.status === 404}
 	<h1>Not found</h1>
 {:else if !online}
-	<h1>You're offline</h1>
+	<h1>Bạn đang offline</h1>
 {:else}
 	<h1>Oops!</h1>
 	<p>{$page.error.message}</p>

@@ -1,10 +1,10 @@
 ---
-title: Customizing the error message
+title: Tùy chỉnh thông báo lỗi
 ---
 
-The error page in the previous exercise is rather static. Maybe you want to show the error message so you can help people turning up in your support channels faster.
+Trang lỗi trong bài tập trước khá tĩnh. Có thể bạn muốn hiển thị thông báo lỗi để giúp người dùng có thể tìm đến các kênh hỗ trợ nhanh hơn.
 
-For this, SvelteKit provides you with `$page.error` and `$page.status`, which contain information about the error and the status code. Let's add it to `+error.svelte`:
+Đối với điều này, SvelteKit cung cấp cho bạn `$page.error` và `$page.status`, chứa thông tin về lỗi và status code _(mã trạng thái)_. Hãy thêm nó vào `+error.svelte`:
 
 ```svelte
 /// file: src/routes/+error.svelte
@@ -19,22 +19,22 @@ For this, SvelteKit provides you with `$page.error` and `$page.status`, which co
 +++{#if $page.status === 404}
 	<h1>Not found</h1>
 {:else +++if !online}
-	<h1>You're offline</h1>
+	<h1>Bạn đang offline</h1>
 {:else}
 	<h1>Oops!</h1>
-	---<p>Something went wrong</p>---
+	---<p>Có gì đó sai sai</p>---
 	+++<p>{$page.error.message}</p>+++
 {/if}
 ```
 
-That's better, but `$page.error.message` always contains "Internal Error" - how so? This is because SvelteKit plays it safe and prevents you from accidentally showing sensitive information as part of the error message.
+`$page.error.message` luôn chứa "Internal Error" - tại sao vậy? Điều này là do SvelteKit ưu tiên an toàn và ngăn bạn sơ ý để lộ thông tin nhạy cảm.
 
-To customize it, implement the `handleError` hook in `hooks.server.js` and `hooks.client.js` which run when an unexpected error is thrown during data loads on the server or client respectively.
+Để tùy chỉnh, triển khai hook `handleError` trong `hooks.server.js` và `hooks.client.js`, được chạy khi một lỗi unexpected xảy ra trong quá trình tải dữ liệu trên server hoặc client.
 
 ```js
 // hooks.server.js
 export function handleError(+++{ error }+++) {
-    ---return { message: 'Internal Error' }; // the default implementation of this hook---
+    ---return { message: 'Internal Error' }; // cấu hình mặc định của hook này---
     +++return { message: error instanceof Error ? error.message : 'Internal Error' };+++
 }
 ```
@@ -42,13 +42,13 @@ export function handleError(+++{ error }+++) {
 ```js
 // hooks.client.js
 export function handleError(+++{ error }+++) {
-    ---return { message: 'Internal Error' }; // the default implementation of this hook---
+    ---return { message: 'Internal Error' }; // cấu hình mặc định của hook này---
     +++return { message: error instanceof Error ? error.message : 'Internal Error' };+++
 }
 ```
 
-You could also call your error reporting service in these hooks.
+Bạn cũng có thể gọi dịch vụ báo cáo lỗi của mình trong những hook này.
 
-Note that you can return more than an error message if you like. Whatever object shape you return will be available in `$page.error`, the only requirement is a `message` property. You can read more about this (and how to make it type-safe!) in the [error docs](https://kit.svelte.dev/docs/errors).
+Lưu ý rằng bạn có thể trả về nhiều hơn một thông báo lỗi nếu bạn muốn. Bất kỳ cấu trúc nào bạn trả về sẽ có sẵn trong `$page.error`, yêu cầu duy nhất là phải có một thuộc tính `message`. Bạn có thể đọc thêm về điều này (và cách thiết lập type-safe!) trong [error docs](https://kit.svelte.dev/docs/errors).
 
-> When handling errors, be careful to not assume it's an `Error` object, anything could be thrown. Also make sure not to expose senstive data by forwarding too much information
+> Khi xử lý lỗi, hãy cẩn thận và không nên giả định rằng đó là một đối tượng `Error` vì bất cứ thứ gì cũng có thể throw được. Ngoài ra, hãy đảm bảo bạn không để lộ dữ liệu nhạy cảm bằng cách chuyển tiếp quá nhiều thông tin.

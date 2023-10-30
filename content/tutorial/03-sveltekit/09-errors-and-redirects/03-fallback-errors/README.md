@@ -2,9 +2,9 @@
 title: Fallback errors
 ---
 
-If things go _really_ wrong — an error occurs while loading the root layout data, or while rendering the error page — SvelteKit will fall back to a static error page.
+Khi có lỗi xảy ra trong quá trình tải dữ liệu ở root layout hoăc trong khi render trang lỗi - SvelteKit sẽ chuyển sang một trang lỗi tĩnh.
 
-Add a new `src/routes/+layout.server.js` file to see this in action:
+Thêm một tệp mới `src/routes/+layout.server.js` để thấy điều này diễn ra:
 
 ```js
 /// file: src/routes/+layout.server.js
@@ -13,16 +13,16 @@ export function load() {
 }
 ```
 
-You can customise the fallback error page. Create a `src/error.html` file:
+Bạn có thể tùy chỉnh trang fallback error. Tạo một tệp `src/error.html`:
 
 ```html
 /// file: src/error.html
-<h1>Game over</h1>
+<h1>Kết thúc</h1>
 <p>Code %sveltekit.status%</p>
 <p>%sveltekit.error.message%</p>
 ```
 
-This file can include the following:
+Tệp này có thể bao gồm:
 
-- `%sveltekit.status%` — the HTTP status code
-- `%sveltekit.error.message%` — the error message
+- `%sveltekit.status%` — mã trạng thái HTTP
+- `%sveltekit.error.message%` — thông báo lỗi

@@ -1,5 +1,5 @@
 export function load() {
 	throw new Error(
-		'Something went terribly wrong loading the about page'
+		'Có lỗi nghiêm trọng khi tải trang giới thiệu'
 	);
 }
