@@ -1,7 +1,8 @@
 const greetings = {
 	en: 'hello!',
 	de: 'hallo!',
-	fr: 'bonjour!'
+	fr: 'bonjour!',
+	vn: 'xin chào'
 };
 
 export function load({ params }) {

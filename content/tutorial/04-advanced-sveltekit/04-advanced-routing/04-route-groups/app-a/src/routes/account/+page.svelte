@@ -1,3 +1,3 @@
 <h1>account</h1>
 
-<p>this is the account page</p>
+<p>đây là trang tài khoản.</p>

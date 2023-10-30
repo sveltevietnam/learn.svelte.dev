@@ -1,11 +1,11 @@
 ---
-title: Param matchers
+title: Khớp tham số
 path: /colors/ff3e00
 ---
 
-To prevent the router from matching on invalid input, you can specify a _matcher_. For example, you might want a route like `/colors/[value]` to match hex values like `/colors/ff3e00` but not named colors like `/colors/octarine` or any other arbitrary input.
+Để ngăn router khớp sai đầu vào, bạn có thể xác định một _matcher_ _(so khớp)_. Ví dụ, bạn có thể muốn một route như `/colors/[value]` khớp với giá trị hex như `/colors/ff3e00` nhưng không khớp với màu có tên như `/colors/octarine` hoặc bất kỳ đầu vào tùy ý nào khác.
 
-First, create a new file called `src/params/hex.js` and export a `match` function from it:
+Đầu tiên, tạo một tệp mới gọi là `src/params/hex.js` và xuất một hàm `match` từ nó:
 
 ```js
 /// file: src/params/hex.js
@@ -14,8 +14,8 @@ export function match(value) {
 }
 ```
 
-Then, to use the new matcher, rename `src/routes/colors/[color]` to `src/routes/colors/[color=hex]`.
+Sau đó, để sử dụng bộ so khớp mới, đổi tên `src/routes/colors/[color]` thành `src/routes/colors/[color=hex]`.
 
-Now, whenever someone navigates to that route, SvelteKit will verify that `color` is a valid `hex` value. If not, SvelteKit will try to match other routes, before eventually returning a 404.
+Bây giờ, mỗi khi ai đó điều hướng đến route đó, SvelteKit sẽ xác minh xem `color` có phải là giá trị `hex` hợp lệ hay không. Nếu không, SvelteKit sẽ thử khớp với các route khác, trước khi trả về một trang 404.
 
-> Matchers run both on the server and in the browser.
+> Bộ so khớp chạy cả trên máy chủ và trong trình duyệt.
