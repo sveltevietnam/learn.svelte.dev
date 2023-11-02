@@ -1,1 +1,1 @@
-<h1>pick a colour</h1>
+<h1>chọn 1 màu</h1>

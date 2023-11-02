@@ -1,12 +1,12 @@
 ---
-title: Using parent data
+title: Sử dụng dữ liệu từ phần tử cha
 ---
 
-As we saw in the introduction to [layout data](/tutorial/layout-data), `+page.svelte` and `+layout.svelte` components have access to everything returned from their parent `load` functions.
+Như chúng ta đã thấy trong phần giới thiệu về [dữ liệu bố cục](/tutorial/layout-data), các thành phần `+page.svelte` và `+layout.svelte` có quyền truy cập vào tất cả mọi thứ được trả về từ các hàm `load` của phần tử cha.
 
-Occasionally it's useful for the `load` functions themselves to access data from their parents. This can be done with `await parent()`.
+Đôi khi, việc cho các hàm `load` tự thân có quyền truy cập dữ liệu từ phần tử cha rất hữu ích. Điều này có thể được thực hiện bằng cách sử dụng `await parent()`.
 
-To show how it works, we'll sum two numbers that come from different `load` functions. First, return some data from `src/routes/+layout.server.js`:
+Để thấy cách nó hoạt động, chúng ta sẽ cộng hai số được trả về từ hai hàm `load` khác nhau. Trước hết, hãy trả về một số dữ liệu từ `src/routes/+layout.server.js`:
 
 ```js
 /// file: src/routes/+layout.server.js
@@ -15,7 +15,7 @@ export function load() {
 }
 ```
 
-Then, get that data in `src/routes/sum/+layout.js`:
+Sau đó, lấy dữ liệu đó trong `src/routes/sum/+layout.js`:
 
 ```js
 /// file: src/routes/sum/+layout.js
@@ -25,9 +25,9 @@ export async function load(+++{ parent }+++) {
 }
 ```
 
-> Notice that a [universal](/tutorial/universal-load-functions) `load` function can get data from a parent _server_ `load` function. The reverse is not true — a server load function can only get parent data from another server load function.
+> Lưu ý rằng một hàm `load` [phổ rộng](/tutorial/universal-load-functions) có thể lấy dữ liệu từ một hàm `load` _server_ cha. Ngược lại thì không được — một hàm `load` server chỉ có thể lấy dữ liệu phần tử cha từ một hàm `load` khác trên server.
 
-Finally, in `src/routes/sum/+page.js`, get parent data from both `load` functions:
+Cuối cùng, trong `src/routes/sum/+page.js`, lấy dữ liệu phần tử cha từ cả hai hàm `load`:
 
 ```js
 /// file: src/routes/sum/+page.js
@@ -37,4 +37,4 @@ export async function load(+++{ parent }+++) {
 }
 ```
 
-> Take care not to introduce waterfalls when using `await parent()`. If you can `fetch` other data that is not dependent on parent data, do that first.
+> Cẩn thận, không tạo ra hiện tượng mô hình thác nước (waterfalls) khi sử dụng `await parent()`. Nếu bạn có thể `fetch` dữ liệu khác không phụ thuộc vào dữ liệu phần tử cha, hãy thực hiện điều đó trước.

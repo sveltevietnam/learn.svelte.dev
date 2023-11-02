@@ -1,6 +1,6 @@
 export async function load() {
 	return {
-		message: 'this data came from the server',
+		message: 'dữ liệu này từ phía server',
 		cool: true
 	};
 }

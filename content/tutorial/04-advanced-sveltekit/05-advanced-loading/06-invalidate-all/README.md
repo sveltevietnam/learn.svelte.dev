@@ -3,9 +3,9 @@ title: invalidateAll
 path: /Europe/London
 ---
 
-Finally, there's the nuclear option — `invalidateAll()`. This will indiscriminately re-run all `load` functions for the current page, regardless of what they depend on.
+Cuối cùng, có tùy chọn mạnh nhất - `invalidateAll()`. Ứng dụng sẽ chạy lại tất cả các hàm `load` cho trang hiện tại, không phân biệt bất kể chúng phụ thuộc vào cái gì.
 
-Update `src/routes/[...timezone]/+page.svelte` from the previous exercise:
+Cập nhật `src/routes/[...timezone]/+page.svelte` từ bài tập trước:
 
 ```svelte
 /// file: src/routes/[...timezone]/+page.svelte
@@ -27,8 +27,7 @@ Update `src/routes/[...timezone]/+page.svelte` from the previous exercise:
 </script>
 ```
 
-The `depends` call in `src/routes/+layout.js` is no longer necessary:
-
+Gọi `depends` trong `src/routes/+layout.js` không còn cần thiết nữa:
 ```js
 /// file: src/routes/+layout.js
 export async function load(---{ depends }---) {
@@ -40,4 +39,4 @@ export async function load(---{ depends }---) {
 }
 ```
 
-> `invalidate(() => true)` and `invalidateAll` are _not_ the same. `invalidateAll` also re-runs `load` functions without any `url` dependencies, which `invalidate(() => true)` does not.
+> `invalidate(() => true)` và `invalidateAll` _không_ giống nhau. `invalidateAll` cũng chạy lại hàm `load` mà không có bất kỳ `url` phụ thuộc nào, trong khi `invalidate(() => true)` không làm điều đó.

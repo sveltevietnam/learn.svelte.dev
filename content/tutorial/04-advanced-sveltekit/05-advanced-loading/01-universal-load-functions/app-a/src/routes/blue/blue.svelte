@@ -1,1 +1,1 @@
-<marquee>hello from blue.svelte</marquee>
+<marquee>chào từ blue.svelte</marquee>

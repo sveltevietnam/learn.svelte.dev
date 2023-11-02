@@ -1,12 +1,12 @@
 ---
-title: Using both load functions
+title: Sử dụng cả hai hàm tải
 ---
 
-Occasionally, you might need to use a server load function and a universal load function together. For example, you might need to return data from the server, but also return a value that can't be serialized as server data.
+Đôi khi, bạn có thể cần sử dụng một hàm tải server và một hàm tải phổ rộng cùng một lúc. Ví dụ, bạn có thể cần trả về dữ liệu từ server, nhưng cũng trả về một giá trị không thể serialized như dữ liệu server.
 
-In this example we want to return a different component from `load` depending on whether the data we got from `src/routes/+page.server.js` is `cool` or not.
+Trong ví dụ này, chúng ta muốn trả về một thành phần khác nhau từ `load` tùy thuộc vào việc dữ liệu chúng ta nhận được từ `src/routes/+page.server.js` có phải là `cool` hay không.
 
-We can access server data in `src/routes/+page.js` via the `data` property:
+Chúng ta có thể truy cập dữ liệu server trong `src/routes/+page.js` thông qua thuộc tính `data`:
 
 ```js
 /// file: src/routes/+page.js
@@ -22,4 +22,4 @@ export async function load(+++{ data }+++) {
 }
 ```
 
-> Note that the data isn't merged — we must explicitly return `message` from the universal `load` function.
+> Lưu ý rằng dữ liệu không được hợp nhất — chúng ta phải trả về `message` một cách rõ ràng từ hàm tải phổ rộng.

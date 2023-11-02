@@ -1,2 +1,2 @@
-<p>if a = 1 and b = a + 1, what is a + b?</p>
-<a href="/sum">show answer</a>
+<p>nếu a = 1 và b = a + 1, thì a + b?</p>
+<a href="/sum">xem câu trả lời</a>
