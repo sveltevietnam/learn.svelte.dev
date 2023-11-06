@@ -32,7 +32,7 @@ Bạn có thể tùy chỉnh hành vi thêm bằng cách chỉ định một tro
 - `"tap"` — chỉ bắt đầu preload khi chạm
 - `"off"` — tắt preload
 
-Việc sử dụng `data-sveltekit-preload-data` đôi khi có thể dẫn đến những kết quả không chính xác - tức là tải dữ liệu trước nhưng sau đó chuyển hướng không xảy ra — điều này không ai muốn. Có một phương án khác, `data-sveltekit-preload-code` cho phép bạn preload JavaScript cần thiết cho một đường dẫn nhất định mà không cần tải trước dữ liệu của nó. Thuộc tính này có thể có một trong những giá trị sau:
+Việc sử dụng `data-sveltekit-preload-data` đôi khi dẫn đến những kết quả không chính xác - dữ liệu được tải trước nhưng sau đó chuyển hướng không xảy ra — có thể không như mong muốn. Có một phương án khác, `data-sveltekit-preload-code` cho phép bạn preload JavaScript cần thiết cho một đường dẫn nhất định mà không cần tải trước dữ liệu của nó. Thuộc tính này có thể có một trong những giá trị sau:
 
 - `"eager"` — preload mọi thứ trên trang sau mỗi chuyển hướng
 - `"viewport"` — preload mọi thứ khi nó xuất hiện trong viewport
