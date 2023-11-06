@@ -25,7 +25,7 @@ export async function load(+++{ parent }+++) {
 }
 ```
 
-> Lưu ý rằng một hàm `load` [phổ rộng](/tutorial/universal-load-functions) có thể lấy dữ liệu từ một hàm `load` _server_ cha. Ngược lại thì không được — một hàm `load` server chỉ có thể lấy dữ liệu phần tử cha từ một hàm `load` khác trên server.
+> Lưu ý rằng một hàm `load` [phổ rộng](/tutorial/universal-load-functions) có thể lấy dữ liệu từ một hàm `load` _server_ cha. Ngược lại thì không được — một hàm `load` server chỉ có thể lấy dữ liệu cha từ một hàm `load` khác trên server.
 
 Cuối cùng, trong `src/routes/sum/+page.js`, lấy dữ liệu phần tử cha từ cả hai hàm `load`:
 
