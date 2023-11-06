@@ -2,7 +2,7 @@
 title: $env/static/private
 ---
 
-Biến môi trường - như khóa API và thông tin đăng nhập cơ sở dữ liệu - có thể được thêm vào tệp `.env`, và chúng sẽ được sử dụng trong ứng dụng của bạn.
+Biến môi trường - như khóa API và thông tin đăng nhập cơ sở dữ liệu - có thể được thêm vào tệp `.env` và sẽ có hiệu lực trong ứng dụng của bạn.
 
 > Bạn cũng có thể sử dụng các tệp `.env.local` hoặc `.env.[mode]` - xem [tài liệu Vite](https://vitejs.dev/guide/env-and-mode.html#env-files) để biết thêm thông tin. Đảm bảo bạn thêm bất kỳ tệp nào chứa thông tin nhạy cảm vào tệp `.gitignore` của bạn!
 >
