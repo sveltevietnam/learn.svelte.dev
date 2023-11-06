@@ -2,9 +2,9 @@
 title: $env/static/public
 ---
 
-Some environment variables _can_ be safely exposed to the browser. These are distinguished from private environment variables with a `PUBLIC_` prefix.
+Một số biến môi trường _có thể_ được mở rộng an toàn cho trình duyệt. Chúng được phân biệt với biến môi trường riêng tư thông qua tiền tố `PUBLIC_`.
 
-Add values to the two public environment variables in `.env`:
+Thêm giá trị cho hai biến môi trường công khai trong `.env`:
 
 ```env
 /// file: .env
@@ -12,7 +12,7 @@ PUBLIC_THEME_BACKGROUND=+++"steelblue"+++
 PUBLIC_THEME_FOREGROUND=+++"bisque"+++
 ```
 
-Then, import them into `src/routes/+page.svelte`:
+Sau đó, import chúng vào `src/routes/+page.svelte`:
 
 ```svelte
 /// file: src/routes/+page.svelte

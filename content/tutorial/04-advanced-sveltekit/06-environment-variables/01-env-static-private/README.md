@@ -2,22 +2,22 @@
 title: $env/static/private
 ---
 
-Environment variables — like API keys and database credentials — can be added to a `.env` file, and they will be made available to your application.
+Biến môi trường - như khóa API và thông tin đăng nhập cơ sở dữ liệu - có thể được thêm vào tệp `.env` và sẽ có hiệu lực trong ứng dụng của bạn.
 
-> You can also use `.env.local` or `.env.[mode]` files — see the [Vite documentation](https://vitejs.dev/guide/env-and-mode.html#env-files) for more information. Make sure you add any files containing sensitive information to your `.gitignore` file!
+> Bạn cũng có thể sử dụng các tệp `.env.local` hoặc `.env.[mode]` - xem [tài liệu Vite](https://vitejs.dev/guide/env-and-mode.html#env-files) để biết thêm thông tin. Hãy nhớ thêm bất kỳ tệp nào chứa thông tin nhạy cảm vào `.gitignore` của bạn!
 >
-> Environment variables in `process.env` are also available via `$env/static/private`.
+> Biến môi trường trong `process.env` cũng có sẵn qua `$env/static/private`.
 
-In this exercise, we want to allow the user to enter the website if they know the correct passphrase, using an environment variable.
+Trong bài tập này, bằng cách sử dụng biến môi trường, chúng ta muốn cho phép người dùng truy cập trang web nếu họ biết passphrase đúng.
 
-First, in `.env`, add a new environment variable:
+Đầu tiên, trong `.env`, thêm một biến môi trường mới:
 
 ```env
 /// file: .env
 PASSPHRASE=+++"open sesame"+++
 ```
 
-Open `src/routes/+page.server.js`. Import `PASSPHRASE` from `$env/static/private` and use it inside the [form action](/tutorial/the-form-element):
+Mở `src/routes/+page.server.js`. Import `PASSPHRASE` từ `$env/static/private` và sử dụng nó bên trong [form action](/tutorial/the-form-element):
 
 ```js
 /// file: src/routes/+page.server.js
@@ -49,13 +49,13 @@ export const actions = {
 };
 ```
 
-The website is now accessible to anyone who knows the correct passphrase.
+Trang web giờ có thể truy cập cho bất kỳ ai biết passphrase đúng.
 
-## Keeping secrets
+## Giữ bí mật
 
-It's important that sensitive data doesn't accidentally end up being sent to the browser, where it could easily be stolen by hackers and scoundrels.
+Điều quan trọng là dữ liệu nhạy cảm không vô tình bị gửi tới trình duyệt, nơi nó có thể dễ dàng bị đánh cắp bởi hacker và những kẻ gian.
 
-SvelteKit makes it easy to prevent this from happening. Notice what happens if we try to import `PASSPHRASE` into `src/routes/+page.svelte`:
+SvelteKit giúp bạn dễ dàng ngăn chặn điều này xảy ra. Lưu ý điều gì sẽ xảy ra nếu chúng ta thử import `PASSPHRASE` vào `src/routes/+page.svelte`:
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -65,28 +65,28 @@ SvelteKit makes it easy to prevent this from happening. Notice what happens if w
 </script>
 ```
 
-An error overlay pops up, telling us that `$env/static/private` cannot be imported into client-side code. It can only be imported into server modules:
+Một bảng lỗi xuất hiện, thông báo cho chúng ta rằng `$env/static/private` không thể được import vào mã chạy ở phía client. Nó chỉ có thể được import vào các mô-đun server:
 
 - `+page.server.js`
 - `+layout.server.js`
 - `+server.js`
-- any modules ending with `.server.js`
-- any modules inside `src/lib/server`
+- bất kỳ mô-đun nào kết thúc bằng `.server.js`
+- bất kỳ mô-đun nào trong `src/lib/server`
 
-In turn, these modules can only be imported by _other_ server modules.
+Lần lượt, những mô-đun này chỉ có thể được import bởi những mô-đun server _khác_.
 
-## Static vs dynamic
+## Tĩnh và động
 
-The `static` in `$env/static/private` indicates that these values are known at build time, and can be _statically replaced_. This enables useful optimisations:
+Chữ `static` trong `$env/static/private` chỉ ra rằng những giá trị này được biết tại thời điểm build và có thể được _thay thế tĩnh_. Điều này giúp ích trong việc tối ưu hóa:
 
 ```js
 /// no-file
 import { FEATURE_FLAG_X } from '$env/static/private';
 
 if (FEATURE_FLAG_X === 'enabled') {
-	// code in here will be removed from the build output
-	// if FEATURE_FLAG_X is not enabled
+	// mã ở đây sẽ bị xóa khỏi kết quả build
+	// nếu FEATURE_FLAG_X không bằng enabled
 }
 ```
 
-In some cases you might need to refer to environment variables that are _dynamic_ — in other words, not known until we run the app. We'll cover this case in the next exercise.
+Trong một số trường hợp, bạn có thể cần tham chiếu đến các biến môi trường là _động_ - nói cách khác, ta không biết cho đến khi chúng ta chạy ứng dụng. Chúng ta sẽ đề cập đến trường hợp này trong bài tập tiếp theo.

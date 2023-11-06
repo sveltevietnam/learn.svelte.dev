@@ -4,13 +4,13 @@
 
 <form method="POST">
 	<label>
-		enter the passphrase
+		nhập passphrase
 		<input name="passphrase" autocomplete="off" />
 	</label>
 </form>
 
 {#if form?.incorrect}
-	<p class="error">wrong passphrase!</p>
+	<p class="error">sai passphrase!</p>
 {/if}
 
 <style>
