@@ -2,13 +2,13 @@
 title: csr
 ---
 
-Client-side rendering is what makes the page interactive — such as incrementing the counter when you click the button in this app — and enables SvelteKit to update the page upon navigation without a full-page reload.
+Client-side rendering làm cho trang có thể tương tác - chẳng hạn như tăng giảm số lần khi bạn nhấp vào nút trong ứng dụng này - và cho phép SvelteKit cập nhật trang sau mỗi lần điều hướng mà không cần tải lại trang.
 
-As with `ssr`, you can disable client-side rendering altogether:
+Tương tự như `ssr`, bạn có thể tắt việc render trên phía client hoàn toàn:
 
 ```js
 /// file: src/routes/+page.server.js
 export const csr = false;
 ```
 
-This means that no JavaScript is served to the client, but it also means that your components are no longer interactive. It can be a useful way to check whether or not your application is usable for people who — for whatever reason — cannot use JavaScript.
+Điều này có nghĩa là không có mã JavaScript nào được đưa đến client, nhưng cũng có nghĩa là các thành phần của bạn không còn tương tác được. Đây có thể là một cách hữu ích để kiểm tra xem ứng dụng của bạn có dùng được đối với những người không sử dụng JavaScript vì bất kỳ lý do nào.

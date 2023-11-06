@@ -1,1 +1,1 @@
-<h2>Page options</h2>
+<h2>Tùy chọn trang</h2>
