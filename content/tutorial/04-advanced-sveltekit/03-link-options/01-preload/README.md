@@ -15,7 +15,7 @@ Không phải lúc nào bạn cũng có thể làm dữ liệu của mình tải
 </nav>
 ```
 
-Việc chuyển hướng đến `/slow-a` sẽ nhanh hơn đáng kể. Bắt đầu chuyển hướng khi di chuột qua hoặc chạm vào (thay vì chờ sự kiện click được đăng ký) có lẽ không tạo ra sự khác biệt lớn, nhưng thực tế thường tiết kiệm 200ms hoặc hơn. Đó là đủ để thấy sự khác biệt giữa chậm và nhanh.
+Việc chuyển hướng đến `/slow-a` bây giờ sẽ nhanh hơn đáng kể. Chuyển hướng bằng cách di chuột qua hoặc chạm vào (thay vì chờ sự kiện `click` được ghi nhận) nghe có vẻ không tạo khác biệt lớn lắm, nhưng thực tế thường tiết kiệm 200ms hoặc hơn, đủ để thấy sự khác biệt giữa chậm và nhanh.
 
 Bạn có thể đặt thuộc tính này trên từng liên kết hoặc trên bất kỳ phần tử nào _chứa_ liên kết. Mẫu dự án mặc định chứa thuộc tính trên phần tử <body>:
 
