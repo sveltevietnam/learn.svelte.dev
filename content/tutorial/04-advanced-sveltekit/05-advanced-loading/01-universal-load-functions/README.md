@@ -1,21 +1,21 @@
 ---
-title: Universal load functions
+title: Universal load functions (Hàm phổ dụng)
 ---
 
-In the [previous section on loading](page-data) we loaded data from the server using `+page.server.js` and `+layout.server.js` files. This is very convenient if you need to do things like getting data directly from a database, or reading cookies.
+Trong [phần trước về việc tải dữ liệu](page-data) chúng ta đã tải dữ liệu từ server bằng cách sử dụng các tệp `+page.server.js` và `+layout.server.js`. Điều này rất thuận tiện nếu bạn cần thực hiện các nhiệm vụ như lấy dữ liệu trực tiếp từ cơ sở dữ liệu hoặc đọc cookie.
 
-Sometimes it doesn't make sense to load data from the server when doing a client-side navigation. For example:
+Đôi khi việc tải dữ liệu từ server khi thực hiện điều hướng phía client không được hợp lý lắm. Ví dụ:
 
-- You're loading data from an external API
-- You want to use in-memory data if it's available
-- You want to delay navigation until an image has been preloaded, to avoid pop-in
-- You need to return something from `load` that can't be serialized (SvelteKit uses [devalue](https://github.com/Rich-Harris/devalue) to turn server data into JSON), such as a component or a store
+- Bạn đang tải dữ liệu từ một API bên ngoài
+- Bạn muốn sử dụng dữ liệu (nếu) có sẳn trên bộ nhớ
+- Bạn muốn tránh sự xuất hiện đột ngột nên muốn trì hoãn điều hướng cho đến khi một hình ảnh đã được tải xong
+- Bạn cần trả về một cái gì đó từ `load` mà không thể serialized (SvelteKit sử dụng [devalue](https://github.com/Rich-Harris/devalue) để chuyển đổi dữ liệu từ server thành JSON), chẳng hạn như một component hoặc một store
 
-In this exercise, we're dealing with the latter case. The server `load` functions in `src/routes/red/+page.server.js`, `src/routes/green/+page.server.js` and `src/routes/blue/+page.server.js` return a `component` constructor, which can't be serialized like data. If you navigate to `/red`, `/green` or `/blue`, you'll see a 'Data returned from `load` ... is not serializable' error in the terminal.
+Trong bài tập này, chúng ta đang xử lý trường hợp cuối cùng. Các hàm server `load` trong các tệp `src/routes/red/+page.server.js`, `src/routes/green/+page.server.js` và `src/routes/blue/+page.server.js` trả về một hàm tạo `component`, những `component` này không thể serialized như dữ liệu. Nếu bạn di chuyển đến `/red`, `/green` hoặc `/blue`, bạn sẽ thấy một lỗi 'Dữ liệu được trả về từ `load` ... không thể được serializable' _('Data returned from `load` ... is not serializable')_ trong cửa sổ terminal.
 
-To turn the server `load` functions into universal `load` functions, rename each `+page.server.js` file to `+page.js`. Now, the functions will run on the server during server-side rendering, but will also run in the browser when the app hydrates or the user performs a client-side navigation.
+Để chuyển đổi các hàm `load` trên server thành các hàm `load` phổ dụng, đổi tên từng tệp `+page.server.js` thành `+page.js`. Bây giờ, các hàm sẽ chạy trên server trong quá trình render phía server, nhưng cũng sẽ chạy trong trình duyệt khi ứng dụng hydrate hoặc người dùng thực hiện một điều hướng phía client.
 
-We can now use the `component` returned from these `load` functions like any other value, including in `src/routes/+layout.svelte`:
+Bây giờ, chúng ta có thể sử dụng `component` được trả về từ các hàm `load` này giống như bất kỳ giá trị nào khác, bao gồm trong `src/routes/+layout.svelte`:
 
 ```svelte
 /// file: src/routes/+layout.svelte
@@ -34,4 +34,4 @@ We can now use the `component` returned from these `load` functions like any oth
 </nav>
 ```
 
-Read the [documentation](https://kit.svelte.dev/docs/load#universal-vs-server) to learn more about the distinction between server `load` functions and universal `load` functions, and when to use which.
+Đọc [tài liệu](https://kit.svelte.dev/docs/load#universal-vs-server) để biết thêm về sự phân biệt giữa các hàm load trên server và các hàm load phổ rộng, cũng như khi nào nên sử dụng chúng.

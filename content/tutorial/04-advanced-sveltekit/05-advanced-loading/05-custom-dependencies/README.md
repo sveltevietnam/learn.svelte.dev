@@ -1,13 +1,14 @@
 ---
-title: Custom dependencies
+title: Tùy biến phụ thuộc
 path: /Europe/London
 ---
 
-Calling `fetch(url)` inside a `load` function registers `url` as a dependency. Sometimes it's not appropriate to use `fetch`, in which case you can specify a dependency manually with the [`depends(url)`](https://kit.svelte.dev/docs/load#invalidation-manual-invalidation) function.
+Gọi `fetch(url)` bên trong một hàm `load` đăng ký `url` như một dependency _(phụ thuộc)_. Đôi khi sử dụng `fetch` không phù hợp lắm, trong trường hợp đó bạn có thể chỉ định một phụ thuộc một cách thủ công với hàm [`depends(url)`](https://kit.svelte.dev/docs/load#invalidation-manual-invalidation).
 
-Since any string that begins with an `[a-z]+:` pattern is a valid URL, we can create custom invalidation keys like `data:now`.
 
-Update `src/routes/+layout.js` to return a value directly rather than making a `fetch` call, and add the `depends`:
+Vì bất kỳ chuỗi nào bắt đầu bằng mẫu `[a-z]+:` đều là một URL hợp lệ, chúng ta có thể tạo khóa vô hiệu lực tùy ý như `data:now`.
+
+Cập nhật `src/routes/+layout.js` để trả về một giá trị trực tiếp thay vì thực hiện một cuộc gọi `fetch`, và thêm `depends`:
 
 ```js
 /// file: src/routes/+layout.js
@@ -20,7 +21,7 @@ export async function load({ +++depends+++ }) {
 }
 ```
 
-Now, update the `invalidate` call in `src/routes/[...timezone]/+page.svelte`:
+Tiếp theo, cập nhật `invalidate` trong `src/routes/[...timezone]/+page.svelte`:
 
 ```svelte
 /// file: src/routes/[...timezone]/+page.svelte
