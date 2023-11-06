@@ -1,14 +1,14 @@
 ---
-title: Route groups
+title: nhóm Route
 ---
 
-As we saw in the [routing introduction](/tutorial/layouts), layouts are a way to share UI and data loading logic between different routes.
+Như chúng ta đã thấy trong [giới thiệu về routing](/tutorial/layouts), layouts là một cách để chia sẻ UI và logic tải dữ liệu giữa các route khác nhau.
 
-Sometimes it's useful to use layouts without affecting the route — for example, you might need your `/app` and `/account` routes to be behind authentication, while your `/about` page is open to the world. We can do this with a _route group_, which is a directory in parentheses.
+Đôi khi thật tiện khi sử dụng layouts mà không ảnh hưởng đến route — ví dụ, bạn có thể cần phải xác thực trước khi truy cập các route `/app` và `/account`, trong khi trang `/about` của bạn thì không. Chúng ta có thể làm điều này với một _nhóm route_, đó là một thư mục trong dấu ngoặc đơn.
 
-Create an `(authed)` group by renaming `account` to `(authed)/account` then renaming `app` to `(authed)/app`.
+Tạo một nhóm `(authed)` bằng cách đổi tên `account` thành `(authed)/account` sau đó đổi tên `app` thành `(authed)/app`.
 
-Now we can control access to these routes by creating `src/routes/(authed)/+layout.server.js`:
+Bây giờ chúng ta có thể kiểm soát quyền truy cập vào các route này bằng cách tạo `src/routes/(authed)/+layout.server.js`:
 
 ```js
 /// file: src/routes/(authed)/+layout.server.js
@@ -21,15 +21,15 @@ export function load({ cookies, url }) {
 }
 ```
 
-If you try to visit these pages, you'll be redirected to the `/login` route, which has a form action in `src/routes/login/+page.server.js` that sets the `logged_in` cookie.
+Nếu bạn cố gắng truy cập các trang này, bạn sẽ được chuyển hướng đến route `/login`, có một form action trong `src/routes/login/+page.server.js` thiết lập cookie `logged_in`.
 
-We can also add some UI to these two routes by adding a `src/routes/(authed)/+layout.svelte` file:
+Chúng ta cũng có thể thêm một số UI vào hai route này bằng cách thêm tệp `src/routes/(authed)/+layout.svelte`:
 
 ```svelte
 /// file: src/routes/(authed)/+layout.svelte
 <slot />
 
 <form method="POST" action="/logout">
-	<button>log out</button>
+	<button>đăng xuất</button>
 </form>
 ```

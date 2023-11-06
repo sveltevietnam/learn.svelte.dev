@@ -1,1 +1,1 @@
-<h1>color picker</h1>
+<h1>chọn màu</h1>

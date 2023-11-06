@@ -1,3 +1,3 @@
 <h1>app</h1>
 
-<p>this is the app</p>
+<p>đây là ứng dụng</p>

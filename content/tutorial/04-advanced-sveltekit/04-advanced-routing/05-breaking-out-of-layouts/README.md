@@ -1,16 +1,16 @@
 ---
-title: Breaking out of layouts
+title: Thoát layouts
 ---
 
-Ordinarily, a page inherits every layout above it, meaning that `src/routes/a/b/c/+page.svelte` inherits four layouts:
+Thường thì, một trang kế thừa tất cả các layout ở phía trên nó, có nghĩa là `src/routes/a/b/c/+page.svelte` sẽ kế thừa bốn layout:
 
 - `src/routes/+layout.svelte`
 - `src/routes/a/+layout.svelte`
 - `src/routes/a/b/+layout.svelte`
 - `src/routes/a/b/c/+layout.svelte`
 
-Occasionally, it's useful to break out of the current layout hierarchy. We can do that by adding the `@` sign followed by the name of the parent segment to 'reset' to — for example `+page@b.svelte` would put `/a/b/c` inside `src/routes/a/b/+layout.svelte`, while `+page@a.svelte` would put it inside `src/routes/a/+layout.svelte`.
+Thỉnh thoảng ta cần thoát khỏi layout hiện tại. Có thể làm điều đó bằng cách thêm ký hiệu `@`, theo sau là layout cha. Ví dụ, `+page@b.svelte` sẽ đặt trang `/a/b/c` vào bên trong `src/routes/a/b/+layout.svelte`, trong khi `+page@a.svelte` sẽ đặt nó vào bên trong `src/routes/a/+layout.svelte`.
 
-Let's reset it all the way to the root layout, by renaming it to `+page@.svelte`.
+Hãy reset toàn bộ về layout gốc, bằng cách đổi tên thành `+page@.svelte`.
 
-> The root layout applies to every page of your app, you cannot break out of it.
+> Layout gốc áp dụng cho mọi trang của ứng dụng của bạn, bạn không thể thoát khỏi nó.

@@ -1,16 +1,17 @@
 ---
-title: Optional parameters
+title: Tham số tùy chọn
 ---
 
-In the first chapter on [routing](/tutorial/pages), we learned how to create routes with [dynamic parameters](/tutorial/params).
+Trong chương đầu tiên về [định tuyến](/tutorial/pages), chúng ta đã học cách tạo các đường dẫn với [tham số động](/tutorial/params).
 
-Sometimes it's helpful to make a parameter optional. A classic example is when you use the pathname to determine the locale — `/fr/...`, `/de/...` and so on — but you also want to have a default locale.
+Đôi khi sẽ hữu ích nếu cho một tham số là tùy chọn. Một ví dụ điển hình là khi bạn sử dụng đường dẫn để xác định ngôn ngữ - `/fr/...`, `/de/...` v.v... - nhưng bạn cũng muốn có một ngôn ngữ mặc định.
 
-To do that, we use double brackets. Rename the `[lang]` directory to `[[lang]]`.
+Để làm điều đó, chúng ta sử dụng cặp dấu ngoặc kép. Đổi tên thư mục `[lang]` thành `[[lang]]`.
 
-The app now fails to build, because `src/routes/+page.svelte` and `src/routes/[[lang]]/+page.svelte` would both match `/`. Delete `src/routes/+page.svelte`. (You may need to reload the app to recover from the error page).
+Ứng dụng sẽ không build thành công ngay bây giờ vì `src/routes/+page.svelte` và `src/routes/[[lang]]/+page.svelte` đều sẽ phù hợp với `/`. Hãy xóa `src/routes/+page.svelte`. (Bạn cần tải lại ứng dụng để khắc phục trang bị lỗi).
 
-Lastly, edit `src/routes/[[lang]]/+page.server.js` to specify the default locale:
+Cuối cùng, chỉnh sửa `src/routes/[[lang]]/+page.server.js` để chỉ định ngôn ngữ mặc định:
+
 
 ```js
 /// file: src/routes/[[lang]]/+page.server.js
@@ -18,11 +19,12 @@ const greetings = {
 	en: 'hello!',
 	de: 'hallo!',
 	fr: 'bonjour!'
+	vn: 'xin chào'
 };
 
 export function load({ params }) {
 	return {
-		greeting: greetings[params.lang +++?? 'en'+++]
+		greeting: greetings[params.lang +++?? 'vn'+++]
 	};
 }
 ```
