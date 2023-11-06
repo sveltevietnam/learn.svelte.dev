@@ -22,4 +22,4 @@ export async function load(+++{ data }+++) {
 }
 ```
 
-> Lưu ý rằng dữ liệu không được hợp nhất — chúng ta phải trả về `message` một cách rõ ràng từ hàm tải phổ rộng.
+> Lưu ý rằng dữ liệu không được hợp nhất (merge) — chúng ta phải trả về `message` một cách rõ ràng từ hàm tải phổ rộng.
