@@ -9,7 +9,7 @@ Nếu không định trước số lượng phân đoạn đường dẫn, bạn
 
 Đổi tên `src/routes/[path]` thành `src/routes/[...path]`. Bây giờ, route này sẽ phù hợp với bất kỳ đường dẫn nào.
 
-> Đối với các route khác, nếu rout nào cụ thể rõ ràng hơn, sẽ được kiểm tra trước, làm cho rest parameters trở nên hữu ích như là các route 'catch-all'. Ví dụ, nếu bạn cần một trang 404 tùy chỉnh cho các trang bên trong `/categories/...`, bạn có thể thêm các tệp như sau:
+> Các route cụ thể hơn sẽ được kiểm tra trước, khiến rest parameters trở nên hữu ích như một route 'catch all'. Ví dụ, nếu bạn cần tùy chỉnh trang 404 cho các trang `/categories/...`, bạn có thể thêm các tệp sau:
 >
 > ```diff
 > src/routes/
