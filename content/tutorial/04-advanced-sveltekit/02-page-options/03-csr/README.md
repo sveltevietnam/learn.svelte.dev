@@ -11,4 +11,4 @@ Tương tự như `ssr`, bạn có thể tắt việc render trên phía client 
 export const csr = false;
 ```
 
-Điều này có nghĩa là không có mã JavaScript nào được phục vụ cho client, nhưng cũng có nghĩa là các thành phần của bạn không còn tương tác. Điều này có thể là một cách hữu ích để kiểm tra xem ứng dụng của bạn có thể sử dụng được cho những người không thể sử dụng JavaScript vì bất kỳ lý do nào.
+Điều này có nghĩa là không có mã JavaScript nào được đưa đến client, nhưng cũng có nghĩa là các thành phần của bạn không còn tương tác được. Đây có thể là một cách hữu ích để kiểm tra xem ứng dụng của bạn có dùng được đối với những người không sử dụng JavaScript vì bất kỳ lý do nào.
