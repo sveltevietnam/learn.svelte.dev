@@ -4,7 +4,7 @@ title: Preloading
 
 Trong bài tập này, cả hai đường dẫn `/slow-a` và `/slow-b` đều được tạo một độ trễ trong các hàm `load` của chúng, điều này có nghĩa là mất nhiều thời gian để chuyển hướng đến chúng.
 
-Bạn không thể luôn làm cho dữ liệu của mình tải nhanh hơn — đôi khi điều đó nằm ngoài tầm kiểm soát của bạn — nhưng SvelteKit có thể tăng tốc độ chuyển hướng bằng cách _dự đoán_ chúng. Khi một phần tử `<a>` có thuộc tính `data-sveltekit-preload-data`, SvelteKit sẽ bắt đầu chuyển hướng ngay khi người dùng di chuột qua liên kết (trên máy tính để bàn) hoặc chạm vào nó (trên điện thoại di động). Hãy thử thêm nó vào liên kết đầu tiên:
+Không phải lúc nào bạn cũng có thể làm dữ liệu của mình tải nhanh hơn — đôi khi điều đó nằm ngoài tầm kiểm soát của bạn — nhưng SvelteKit có thể tăng tốc độ chuyển hướng bằng cách _dự đoán_ chúng. Khi một phần tử `<a>` có thuộc tính `data-sveltekit-preload-data`, SvelteKit sẽ bắt đầu chuyển hướng ngay khi người dùng di chuột qua liên kết (trên máy tính để bàn) hoặc chạm vào nó (trên điện thoại di động). Hãy thử thêm nó vào liên kết đầu tiên:
 
 ```svelte
 /// file: src/routes/+layout.svelte
