@@ -16,6 +16,6 @@ export function match(value) {
 
 Sau đó, để sử dụng bộ so khớp mới, đổi tên `src/routes/colors/[color]` thành `src/routes/colors/[color=hex]`.
 
-Bây giờ, mỗi khi ai đó điều hướng đến route đó, SvelteKit sẽ xác minh xem `color` có phải là giá trị `hex` hợp lệ hay không. Nếu không, SvelteKit sẽ thử khớp với các route khác, trước khi trả về một trang 404.
+Bây giờ, khi điều hướng đến route đó, SvelteKit sẽ xác minh xem `color` có phải là giá trị `hex` hợp lệ hay không. Nếu không, SvelteKit sẽ thử khớp với các route khác, trước khi trả về một trang 404.
 
 > Bộ so khớp chạy cả trên máy chủ và trong trình duyệt.
