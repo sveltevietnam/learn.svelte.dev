@@ -4,7 +4,7 @@ title: prerender
 
 Prerendering có nghĩa là tạo HTML cho một trang một lần vào thời điểm build, thay vì linh động tạo HTML cho trang cho mỗi lần có yêu cầu request.
 
-Ưu điểm khi dùng dữ liệu tĩnh là rất rẻ và mang lại hiệu suất, cho phép bạn dễ dàng phục vụ một số lượng lớn người dùng mà không phải lo lắng về cache-control headers (cái rất dễ gặp lỗi).
+Ưu điểm khi dùng dữ liệu tĩnh là rất rẻ và hiệu suất, cho phép bạn dễ dàng phục vụ một số lượng lớn người dùng mà không phải lo lắng về cache-control headers (cái rất dễ gặp lỗi).
 
 Đổi lại là quá trình build mất thời gian hơn và nội dung được prerender chỉ có thể được cập nhật bằng cách build và triển khai một phiên bản mới của ứng dụng.
 
