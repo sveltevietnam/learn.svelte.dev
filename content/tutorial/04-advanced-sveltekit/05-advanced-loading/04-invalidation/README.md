@@ -5,7 +5,7 @@ path: /Europe/London
 
 Khi người dùng điều hướng từ một trang sang trang khác, SvelteKit sẽ gọi các hàm `load`, nhưng chỉ khi nó nghĩ rằng đã có sự thay đổi.
 
-Trong ví dụ này, việc điều hướng giữa các múi giờ làm cho hàm `load` trong `src/routes/[...timezone]/+page.js` chạy lại vì `params.timezone` không hợp lệ. Nhưng hàm `load` trong `src/routes/+layout.js` _không_ chạy lại, bởi vì theo SvelteKit, nó không bị vô hiệu hóa do điều hướng.
+Trong ví dụ này, việc điều hướng giữa các múi giờ làm cho hàm `load` trong `src/routes/[...timezone]/+page.js` chạy lại vì `params.timezone` không hợp lệ. Nhưng hàm `load` trong `src/routes/+layout.js` _không_ chạy lại, bởi vì theo SvelteKit, nó không bị mất hiệu lực bởi điều hướng đó.
 
 Chúng ta có thể sửa điều đó bằng cách vô hiệu hóa nó một cách thủ công sử dụng hàm [`invalidate(...)`](https://kit.svelte.dev/docs/modules#$app-navigation-invalidate), hàm này nhận vào một URL và chạy lại bất kỳ hàm `load` nào phụ thuộc vào nó. Bởi vì hàm `load` trong `src/routes/+layout.js` gọi `fetch('/api/now')`, nó phụ thuộc vào `/api/now`.
 
