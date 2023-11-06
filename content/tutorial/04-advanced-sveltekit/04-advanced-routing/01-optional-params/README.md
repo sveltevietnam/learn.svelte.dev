@@ -4,7 +4,7 @@ title: Tham số tùy chọn
 
 Trong chương đầu tiên về [định tuyến](/tutorial/pages), chúng ta đã học cách tạo các đường dẫn với [tham số động](/tutorial/params).
 
-Đôi khi việc làm cho một tham số có thể tùy chọn rất hữu ích. Một ví dụ điển hình là khi bạn sử dụng đường dẫn để xác định ngôn ngữ - `/fr/...`, `/de/...` v.v... - nhưng bạn cũng muốn có một ngôn ngữ mặc định.
+Đôi khi sẽ hữu ích nếu cho một tham số là tùy chọn. Một ví dụ điển hình là khi bạn sử dụng đường dẫn để xác định ngôn ngữ - `/fr/...`, `/de/...` v.v... - nhưng bạn cũng muốn có một ngôn ngữ mặc định.
 
 Để làm điều đó, chúng ta sử dụng cặp dấu ngoặc kép. Đổi tên thư mục `[lang]` thành `[[lang]]`.
 
