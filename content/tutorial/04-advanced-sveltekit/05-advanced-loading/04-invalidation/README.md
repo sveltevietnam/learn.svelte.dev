@@ -38,4 +38,4 @@ Trong `src/routes/[...timezone]/+page.svelte`, thêm một hàm gọi lại `onM
 </h1>
 ```
 
-> Bạn cũng có thể truyền một hàm cho `invalidate`, trong trường hợp bạn muốn vô hiệu hóa dựa trên một mẫu và không phải là URL cụ thể.
+> Bạn cũng có thể truyền một hàm cho `invalidate`, trong trường hợp bạn muốn vô hiệu hóa dựa trên một đặc tính chứ không phải là URL cụ thể.
