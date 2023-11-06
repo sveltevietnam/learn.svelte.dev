@@ -4,7 +4,7 @@ path: /how
 focus: /src/routes/[path]/+page.svelte
 ---
 
-Để phù hợp với một số đoạn path không xác định trước, bạn có thể sử dụng tham số `[...rest]`, được đặt tên như vậy vì nó giống với [rest parameters trong JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
+Nếu không định trước số lượng phân đoạn đường dẫn, bạn có thể sử dụng tham số `[...rest]`, được đặt tên như vậy vì nó giống với [rest parameters trong JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
 
 
 Đổi tên `src/routes/[path]` thành `src/routes/[...path]`. Bây giờ, route này sẽ phù hợp với bất kỳ đoạn path nào.
