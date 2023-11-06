@@ -9,7 +9,7 @@ Trong [phần trước về việc tải dữ liệu](page-data) chúng ta đã 
 - Bạn đang tải dữ liệu từ một API bên ngoài
 - Bạn muốn sử dụng dữ liệu (nếu) có sẳn trên bộ nhớ
 - Bạn muốn tránh sự xuất hiện đột ngột nên muốn trì hoãn điều hướng cho đến khi một hình ảnh đã được tải xong
-- Bạn cần trả về một cái gì đó từ `load` mà không thể serialized (SvelteKit sử dụng [devalue](https://github.com/Rich-Harris/devalue) để chuyển đổi dữ liệu từ server thành JSON), chẳng hạn như một thành phần hoặc một store
+- Bạn cần trả về một cái gì đó từ `load` mà không thể serialized (SvelteKit sử dụng [devalue](https://github.com/Rich-Harris/devalue) để chuyển đổi dữ liệu từ server thành JSON), chẳng hạn như một component hoặc một store
 
 Trong bài tập này, chúng ta đang xử lý trường hợp cuối cùng. Các hàm server `load` trong các tệp `src/routes/red/+page.server.js`, `src/routes/green/+page.server.js` và `src/routes/blue/+page.server.js` trả về một hàm tạo `component`, những `component` này không thể serialized như dữ liệu. Nếu bạn di chuyển đến `/red`, `/green` hoặc `/blue`, bạn sẽ thấy một lỗi 'Dữ liệu được trả về từ `load` ... không thể được serializable' _('Data returned from `load` ... is not serializable')_ trong cửa sổ terminal.
 
