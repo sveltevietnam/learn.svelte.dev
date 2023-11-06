@@ -1,5 +1,5 @@
 ---
-title: Vô hiệu hóa
+title: Vô hiệu lực
 path: /Europe/London
 ---
 
