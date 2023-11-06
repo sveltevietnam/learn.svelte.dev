@@ -37,4 +37,4 @@ export async function load(+++{ parent }+++) {
 }
 ```
 
-> Cẩn thận, không tạo ra hiện tượng mô hình thác nước (waterfalls) khi sử dụng `await parent()`. Nếu bạn có thể `fetch` dữ liệu khác không phụ thuộc vào dữ liệu phần tử cha, hãy thực hiện điều đó trước.
+> Cẩn thận để không tạo ra thác nước (waterfalls) khi sử dụng `await parent()`. Nếu bạn có thể `fetch` dữ liệu khác không phụ thuộc vào dữ liệu cha, hãy thực hiện điều đó trước.
