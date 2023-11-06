@@ -1,10 +1,11 @@
 ---
-title: Reloading the page
+title: Tải lại trang
 ---
 
-Ordinarily, SvelteKit will navigate between pages without refreshing the page. In this exercise, if we navigate between `/` and `/about`, the timer keeps on ticking.
+Thường thì, SvelteKit sẽ chuyển hướng giữa các trang mà không làm mới trang. Trong bài tập này, nếu chúng ta chuyển hướng giữa `/` và `/about`, đồng hồ vẫn tiếp tục đếm.
 
-In rare cases, you might want to disable this behaviour. You can do so by adding the `data-sveltekit-reload` attribute on an individual link, or any element that contains links:
+Trong vài trường hợp hiếm hoi, bạn có thể muốn tắt chế độ này. Bạn có thể làm như vậy bằng cách thêm thuộc tính `data-sveltekit-reload` trên một liên kết cụ thể hoặc bất kỳ phần tử nào chứa liên kết:
+
 
 ```svelte
 /// file: src/routes/+layout.svelte
@@ -14,4 +15,4 @@ In rare cases, you might want to disable this behaviour. You can do so by adding
 </nav>
 ```
 
-For more information on available link options and their values, consult the [link options documentation](https://kit.svelte.dev/docs/link-options).
+Để biết thêm thông tin về các tùy chọn liên kết khả dụng và giá trị của chúng, hãy tham khảo [tài liệu tùy chọn liên kết](https://kit.svelte.dev/docs/link-options).

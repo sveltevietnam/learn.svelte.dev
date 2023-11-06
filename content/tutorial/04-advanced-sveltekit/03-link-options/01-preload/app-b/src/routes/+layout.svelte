@@ -23,5 +23,5 @@
 <slot />
 
 {#if previous && end}
-<p>navigated from {previous.from.url.pathname} to {previous.to.url.pathname} in <strong>{end - start}ms</strong></p>
+<p>đã chuyển đến từ {previous.from.url.pathname} to {previous.to.url.pathname} in <strong>{end - start}ms</strong></p>
 {/if}
