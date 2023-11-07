@@ -40,7 +40,7 @@ Vậy là xong! Bây giờ, khi JavaScript được kích hoạt, use:enhance s�
 Bây giờ chúng ta đang cập nhật trang thay vì tải lại nó, chúng ta có thể làm phức tạp hơn với những thứ như transitions:
 
 ```svelte
-/// tệp: src/routes/+page.svelte
+/// file: src/routes/+page.svelte
 <script>
 	+++import { fly, slide } from 'svelte/transition';+++
 	import { enhance } from '$app/forms';
@@ -51,6 +51,6 @@ Bây giờ chúng ta đang cập nhật trang thay vì tải lại nó, chúng t
 ```
 
 ```svelte
-/// tệp: src/routes/+page.svelte
+/// file: src/routes/+page.svelte
 <li +++in:fly={{ y: 20 }} out:slide+++>...</li>
 ```
