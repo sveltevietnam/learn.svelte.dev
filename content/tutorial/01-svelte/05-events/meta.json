@@ -1,5 +1,5 @@
 {
-	"title": "Events",
+	"title": "Sự kiện",
 	"scope": {
 		"prefix": "/src/lib/",
 		"name": "src"

@@ -1,8 +1,8 @@
 ---
-title: Component events
+title: Sự kiện trong component
 ---
 
-Components can also dispatch events. To do so, they must create an event dispatcher. Update `Inner.svelte`:
+Component cũng có thể phái _(dispatch)_ các sự kiện. Bạn cần phải tạo một _event dispatcher_ để có thể làm điều này.
 
 ```svelte
 /// file: Inner.svelte
@@ -13,19 +13,19 @@ Components can also dispatch events. To do so, they must create an event dispatc
 
 	function sayHello() {
 		dispatch('message', {
-			text: 'Hello!'
+			text: 'Xin chào!'
 		});
 	}
 </script>
 ```
 
-> `createEventDispatcher` must be called when the component is first instantiated — you can't do it later inside e.g. a `setTimeout` callback. This links `dispatch` to the component instance.
+> Bạn phải gọi `createEventDispatcher` khi component được khởi tạo lần đầu - bạn không thể chúng gọi sau này, chẳng hạn như trong callback của `setTimeout`. Việc này sẽ liên kết `dispatch` với instance của component.
 
-Then, add an `on:message` handler in `App.svelte`:
+Sau đó, thêm handler `on:message` vào `App.svelte`:
 
 ```svelte
 /// file: App.svelte
 <Inner +++on:message={handleMessage}+++ />
 ```
 
-> You can also try changing the event name to something else. For instance, change `dispatch('message', {...})` to `dispatch('greet', {...})` in `Inner.svelte` and change the attribute name from `on:message` to `on:greet` in `App.svelte`.
+> Bạn cũng có thể thay đổi tên sự kiện thành thứ khác. Chẳng hạn như thay đổi `dispatch('message', {...})` thành `dispatch('greet', {...})` trong `Inner.svelte` và thay đổi tên attribute từ `on:message` thành `on:greet` trong `App.svelte`.

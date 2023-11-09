@@ -1,5 +1,5 @@
 <button on:click>
-	Push
+	Bấm
 </button>
 
 <style>

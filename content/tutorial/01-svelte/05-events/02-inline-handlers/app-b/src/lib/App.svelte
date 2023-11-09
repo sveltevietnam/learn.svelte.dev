@@ -7,7 +7,7 @@
 		m = { x: e.clientX, y: e.clientY };
 	}}
 >
-	The pointer is at {m.x} x {m.y}
+	Con trỏ chuột đang ở {m.x} x {m.y}
 </div>
 
 <style>
