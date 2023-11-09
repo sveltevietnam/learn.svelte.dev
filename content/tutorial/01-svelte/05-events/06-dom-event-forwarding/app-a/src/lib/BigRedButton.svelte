@@ -1,5 +1,5 @@
 <button>
-	Push
+	Bấm
 </button>
 
 <style>

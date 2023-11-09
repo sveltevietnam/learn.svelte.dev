@@ -8,7 +8,7 @@
 </script>
 
 <div on:pointermove={handleMove}>
-	The pointer is at {m.x} x {m.y}
+	Con trỏ chuột đang ở {m.x} x {m.y}
 </div>
 
 <style>

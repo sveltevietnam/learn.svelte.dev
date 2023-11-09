@@ -1,11 +1,11 @@
 <script>
 	function sayHello() {
 		dispatch('message', {
-			text: 'Hello!'
+			text: 'Xin chào!'
 		});
 	}
 </script>
 
 <button on:click={sayHello}>
-	Click to say hello
+	Bấm để nói Xin chào
 </button>

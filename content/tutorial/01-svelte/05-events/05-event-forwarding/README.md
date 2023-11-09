@@ -2,11 +2,12 @@
 title: Event forwarding
 ---
 
-Unlike DOM events, component events don't _bubble_. If you want to listen to an event on some deeply nested component, the intermediate components must _forward_ the event.
+<!-- FIXME: Need link for "bubble" -->
+Không như DOM event, component events không _bubble_. Nếu bạn muốn lắng nghe một sự kiện trên component được lồng sâu bên trong, component trung gian đó phải đẩy _(forward)_ sự kiện đó.
 
-In this case, we have the same `App.svelte` and `Inner.svelte` as in the [previous chapter](/tutorial/component-events), but there's now an `Outer.svelte` component that contains `<Inner/>`.
+Trong trường hợp này, chúng ta có `App.svelte` và `Inner.svelte` trong [phần trước](/tutorial/component-events), và bây giờ ta có component `Outer.svelte` bao gồm `<Inner/>`.
 
-One way we _could_ solve the problem is adding `createEventDispatcher` to `Outer.svelte`, listening for the `message` event, and creating a handler for it:
+Một cách mà ta _có thể_ giải là thêm `createEventDispatcher` vào `Outer.svelte`, _nghe_ sự kiện `message`, và tạo một handler cho nó:
 
 ```svelte
 /// file: Outer.svelte
@@ -24,7 +25,7 @@ One way we _could_ solve the problem is adding `createEventDispatcher` to `Outer
 <Inner on:message={forward}/>
 ```
 
-But that's a lot of code to write, so Svelte gives us an equivalent shorthand — an `on:message` event directive without a value means 'forward all `message` events'.
+Nhưng bạn phải viết khá nhiều code cho việc này, cho nên Svelte có một cách viết tắt - một event `on:message` mà không có giá trị thì nó có nghĩa là "forward tất cả sự kiện có tên `message`".
 
 ```svelte
 /// file: Outer.svelte

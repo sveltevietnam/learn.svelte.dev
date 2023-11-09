@@ -2,9 +2,9 @@
 title: DOM event forwarding
 ---
 
-Event forwarding works for DOM events too.
+Bạn cũng có thể forward sự kiện cho DOM event luôn.
 
-We want to get notified of clicks on our `<BigRedButton>` — to do that, we just need to forward `click` events on the `<button>` element in `BigRedButton.svelte`:
+Để được thông báo khi bấm nút `<BigRedButton>` - ta chỉ cần forward sự kiện `click` trên phần tử `<button>` ở trong `BigRedButton.svelte`:
 
 ```svelte
 /// file: BigRedButton.svelte

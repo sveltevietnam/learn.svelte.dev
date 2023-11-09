@@ -1,3 +1,3 @@
-<button on:click={() => alert('clicked')}>
-	Click me
+<button on:click={() => alert('đã bấm')}>
+	Bấm vào tôi
 </button>
