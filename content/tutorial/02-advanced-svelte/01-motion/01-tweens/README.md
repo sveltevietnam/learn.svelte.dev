@@ -2,11 +2,12 @@
 title: Tweens
 ---
 
-Now that we've covered the basics, it's time to learn some advanced Svelte techniques, starting with _motion_.
+Bây giờ, sau khi đã covers những kiến thức cơ bản, là lúc để học một số kỹ thuật Svelte nâng cao, bắt đầu với _motion_.
 
-Setting values and watching the DOM update automatically is cool. Know what's even cooler? Tweening those values. Svelte includes tools to help you build slick user interfaces that use animation to communicate changes.
+Việc đặt giá trị và theo dõi cập nhật DOM tự động là tuyệt vời. Bạn biết cái gì còn tuyệt vời hơn không? Làm cho những giá trị đó tween. Svelte bao gồm các công cụ để giúp bạn xây dựng giao diện người dùng tuyệt vời sử dụng animation để truyền đạt các thay đổi.
 
-Let's start by changing the `progress` store to a `tweened` value:
+Hãy bắt đầu bằng cách thay đổi `progress` store thành một giá trị `tweened`:
+
 
 ```svelte
 /// file: App.svelte
@@ -17,7 +18,7 @@ Let's start by changing the `progress` store to a `tweened` value:
 </script>
 ```
 
-Clicking the buttons causes the progress bar to animate to its new value. It's a bit robotic and unsatisfying though. We need to add an easing function:
+Việc nhấp vào các nút khiến thanh tiến trình di chuyển đến giá trị mới của nó. Nó trông không được tự nhiên lắm. Chúng ta cần thêm một hàm easing:
 
 ```svelte
 /// file: App.svelte
@@ -32,13 +33,13 @@ Clicking the buttons causes the progress bar to animate to its new value. It's a
 </script>
 ```
 
-> The `svelte/easing` module contains the [Penner easing equations](https://web.archive.org/web/20190805215728/http://robertpenner.com/easing/), or you can supply your own `p => t` function where `p` and `t` are both values between 0 and 1.
+> Module `svelte/easing` chứa các [phương trình easing Penner](https://web.archive.org/web/20190805215728/http://robertpenner.com/easing/), hoặc bạn có thể tự chỉnh hàm `p => t` với `p` và `t` đều là giá trị giữa 0 và 1.
 
-The full set of options available to `tweened`:
+Tập hợp đầy đủ các tùy chọn sẵn có cho `tweened`:
 
-- `delay` — milliseconds before the tween starts
-- `duration` — either the duration of the tween in milliseconds, or a `(from, to) => milliseconds` function allowing you to (e.g.) specify longer tweens for larger changes in value
-- `easing` — a `p => t` function
-- `interpolate` — a custom `(from, to) => t => value` function for interpolating between arbitrary values. By default, Svelte will interpolate between numbers, dates, and identically-shaped arrays and objects (as long as they only contain numbers and dates or other valid arrays and objects). If you want to interpolate (for example) colour strings or transformation matrices, supply a custom interpolator
+- `delay` — số mili giây trước khi tween bắt đầu
+- `duration` — là thời gian của tween trong mili giây, hoặc là một hàm `(from, to) => mili giây` cho phép bạn chỉ định giá trị tween lâu hơn cho sự thay đổi lớn hơn
+- `easing` — một hàm `p => t`
+- `interpolate` — một hàm `(from, to) => t => value` tùy chỉnh để nội suy giữa các giá trị tùy ý. Theo mặc định, Svelte sẽ nội suy giữa các số, ngày và mảng có hình dạng giống nhau (miễn là chúng chỉ chứa số và ngày hoặc các mảng và đối tượng hợp lệ khác). Nếu bạn muốn nội suy (ví dụ) các chuỗi màu hoặc ma trận biến đổi, thì hãy cung cấp một trình nội suy tùy chỉnh
 
-You can also pass these options to `progress.set` and `progress.update` as a second argument, in which case they will override the defaults. The `set` and `update` methods both return a promise that resolves when the tween completes.
+Bạn cũng có thể chuyển các tùy chọn này vào `progress.set` và `progress.update` như là một đối số thứ hai, trong trường hợp đó chúng sẽ ghi đè lên các giá trị mặc định. Cả hai phương thức `set` và `update` đều trả về một promise để giải quyết khi tween hoàn thành.
