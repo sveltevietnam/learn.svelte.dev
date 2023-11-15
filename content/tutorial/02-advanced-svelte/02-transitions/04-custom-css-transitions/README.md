@@ -1,8 +1,8 @@
 ---
-title: Custom CSS transitions
+title: Tùy biến CSS chuyển tiếp
 ---
 
-The `svelte/transition` module has a handful of built-in transitions, but it's very easy to create your own. By way of example, this is the source of the `fade` transition:
+Module `svelte/transition` có một số chuyển tiếp tích hợp sẵn, nhưng rất dễ tạo ra chuyển tiếp riêng của bạn. Qua ví dụ, đây là mã nguồn của chuyển tiếp `fade`:
 
 ```js
 /// no-file
@@ -17,19 +17,19 @@ function fade(node, { delay = 0, duration = 400 }) {
 }
 ```
 
-The function takes two arguments — the node to which the transition is applied, and any parameters that were passed in — and returns a transition object which can have the following properties:
+Hàm nhận hai đối số — node mà chuyển tiếp được áp dụng và bất kỳ tham số nào được truyền vào — và trả về một đối tượng chuyển tiếp có thể có các thuộc tính sau:
 
-- `delay` — milliseconds before the transition begins
-- `duration` — length of the transition in milliseconds
-- `easing` — a `p => t` easing function (see the chapter on [tweening](/tutorial/tweens))
-- `css` — a `(t, u) => css` function, where `u === 1 - t`
-- `tick` — a `(t, u) => {...}` function that has some effect on the node
+- `delay` — số mili giây trước khi chuyển tiếp bắt đầu
+- `duration` — độ dài của chuyển động trong mili giây
+- `easing` — một hàm easing `p => t` (xem chương [tweening](/tutorial/tweens))
+- `css` — một hàm `(t, u) => css`, trong đó `u === 1 - t`
+- `tick` — một hàm `(t, u) => {...}` có một số ảnh hưởng đối với node
 
-The `t` value is `0` at the beginning of an intro or the end of an outro, and `1` at the end of an intro or beginning of an outro.
+Giá trị `t` là `0` ở đầu của một intro hoặc cuối của một outro, và `1` ở cuối của một intro hoặc đầu của một outro.
 
-Most of the time you should return the `css` property and _not_ the `tick` property, as CSS animations run off the main thread to prevent jank where possible. Svelte 'simulates' the transition and constructs a CSS animation, then lets it run.
+Hầu hết thời gian bạn nên trả về thuộc tính `css` và _không_ phải thuộc tính `tick`, vì các hoạt ảnh CSS chạy ngoài luồng chính để ngăn chặn jank nếu có thể. Svelte 'mô phỏng' chuyển tiếp và xây dựng một hoạt ảnh CSS, sau đó để nó chạy.
 
-For example, the `fade` transition generates a CSS animation somewhat like this:
+Ví dụ, chuyển tiếp `fade` tạo ra một hoạt ảnh CSS giống như sau:
 
 ```css
 /// no-file
@@ -40,7 +40,7 @@ For example, the `fade` transition generates a CSS animation somewhat like this:
 100% { opacity: 1 }
 ```
 
-We can get a lot more creative though. Let's make something truly gratuitous:
+Chúng ta có thể sáng tạo nhiều hơn. Hãy tạo ra điều gì đó thực sự miễn phí:
 
 ```svelte
 /// file: App.svelte
@@ -69,4 +69,4 @@ We can get a lot more creative though. Let's make something truly gratuitous:
 </script>
 ```
 
-Remember: with great power comes great responsibility.
+Nhớ rằng: quyền lực lớn đến từ trách nhiệm lớn.

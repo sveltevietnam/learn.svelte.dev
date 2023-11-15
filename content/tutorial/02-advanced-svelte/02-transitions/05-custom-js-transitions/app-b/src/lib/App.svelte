@@ -5,7 +5,7 @@
 		const valid = node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE;
 
 		if (!valid) {
-			throw new Error(`This transition only works on elements with a single text node child`);
+			throw new Error(`Quá trình chuyển tiếp này chỉ hoạt động trên các phần tử có một node văn bản con`);
 		}
 
 		const text = node.textContent;
@@ -23,7 +23,7 @@
 
 <label>
 	<input type="checkbox" bind:checked={visible} />
-	visible
+	hiện
 </label>
 
 {#if visible}

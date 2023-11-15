@@ -1,10 +1,11 @@
 ---
-title: Key blocks
+title: Key blocks (khối khóa)
 ---
 
-Key blocks destroy and recreate their contents when the value of an expression changes. This is useful if you want an element to play its transition whenever a value changes instead of only when the element enters or leaves the DOM.
+Các khối khóa (key blocks) hủy và tạo lại nội dung của chúng khi giá trị của biểu thức thay đổi. Điều này rất hữu ích trong trường hợp bạn muốn một phần tử chạy hiệu ứng chuyển tiếp mỗi khi giá trị thay đổi thay vì chỉ khi phần tử vào hoặc rời khỏi DOM.
 
-Here, for example, we'd like to play the `typewriter` transition from `transition.js` whenever the loading message, i.e. `i` changes. Wrap the `<p>` element in a key block:
+Ở đây, ví dụ, chúng ta muốn chạy hiệu ứng chuyển tiếp `typewriter` từ `transition.js` mỗi khi thông báo tải, tức là `i`, thay đổi. Bọc phần tử `<p>` trong một khối khóa:
+
 
 ```svelte
 /// file: App.svelte

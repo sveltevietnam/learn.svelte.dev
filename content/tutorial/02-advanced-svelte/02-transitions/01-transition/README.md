@@ -1,10 +1,11 @@
 ---
-title: The transition directive
+title: Chỉ thị chuyển tiếp
 ---
 
-We can make more appealing user interfaces by gracefully transitioning elements into and out of the DOM. Svelte makes this very easy with the `transition` directive.
+Chúng ta có thể tạo giao diện người dùng hấp dẫn hơn bằng cách chuyển tiếp nhẹ các phần tử vào và ra khỏi DOM. Svelte làm điều này rất dễ dàng với chỉ thị `transition`.
 
-First, import the `fade` function from `svelte/transition`...
+Đầu tiên, nhập hàm `fade` từ `svelte/transition`...
+
 
 ```svelte
 /// file: App.svelte
@@ -14,7 +15,7 @@ First, import the `fade` function from `svelte/transition`...
 </script>
 ```
 
-...then add it to the `<p>` element:
+...sau đó thêm vào phần tử `<p>`:
 
 ```svelte
 /// file: App.svelte

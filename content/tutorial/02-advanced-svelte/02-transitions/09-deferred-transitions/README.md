@@ -1,14 +1,14 @@
 ---
-title: Deferred transitions
+title: Chuyển tiếp trì hoãn
 ---
 
-A particularly powerful feature of Svelte's transition engine is the ability to _defer_ transitions, so that they can be coordinated between multiple elements.
+Một tính năng mạnh mẽ của hệ thống chuyển tiếp của Svelte là khả năng _trì hoãn_ các hiệu ứng chuyển tiếp, giúp chúng có thể được đồng bộ giữa nhiều phần tử.
 
-Take this pair of todo lists, in which toggling a todo sends it to the opposite list. In the real world, objects don't behave like that — instead of disappearing and reappearing in another place, they move through a series of intermediate positions. Using motion can go a long way towards helping users understand what's happening in your app.
+Xem xét cặp danh sách todo này, trong đó việc chuyển đổi một todo gửi nó đến danh sách khác. Trong thực tế, các đối tượng không hoạt động như vậy — thay vì biến mất và xuất hiện lại ở một nơi khác, chúng di chuyển qua một loạt các vị trí trung gian. Sử dụng chuyển động có thể giúp người dùng hiểu được điều gì đang xảy ra trong ứng dụng của bạn.
 
-We can achieve this effect using the `crossfade` function, as seen in `transition.js`, which creates a pair of transitions called `send` and `receive`. When an element is 'sent', it looks for a corresponding element being 'received', and generates a transition that transforms the element to its counterpart's position and fades it out. When an element is 'received', the reverse happens. If there is no counterpart, the `fallback` transition is used.
+Chúng ta có thể tạo được hiệu ứng này bằng cách sử dụng hàm `crossfade` như trong `transition.js`, tạo ra một cặp chuyển tiếp gọi là `send` và `receive`. Khi một phần tử được 'gửi', nó sẽ tìm kiếm một phần tử tương ứng đang được 'nhận', và tạo ra một chuyển động chuyển đổi phần tử đó đến vị trí của phần tử đối tác và làm mờ nó đi. Khi một phần tử được 'nhận', điều ngược lại sẽ xảy ra. Nếu không có phần tử đối tác, chuyển tiếp `fallback` sẽ được sử dụng.
 
-Open `TodoList.svelte`. First, import the `send` and `receive` transitions from transition.js:
+Mở `TodoList.svelte`. Đầu tiên, nhập các chuyển tiếp `send` và `receive` từ `transition.js`:
 
 ```svelte
 /// file: TodoList.svelte
@@ -20,7 +20,7 @@ Open `TodoList.svelte`. First, import the `send` and `receive` transitions from 
 </script>
 ```
 
-Then, add them to the `<li>` element, using the `todo.id` property as a key to match the elements:
+Sau đó, thêm chúng vào phần tử <li>, sử dụng thuộc tính `todo.id` làm khóa để phù hợp các phần tử:
 
 ```svelte
 /// file: TodoList.svelte
@@ -31,4 +31,4 @@ Then, add them to the `<li>` element, using the `todo.id` property as a key to m
 >
 ```
 
-Now, when you toggle items, they move smoothly to their new location. The non-transitioning items still jump around awkwardly — we can fix that in the next chapter.
+Bây giờ, khi bạn chuyển đổi các mục, chúng sẽ di chuyển mượt mà đến vị trí mới của chúng. Các mục không chuyển tiếp vẫn nhảy lên xung quanh một cách không thoải mái — chúng ta có thể sửa nó trong chương tiếp theo.

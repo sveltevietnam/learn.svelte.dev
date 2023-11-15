@@ -4,7 +4,7 @@
 
 <label>
 	<input type="checkbox" bind:checked={visible} />
-	visible
+	hiện
 </label>
 
 {#if visible}

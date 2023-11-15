@@ -1,12 +1,13 @@
 ---
-title: Global transitions
+title: Chuyển tiếp toàn cục
 ---
 
-Ordinarily, transitions will only play on elements when their direct containing block is added or destroyed. In the example here, toggling the visibility of the entire list does not apply transitions to individual list elements.
+Thường thì, các chuyển tiếp chỉ hoạt động trên các phần tử khi khối chứa trực tiếp của chúng được thêm vào hoặc hủy bỏ. Trong ví dụ này, việc chuyển đổi khả năng nhìn thấy của toàn bộ danh sách không áp dụng các chuyển tiếp cho các phần tử danh sách cục bộ.
 
-Instead, we'd like transitions to not only play when individual items are added and removed with the slider but also when we toggle the checkbox.
 
-We can achieve this with a _global_ transition, which plays when _any_ block containing the transitions is added or removed:
+Thay vào đó, chúng ta muốn các chuyển tiếp không chỉ hoạt động khi các mục cục bộ được thêm và loại bỏ với thanh trượt mà còn khi chúng ta chuyển đổi checkbox.
+
+Chúng ta có thể làm được điều này với một chuyển tiếp _toàn cục_, chạy khi _bất kỳ_ khối chứa các chuyển tiếp nào được thêm hoặc xóa:
 
 ```svelte
 /// file: App.svelte
@@ -15,4 +16,4 @@ We can achieve this with a _global_ transition, which plays when _any_ block con
 </div>
 ```
 
-> In Svelte 3, transitions were global by default and you had to use the `|local` modifier to make them local.
+> Trong Svelte 3, các chuyển tiếp mặc định là toàn cục (global) và bạn phải sử dụng modifier `|local` để làm chúng trở thành chuyển tiếp cục bộ.
