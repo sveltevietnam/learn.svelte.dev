@@ -1,8 +1,8 @@
 ---
-title: Inline handlers
+title: Hàm xử lý cùng dòng _(inline handlers)_
 ---
 
-Bạn cũng có thể khai báo event handler trong cùng một dòng _(inline event handlers)_:
+Bạn cũng có thể khai báo hàm xử lý sự kiện cùng dòng:
 
 ```svelte
 /// file: App.svelte
@@ -24,4 +24,4 @@ Bạn cũng có thể khai báo event handler trong cùng một dòng _(inline e
 </div>
 ```
 
-> Trong một số framework thường hay có đề xuất nên tránh inline event handler để có hiệu năng tốt nhất, thường là trong các vòng lặp. Lời khuyên đó thì lại không áp dụng cho Svelte - bất kể bạn chọn cách nào, trình dịch sẽ luôn làm điều đúng đắn nhất.
+> Trong một số framework thường hay có đề xuất nên tránh hàm xử lý cùng dòng để có hiệu năng tốt nhất, đặc biệt là trong các vòng lặp. Lời khuyên đó không áp dụng cho Svelte - bất kể bạn chọn cách nào, trình dịch sẽ luôn làm điều đúng đắn nhất.

@@ -21,11 +21,11 @@ Component cũng có thể phái _(dispatch)_ các sự kiện. Bạn cần phả
 
 > Bạn phải gọi `createEventDispatcher` khi component được khởi tạo lần đầu - bạn không thể chúng gọi sau này, chẳng hạn như trong callback của `setTimeout`. Việc này sẽ liên kết `dispatch` với instance của component.
 
-Sau đó, thêm handler `on:message` vào `App.svelte`:
+Sau đó, thêm hàm xử lý `on:message` vào `App.svelte`:
 
 ```svelte
 /// file: App.svelte
 <Inner +++on:message={handleMessage}+++ />
 ```
 
-> Bạn cũng có thể thay đổi tên sự kiện thành thứ khác. Chẳng hạn như thay đổi `dispatch('message', {...})` thành `dispatch('greet', {...})` trong `Inner.svelte` và thay đổi tên attribute từ `on:message` thành `on:greet` trong `App.svelte`.
+> Bạn cũng có thể thay đổi tên của sự kiện. Chẳng hạn như thay đổi `dispatch('message', {...})` thành `dispatch('greet', {...})` trong `Inner.svelte` và thay đổi tên thuộc tính từ `on:message` thành `on:greet` trong `App.svelte`.
