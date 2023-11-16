@@ -1,12 +1,12 @@
 ---
-title: The animate directive
+title: Chỉ thị animate
 ---
 
-In the [previous chapter](/tutorial/deferred-transitions), we used deferred transitions to create the illusion of motion as elements move from one todo list to the other.
+Trong [chương trước](/tutorial/deferred-transitions), chúng ta đã sử dụng các hiệu ứng chuyển tiếp trì hoãn để tạo hiệu ứng về chuyển động khi các phần tử di chuyển từ một danh sách công việc sang danh sách khác.
 
-To complete the illusion, we also need to apply motion to the elements that _aren't_ transitioning. For this, we use the `animate` directive.
+Để hoàn tất hiệu ứng, chúng ta cũng cần áp dụng chuyển động cho các phần tử _không_ tham gia chuyển tiếp. Để làm điều này, chúng ta sử dụng chỉ thị `animate`.
 
-First, import the `flip` function — flip stands for ['First, Last, Invert, Play'](https://aerotwist.com/blog/flip-your-animations/) — from `svelte/animate` into `TodoList.svelte`:
+Đầu tiên, nhập hàm `flip` — flip viết tắt của ['First, Last, Invert, Play'](https://aerotwist.com/blog/flip-your-animations/) — từ `svelte/animate` vào `TodoList.svelte`:
 
 ```svelte
 /// file: TodoList.svelte
@@ -19,7 +19,7 @@ First, import the `flip` function — flip stands for ['First, Last, Invert, Pla
 </script>
 ```
 
-Then add it to the `<li>` elements:
+Sau đó thêm nó vào các phần tử <li>:
 
 ```svelte
 /// file: TodoList.svelte
@@ -31,7 +31,7 @@ Then add it to the `<li>` elements:
 >
 ```
 
-The movement is a little slow in this case, so we can add a `duration` parameter:
+Chuyển động hơi chậm trong trường hợp này, nên chúng ta có thể thêm một tham số `duration`:
 
 ```svelte
 /// file: TodoList.svelte
@@ -43,6 +43,6 @@ The movement is a little slow in this case, so we can add a `duration` parameter
 >
 ```
 
-> `duration` can also be a `d => milliseconds` function, where `d` is the number of pixels the element has to travel
+> `duration` cũng có thể là một hàm `d => milliseconds`, trong đó `d` là số pixel mà phần tử phải di chuyển
 
-Note that all the transitions and animations are being applied with CSS, rather than JavaScript, meaning they won't block (or be blocked by) the main thread.
+Lưu ý rằng tất cả các hiệu ứng chuyển tiếp và chuyển động đều được áp dụng bằng CSS, chứ không phải JavaScript, có nghĩa là chúng sẽ không chặn (hoặc bị chặn bởi) luồng chính.
