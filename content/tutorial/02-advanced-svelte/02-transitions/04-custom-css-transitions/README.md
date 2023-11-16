@@ -27,7 +27,7 @@ Hàm nhận hai đối số — node mà chuyển tiếp được áp dụng và
 
 Giá trị `t` là `0` ở đầu của một intro hoặc cuối của một outro, và `1` ở cuối của một intro hoặc đầu của một outro.
 
-Hầu hết thời gian bạn nên trả về thuộc tính `css` và _không_ phải thuộc tính `tick`, vì các hoạt ảnh CSS chạy ngoài luồng chính để ngăn chặn jank nếu có thể. Svelte 'mô phỏng' chuyển tiếp và xây dựng một hoạt ảnh CSS, sau đó để nó chạy.
+Thường thì bạn nên trả về thuộc tính `css` và _không_ phải thuộc tính `tick`, vì các hoạt ảnh CSS chạy ngoài luồng chính để ngăn chặn gián đoạn khi có thể. Svelte 'mô phỏng' chuyển tiếp và xây dựng một hoạt ảnh CSS, sau đó để nó chạy.
 
 Ví dụ, chuyển tiếp `fade` tạo ra một hoạt ảnh CSS giống như sau:
 
