@@ -1,8 +1,8 @@
 ---
-title: Checkbox inputs
+title: Ô đánh dấu
 ---
 
-Checkboxes are used for toggling between states. Instead of binding to `input.value`, we bind to `input.checked`:
+Các ô đánh dấu được sử dụng cho việc bật tắt các trạng thái. Thay vì gán nó vào `input.value`, ta gán nó với `input.checked`:
 
 ```svelte
 /// file: App.svelte

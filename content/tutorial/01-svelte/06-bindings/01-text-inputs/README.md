@@ -1,16 +1,16 @@
 ---
-title: Text inputs
+title: Ô nhập văn bản
 ---
 
-As a general rule, data flow in Svelte is _top down_ — a parent component can set props on a child component, and a component can set attributes on an element, but not the other way around.
+Có một luật chung là dòng dữ liệu trong Svelte chạy _từ trên xuống_ — component cha có thể đặt thuộc tính vào component con, và một component có thể đặt thuộc tính vào một phần tử, nhưng ngược lại thì không.
 
-Sometimes it's useful to break that rule. Take the case of the `<input>` element in this component — we _could_ add an `on:input` event handler that sets the value of `name` to `event.target.value`, but it's a bit... boilerplatey. It gets even worse with other form elements, as we'll see.
+Đôi khi phá luật sẽ có ích hơn. Trong trường hợp của phần tử `<input>` trong component này — ta _có thể_ thêm một hàm xử lý sự kiện `on:input` để thay đổi giá trị của `name` thành `event.target.value`, nhưng nó nhìn có vẻ... dài dòng. Ta sẽ thấy điều này sẽ trở nên tệ hơn cho những phần tử khác trong form.
 
-Instead, we can use the `bind:value` directive:
+Thay vào đó, ta có thể dùng chỉ thị `bind:value`:
 
 ```svelte
 /// file: App.svelte
 <input +++bind:+++value={name}>
 ```
 
-This means that not only will changes to the value of `name` update the input value, but changes to the input value will update `name`.
+Điều này có nghĩa là khi thay đổi giá trị của `name` sẽ làm thay đổi giá trị của ô nhập, mà thay đổi giá trị trong ô nhập cũng sẽ cập nhật `name`.
