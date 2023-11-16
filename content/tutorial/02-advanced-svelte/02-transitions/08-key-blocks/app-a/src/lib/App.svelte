@@ -17,7 +17,7 @@
 	});
 </script>
 
-<h1>loading...</h1>
+<h1>đang tải...</h1>
 
 <p in:typewriter={{ speed: 10 }}>
 	{messages[i] || ''}

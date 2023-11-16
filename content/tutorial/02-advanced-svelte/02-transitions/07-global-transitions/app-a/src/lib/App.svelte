@@ -8,7 +8,7 @@
 
 <label>
 	<input type="checkbox" bind:checked={showItems} />
-	show list
+	xem danh sách
 </label>
 
 <label>

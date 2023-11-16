@@ -1,8 +1,8 @@
 ---
-title: Adding parameters
+title: Thêm tham số
 ---
 
-Transition functions can accept parameters. Replace the `fade` transition with `fly`...
+Hàm chuyển tiếp có thể chấp nhận các tham số. Thay thế chuyển tiếp `fade` bằng `fly`...
 
 ```svelte
 /// file: App.svelte
@@ -12,7 +12,7 @@ Transition functions can accept parameters. Replace the `fade` transition with `
 </script>
 ```
 
-...and apply it to the `<p>` along with some options:
+... và áp dụng nó cho phần tử <p> cùng với một số tùy chọn:
 
 ```svelte
 /// file: App.svelte
@@ -21,4 +21,4 @@ Transition functions can accept parameters. Replace the `fade` transition with `
 </p>
 ```
 
-Note that the transition is _reversible_ — if you toggle the checkbox while the transition is ongoing, it transitions from the current point, rather than the beginning or the end.
+Lưu ý: chuyển tiếp có thể _đảo ngược_ — nếu bạn thay đổi checkbox trong khi chuyển động đang diễn ra, nó sẽ chuyển tiếp từ điểm hiện tại, thay vì từ đầu hoặc cuối.

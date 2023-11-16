@@ -1,8 +1,8 @@
 ---
-title: Transition events
+title: Các sự kiện chuyển tiếp
 ---
 
-It can be useful to know when transitions are beginning and ending. Svelte dispatches events that you can listen to like any other DOM event:
+Việc biết khi nào chuyển tiếp bắt đầu và kết thúc có thể hữu ích. Svelte phát ra các sự kiện mà bạn có thể lắng nghe giống như bất kỳ sự kiện DOM nào khác:
 
 ```svelte
 /// file: App.svelte
