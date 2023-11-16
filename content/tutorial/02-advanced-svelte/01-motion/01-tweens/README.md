@@ -2,7 +2,7 @@
 title: Tweens
 ---
 
-Bây giờ, sau khi đã covers những kiến thức cơ bản, là lúc để học một số kỹ thuật Svelte nâng cao, bắt đầu với _motion_.
+Sau khi đã đi qua những kiến thức cơ bản, giờ là lúc để ta học đến một số kỹ thuật Svelte nâng cao, bắt đầu với chuyển động _(motion)_.
 
 Việc đặt giá trị và theo dõi cập nhật DOM tự động là tuyệt vời. Bạn biết cái gì còn tuyệt vời hơn không? Làm cho những giá trị đó tween. Svelte bao gồm các công cụ để giúp bạn xây dựng giao diện người dùng tuyệt vời sử dụng animation để truyền đạt các thay đổi.
 
