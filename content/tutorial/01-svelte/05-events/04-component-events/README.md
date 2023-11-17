@@ -2,7 +2,7 @@
 title: Sự kiện trong component
 ---
 
-Component cũng có thể phái _(dispatch)_ các sự kiện. Bạn cần phải tạo một _event dispatcher_ để có thể làm điều này.
+Component cũng có thể gởi _(dispatch)_ các sự kiện. Bạn cần phải tạo một _event dispatcher_ để có thể làm điều này. Hãy sửa lại `Inner.svelte`:
 
 ```svelte
 /// file: Inner.svelte
@@ -19,7 +19,7 @@ Component cũng có thể phái _(dispatch)_ các sự kiện. Bạn cần phả
 </script>
 ```
 
-> Bạn phải gọi `createEventDispatcher` khi component được khởi tạo lần đầu - bạn không thể chúng gọi sau này, chẳng hạn như trong callback của `setTimeout`. Việc này sẽ liên kết `dispatch` với instance của component.
+> Bạn phải gọi `createEventDispatcher` khi component được khởi tạo lần đầu - bạn không thể gọi sau này, chẳng hạn như trong callback của `setTimeout`. Việc này sẽ liên kết `dispatch` với instance của component.
 
 Sau đó, thêm hàm xử lý `on:message` vào `App.svelte`:
 
