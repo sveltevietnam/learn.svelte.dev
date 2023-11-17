@@ -3,7 +3,7 @@
 	import 'tippy.js/dist/tippy.css';
 	import 'tippy.js/themes/material.css';
 
-	let content = 'Hello!';
+	let content = 'Xin chào!';
 
 	function tooltip(node) {
 		const tooltip = tippy(node);
@@ -19,5 +19,5 @@
 <input bind:value={content} />
 
 <button use:tooltip>
-	Hover me
+	Rê chuột qua tôi
 </button>

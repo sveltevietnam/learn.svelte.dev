@@ -1,17 +1,17 @@
 ---
-title: The use directive
+title: Chỉ thị use
 ---
 
-Actions are essentially element-level lifecycle functions. They're useful for things like:
+Actions chủ yếu là các hàm vòng đời cấp phần tử. Chúng hữu ích để thực hiện các công việc như:
 
-- interfacing with third-party libraries
-- lazy-loaded images
-- tooltips
-- adding custom event handlers
+- tương tác với các thư viện của bên thứ ba
+- trì hoản tải ảnh
+- gợi ý
+- thêm các xử lý sự kiện tùy chỉnh
 
-In this app, you can scribble on the `<canvas>`, and change colours and brush size via the menu. But if you open the menu and cycle through the options with the Tab key, you'll soon find that the focus isn't _trapped_ inside the modal.
+Trong ứng dụng này, bạn có thể vẽ trên `<canvas>`, và thay đổi màu sắc và kích thước cọ thông qua menu. Nhưng nếu bạn mở menu và di chuyển qua các tùy chọn với phím Tab, bạn sẽ nhanh chóng nhận ra rằng sự tập trung không được _giữ_ trong modal.
 
-We can fix that with an action. Import `trapFocus` from `actions.js`...
+Chúng ta có thể sửa điều đó bằng một action. Nhập `trapFocus` từ `actions.js`...
 
 ```svelte
 /// file: App.svelte
@@ -27,16 +27,16 @@ We can fix that with an action. Import `trapFocus` from `actions.js`...
 </script>
 ```
 
-...then add it to the menu with the `use:` directive:
+...sau đó thêm nó vào menu với chỉ thị `use:`:
 
 ```svelte
 /// file: App.svelte
 <div class="menu" +++use:trapFocus+++>
 ```
 
-Let's take a look at the `trapFocus` function in `actions.js`. An action function is called with a `node` — the `<div class="menu">` in our case — when the node is mounted to the DOM, and can return an action object with a `destroy` method.
+Hãy xem hàm `trapFocus` trong `actions.js`. Một hàm action được gọi với một `node` — `<div class="menu">` trong trường hợp của chúng ta — khi node được gắn vào DOM, và có thể trả về một đối tượng action với một phương thức `destroy`.
 
-First, we need to add an event listener that intercepts Tab key presses:
+Thứ nhất, chúng ta cần thêm một trình lắng nghe sự kiện mà chặn phím Tab:
 
 ```js
 /// file: actions.js
@@ -45,7 +45,7 @@ focusable()[0]?.focus();
 +++node.addEventListener('keydown', handleKeydown);+++
 ```
 
-Second, we need to do some cleanup when the node is unmounted — removing the event listener, and restoring focus to where it was before the element mounted:
+Thứ hai, chúng ta cần thực hiện một số công việc dọn dẹp khi node được gỡ ra — xóa bỏ trình lắng nghe sự kiện, và khôi phục tập trung về ban đầu trước khi phần tử được gắn vào:
 
 ```js
 /// file: actions.js
@@ -61,4 +61,4 @@ node.addEventListener('keydown', handleKeydown);
 };+++
 ```
 
-Now, when you open the menu, you can cycle through the options with the Tab key.
+Bây giờ, khi bạn mở menu, bạn có thể di chuyển qua các tùy chọn với phím Tab.
