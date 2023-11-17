@@ -2,9 +2,9 @@
 title: Springs
 ---
 
-The `spring` function is an alternative to `tweened` that often works better for values that are frequently changing.
+Hàm `spring` là một lựa chọn thay thế cho `tweened` mà thường hoạt động tốt hơn cho các giá trị thay đổi thường xuyên.
 
-In this example we have two stores — one representing the circle's coordinates, and one representing its size. Let's convert them to springs:
+Trong ví dụ này, chúng ta có hai stores — một đại diện cho tọa độ của hình tròn, và một đại diện cho kích thước của nó. Hãy chuyển chúng thành springs:
 
 ```svelte
 /// file: App.svelte
@@ -16,7 +16,7 @@ In this example we have two stores — one representing the circle's coordinates
 </script>
 ```
 
-Both springs have default `stiffness` and `damping` values, which control the spring's, well... springiness. We can specify our own initial values:
+Cả hai spring đều có giá trị mặc định `stiffness` và `damping`, điều này kiểm soát độ mượt mà của spring. Chúng ta có thể chỉ định giá trị ban đầu của chúng:
 
 ```js
 /// file: App.svelte
@@ -26,4 +26,4 @@ let coords = spring({ x: 50, y: 50 }, +++{
 }+++);
 ```
 
-Waggle your mouse around, and try dragging the sliders to get a feel for how they affect the spring's behaviour. Notice that you can adjust the values while the spring is still in motion.
+Vung chuột của bạn xung quanh và thử kéo các thanh trượt để cảm nhận cách chúng ảnh hưởng đến hành vi của spring. Lưu ý, bạn có thể điều chỉnh các giá trị trong khi spring vẫn đang chuyển động.
