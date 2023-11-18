@@ -1,19 +1,19 @@
 ---
-title: Textarea inputs
+title: Ô nhập Textarea
 ---
 
-The `<textarea>` element behaves similarly to a text input in Svelte — use `bind:value`:
+Thẻ `<textarea>` hoạt động khá giống với một ô nhập văn bản trong Svelte — dùng `bind:value`:
 
 ```svelte
 /// file: App.svelte
 <textarea +++bind:value=+++{value}></textarea>
 ```
 
-In cases like these, where the names match, we can also use a shorthand form:
+Trong những trường hợp này, nếu tên thuộc tính giống nhau, ta có thể viết một các ngắn gọn hơn:
 
 ```svelte
 /// file: App.svelte
 <textarea +++bind:value+++></textarea>
 ```
 
-This applies to all bindings, not just textareas.
+Điều này áp dùng cho các binding khác, không chỉ cho các textarea.

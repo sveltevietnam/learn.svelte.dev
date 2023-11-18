@@ -1,10 +1,11 @@
 ---
-title: Group inputs
+title: Nhóm các ô nhập
 ---
 
-If you have multiple `type="radio"` or `type="checkbox"` inputs relating to the same value, you can use `bind:group` along with the `value` attribute. Radio inputs in the same group are mutually exclusive; checkbox inputs in the same group form an array of selected values.
+<!-- FIXME -->
+Nếu bạn có nhiều ô `type="radio"` hoặc `type="checkbox"` mà liên quan đến cùng một giá trị, bạn có thể dùng `bind:group` cùng với thuộc tính `value`. Các ô đánh dấu _(radio input)_ trong cùng một nhóm đều có sự độc nhất với nhau; ô lựa chọn _(checkbox input)_ trong cùng một nhóm sẽ phân thành một mảng nhiều giá trị.
 
-Add `bind:group={scoops}` to the radio inputs...
+Hãy thêm `bind:group={scoops}` vào các ô đánh dấu...
 
 ```svelte
 /// file: App.svelte
@@ -16,7 +17,7 @@ Add `bind:group={scoops}` to the radio inputs...
 />
 ```
 
-...and `bind:group={flavours}` to the checkbox inputs:
+...và thêm `bind:group={flavours}` vào các ô lựa chọn:
 
 ```svelte
 /// file: App.svelte
