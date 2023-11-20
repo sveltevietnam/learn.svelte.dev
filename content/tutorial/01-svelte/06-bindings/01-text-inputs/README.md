@@ -1,5 +1,5 @@
 ---
-title: Ô nhập văn bản
+title: Input văn bản
 ---
 
 Có một luật chung là dòng dữ liệu trong Svelte chạy _từ trên xuống_ — component cha có thể đặt thuộc tính vào component con, và một component có thể đặt thuộc tính vào một phần tử, nhưng ngược lại thì không.

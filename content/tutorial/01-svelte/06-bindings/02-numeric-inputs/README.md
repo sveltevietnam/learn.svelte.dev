@@ -1,5 +1,5 @@
 ---
-title: Ô nhập số
+title: Input số
 ---
 
 Trong DOM, mọi thứ sẽ là dải kí tự. Điều này sẽ không giúp gì cho bạn khi bạn phải làm việc với những ô nhập số — `type="number"` và `type="range"` — tức là bạn phải nhớ chuyển kiểu cho giá trị của `input.value` trước khi sử dụng nó.

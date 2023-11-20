@@ -16,4 +16,4 @@ Trong những trường hợp này, nếu tên thuộc tính giống nhau, ta c�
 <textarea +++bind:value+++></textarea>
 ```
 
-Điều này áp dùng cho các binding khác, không chỉ cho các textarea.
+Điều này áp dùng cho các phép bind khác, không chỉ textarea.

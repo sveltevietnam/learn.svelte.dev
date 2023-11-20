@@ -2,8 +2,7 @@
 title: Nhóm các ô nhập
 ---
 
-<!-- FIXME -->
-Nếu bạn có nhiều ô `type="radio"` hoặc `type="checkbox"` mà liên quan đến cùng một giá trị, bạn có thể dùng `bind:group` cùng với thuộc tính `value`. Các ô đánh dấu _(radio input)_ trong cùng một nhóm đều có sự độc nhất với nhau; ô lựa chọn _(checkbox input)_ trong cùng một nhóm sẽ phân thành một mảng nhiều giá trị.
+Nếu bạn có nhiều ô `type="radio"` hoặc `type="checkbox"` mà liên quan đến cùng một giá trị, bạn có thể dùng `bind:group` cùng với thuộc tính `value`. Các ô đánh dấu _(radio input)_ trong cùng một nhóm sẽ loại trừ lẫn nhau (chỉ được chọn một); ô lựa chọn _(checkbox input)_ trong cùng một nhóm sẽ phân thành một mảng nhiều giá trị.
 
 Hãy thêm `bind:group={scoops}` vào các ô đánh dấu...
 
