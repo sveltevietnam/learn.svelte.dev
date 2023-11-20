@@ -1,5 +1,5 @@
 ---
-title: Chọn nhiều lựa chọn
+title: Chọn nhiều trong select
 ---
 
 Một phần tử `<select>` có thể có thuộc tính `multiple`, tức là nó sẽ phân ra thành một mảng thay vì chỉ có chọn một giá trị.
