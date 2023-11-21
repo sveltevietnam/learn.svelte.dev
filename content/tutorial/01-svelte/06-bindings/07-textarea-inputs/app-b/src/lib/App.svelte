@@ -1,6 +1,6 @@
 <script>
 	import { marked } from 'marked';
-	let value = `Some words are *italic*, some are **bold**\n\n- lists\n- are\n- cool`;
+	let value = `Một vài từ có chữ *nghiêng*, vài cái thì **đậm**\n\n- danh\n- sách\n- rất\n- tuyệt`;
 </script>
 
 <div class="grid">

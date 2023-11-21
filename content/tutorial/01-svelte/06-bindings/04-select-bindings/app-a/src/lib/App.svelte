@@ -2,15 +2,15 @@
 	let questions = [
 		{
 			id: 1,
-			text: `Where did you go to school?`
+			text: `Bạn học ở trường gì?`
 		},
 		{
 			id: 2,
-			text: `What is your mother's name?`
+			text: `Tên của cha hoặc mẹ bạn?`
 		},
 		{
 			id: 3,
-			text: `What is another personal fact that an attacker could easily find with Google?`
+			text: `Bạn có một sự thật nào mà những kẻ tấn công có thể dễ dàng tìm kiếm được trên mạng?`
 		}
 	];
 
@@ -20,12 +20,12 @@
 
 	function handleSubmit() {
 		alert(
-			`answered question ${selected.id} (${selected.text}) with "${answer}"`
+			`Câu trả lời #${selected.id} (${selected.text}) là "${answer}"`
 		);
 	}
 </script>
 
-<h2>Insecurity questions</h2>
+<h2>Câu hỏi không bảo mật</h2>
 
 <form on:submit|preventDefault={handleSubmit}>
 	<select
@@ -47,7 +47,7 @@
 </form>
 
 <p>
-	selected question {selected
+	đã chọn câu hỏi #{selected
 		? selected.id
 		: '[waiting...]'}
 </p>
