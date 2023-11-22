@@ -1,8 +1,8 @@
 ---
-title: Contenteditable bindings
+title: Các ràng buộc có thể chỉnh sửa nội dung
 ---
 
-Elements with a `contenteditable` attribute support `textContent` and `innerHTML` bindings:
+Các phần tử có thuộc tính `contenteditable` hỗ trợ việc ràng buộc `textContent` và `innerHTML`:
 
 ```svelte
 /// file: App.svelte

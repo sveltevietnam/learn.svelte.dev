@@ -36,9 +36,9 @@
 				</div>
 
 				<label>
-					small
+					nhỏ
 					<input type="range" bind:value={size} min="1" max="50" />
-					large
+					to
 				</label>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 
 	<div class="controls">
 		<button class="show-menu" on:click={() => showMenu = !showMenu}>
-			{showMenu ? 'close' : 'menu'}
+			{showMenu ? 'đóng' : 'menu'}
 		</button>
 	</div>
 </div>

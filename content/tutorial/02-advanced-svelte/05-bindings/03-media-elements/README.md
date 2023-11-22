@@ -1,10 +1,10 @@
 ---
-title: Media elements
+title: Phần tử Media
 ---
 
-You can bind to properties of `<audio>` and `<video>` elements, making it easy to (for example) build custom player UI, like `AudioPlayer.svelte`.
+Bạn có thể ràng buộc đến các thuộc tính của các phần tử `<audio>` và `<video>`, giúp bạn dễ dàng xây dựng giao diện trình phát tùy chỉnh, chẳng hạn như `AudioPlayer.svelte`.
 
-First, add the `<audio>` element along with its bindings (we'll use the shorthand form for `src`, `duration` and `paused`):
+Đầu tiên, thêm phần tử `<audio>` cùng với các ràng buộc của nó (chúng ta sẽ sử dụng dạng viết tắt cho `src`, `duration` và `paused`):
 
 ```svelte
 /// file: AudioPlayer.svelte
@@ -22,7 +22,7 @@ First, add the `<audio>` element along with its bindings (we'll use the shorthan
 	/>
 ```
 
-Next, add an event handler to the `<button>` that toggles `paused`:
+Tiếp theo, thêm một trình xử lý sự kiện cho <button> để chuyển đổi `paused`:
 
 ```svelte
 /// file: AudioPlayer.svelte
@@ -33,7 +33,7 @@ Next, add an event handler to the `<button>` that toggles `paused`:
 />
 ```
 
-Our audio player now has basic functionality. Let's add the ability to seek to a specific part of a track by dragging the slider. Inside the slider's `pointerdown` handler there's a `seek` function, where we can update `time`:
+Bây giờ, trình phát audio của chúng ta đã có chức năng cơ bản. Hãy thêm khả năng tua đến một phần cụ thể của bản nhạc bằng cách kéo thanh trượt. Bên trong trình xử lý `pointerdown` của thanh trượt có một hàm `seek`, nơi chúng ta có thể cập nhật `time`:
 
 ```js
 /// file: AudioPlayer.svelte
@@ -48,7 +48,7 @@ function seek(e) {
 }
 ```
 
-When the track ends, be kind — rewind:
+Khi bản nhạc kết thúc, hãy lịch sự - tua lại:
 
 ```svelte
 /// file: AudioPlayer.svelte
@@ -63,22 +63,22 @@ When the track ends, be kind — rewind:
 />
 ```
 
-The complete set of bindings for `<audio>` and `<video>` is as follows — seven _readonly_ bindings...
+Tổng số ràng buộc đầy đủ cho <audio> và <video> như sau - bảy ràng buộc _chỉ đọc_...
 
-- `duration` (readonly) — the total duration of the video, in seconds
-- `buffered` (readonly) — an array of `{start, end}` objects
-- `seekable` (readonly) — ditto
-- `played` (readonly) — ditto
-- `seeking` (readonly) — boolean
-- `ended` (readonly) — boolean
-- `readyState` (readonly) — number between (and including) 0 and 4
+- `duration` (chỉ đọc) — tổng thời lượng của video, tính bằng giây
+- `buffered`  (chỉ đọc) — một mảng các đối tượng `{start, end}`
+- `seekable` (chỉ đọc) — như trên
+- `played` (chỉ đọc) — như trên
+- `seeking` (chỉ đọc) — boolean
+- `ended` (chỉ đọc) — boolean
+- `readyState` (chỉ đọc) — số giữa (và bao gồm) 0 và 4
 
-...and five _two-way_ bindings:
+...và năm ràng buộc hai chiều:
 
-- `currentTime` — the current point in the video, in seconds
-- `playbackRate` — how fast to play the video, where `1` is 'normal'
-- `paused` — this one should be self-explanatory
-- `volume` — a value between 0 and 1
-- `muted` — a boolean value where true is muted
+- `currentTime` — the current point in the video, in seconds điểm hiện tại trong video, tính bằng giây
+- `playbackRate` — tốc độ phát video, với `1` là 'bình thường'
+- `paused` — dừng
+- `volume` — một giá trị giữa 0 và 1
+- `muted` — một giá trị boolean, trong đó true là tắt tiếng
 
-Videos additionally have readonly `videoWidth` and `videoHeight` bindings.
+Video thêm vào đó các ràng buộc chỉ đọc `videoWidth` và `videoHeight`.

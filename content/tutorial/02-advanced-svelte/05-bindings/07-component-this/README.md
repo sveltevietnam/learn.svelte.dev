@@ -1,12 +1,13 @@
 ---
-title: Binding to component instances
+title: Ràng buộc thành phần với chính nó
 ---
 
-Just as you can bind to DOM elements, you can bind to component instances themselves with `bind:this`.
+Tương tự như bạn có thể ràng buộc với các phần tử DOM, bạn cũng có thể ràng buộc với chính các instance của component với `bind:this`.
 
-This is useful in the rare cases that you need to interact with a component programmatically (rather than by providing it with updated props). Revisiting our canvas app from [a few exercises ago](actions), it would be nice to add a button to clear the screen.
+Điều này hữu ích trong những trường hợp hiếm hoi bạn cần tương tác với một component theo cách máy móc (thay vì cung cấp cho nó các props được cập nhật). Quay lại ứng dụng canvas của chúng ta từ [một vài bài tập trước đó](actions), thật tốt nếu chúng ta có thể thêm một nút để xóa màn hình.
 
-First, let's export a function from `Canvas.svelte`:
+
+Trước tiên, hãy xuất một hàm từ `Canvas.svelte`:
 
 ```svelte
 /// file: Canvas.svelte
@@ -18,7 +19,7 @@ export let size;
 }+++
 ```
 
-Then, create a reference to the component instance:
+Sau đó, tạo một tham chiếu đến chính thành phần đó:
 
 ```svelte
 /// file: App.svelte
@@ -38,7 +39,7 @@ Then, create a reference to the component instance:
 	<Canvas +++bind:this={canvas}+++ color={selected} size={size} />
 ```
 
-Finally, add a button that calls the `clear` function:
+Cuối cùng, thêm một nút gọi hàm clear:
 
 ```svelte
 /// file: App.svelte
@@ -48,7 +49,7 @@ Finally, add a button that calls the `clear` function:
 	</button>
 
 +++	<button on:click={() => canvas.clear()}>
-		clear
+		xóa
 	</button>+++
 </div>
 ```

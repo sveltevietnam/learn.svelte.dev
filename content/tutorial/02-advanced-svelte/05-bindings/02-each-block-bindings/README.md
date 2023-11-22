@@ -1,8 +1,9 @@
 ---
-title: Each block bindings
+title: Ràng buộc khối each
 ---
 
-You can even bind to properties inside an `each` block.
+Thậm chí bạn cũng có thể ràng buộc đến các thuộc tính bên trong một khối `each`.
+
 
 ```svelte
 /// file: App.svelte
@@ -15,11 +16,11 @@ You can even bind to properties inside an `each` block.
 
 		<input
 			type="text"
-			placeholder="What needs to be done?"
+			placeholder="Việc cần hoàn thành?"
 			+++bind:+++value={todo.text}
 		/>
 	</li>
 {/each}
 ```
 
-> Note that interacting with these `<input>` elements will mutate the array. If you prefer to work with immutable data, you should avoid these bindings and use event handlers instead.
+> Lưu ý: tương tác với các phần tử `<input>` này sẽ thay đổi mảng. Nếu bạn muốn làm việc với dữ liệu không thay đổi, bạn nên tránh các ràng buộc này và thay vào đó, sử dụng các xử lý sự kiện.
