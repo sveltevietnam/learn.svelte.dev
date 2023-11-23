@@ -1,8 +1,8 @@
 ---
-title: The class directive
+title: Chỉ thị lớp
 ---
 
-Like any other attribute, you can specify classes with a JavaScript attribute. Here, we could add a `flipped` class to the card:
+Tương tự như bất kỳ thuộc tính nào khác, bạn có thể chỉ định các lớp với một thuộc tính JavaScript. Ở đây, chúng ta có thể thêm một lớp `flipped` vào thẻ:
 
 ```svelte
 /// file: App.svelte
@@ -12,9 +12,9 @@ Like any other attribute, you can specify classes with a JavaScript attribute. H
 >
 ```
 
-This works as expected — if you click on the card now, it'll flip.
+Điều này hoạt động như dự kiến — nếu bạn click vào thẻ bây giờ, nó sẽ lật.
 
-We can make it nicer though. Adding or removing a class based on some condition is such a common pattern in UI development that Svelte includes a special directive to simplify it:
+Tuy nhiên, chúng ta có thể làm cho nó đẹp hơn. Thêm hoặc xóa một lớp dựa trên một vài điều kiện là một mẫu thiết kế phổ biến trong phát triển UI đến mức mà Svelte đã bao gồm một chỉ thị đặc biệt để đơn giản hóa nó:
 
 ```svelte
 /// file: App.svelte
@@ -25,4 +25,4 @@ We can make it nicer though. Adding or removing a class based on some condition 
 >
 ```
 
-This directive means 'add the `flipped` class whenever `flipped` is truthy'.
+Chỉ thị này có nghĩa là 'thêm lớp `flipped` mỗi khi `flipped` là trị đúng'.
