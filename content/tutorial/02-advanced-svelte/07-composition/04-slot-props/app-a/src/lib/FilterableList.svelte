@@ -10,7 +10,7 @@
 
 <div class="list">
 	<label>
-		Filter: <input bind:value={search} />
+		Lọc: <input bind:value={search} />
 	</label>
 
 	<div class="header">

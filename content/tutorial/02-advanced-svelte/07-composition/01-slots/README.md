@@ -2,16 +2,16 @@
 title: Slots
 ---
 
-Just like elements can have children...
+Tương tự như các phần tử có thể có các phần tử con...
 
 ```html
 /// no-file
 <div>
-	<p>I'm a child of the div</p>
+	<p>Tôi là một phần tử con của thẻ div</p>
 </div>
 ```
 
-...so can components. Before a component can accept children, though, it needs to know where to put them. We do this with the `<slot>` element. Put this inside `Card.svelte`:
+... thì các thành phần cũng có thể. Trước khi một thành phần có thể chấp nhận các phần tử con, nó cần biết nơi để đặt chúng. Chúng ta làm điều này với phần tử `<slot>`. Đặt nó bên trong `Card.svelte`:
 
 ```svelte
 /// file: Card.svelte
@@ -20,7 +20,7 @@ Just like elements can have children...
 </div>
 ```
 
-You can now put things on the card:
+Bây giờ bạn có thể đặt các phần tử lên thẻ:
 
 ```svelte
 /// file: App.svelte

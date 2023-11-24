@@ -1,12 +1,12 @@
 ---
-title: Slot props
+title: Thuộc tính slot
 ---
 
-Components can pass data _back_ to their slotted content via _slot props_. In this app, we have a list of named CSS colours. Typing into the `<input>` will filter the list.
+Các thành phần có thể truyền dữ liệu _trở lại_ cho nội dung được đặt vào thông qua _thuộc tính slot_. Trong ứng dụng này, chúng ta có một danh sách các màu CSS được đặt tên. Việc gõ vào ô `<input>` sẽ lọc danh sách.
 
-Right now every row is showing `AliceBlue`, and as lovely a colour as it is, that's not what we want.
+Hiện tại, mỗi hàng hiển thị `AliceBlue`, và mặc dù màu này rất đẹp, nhưng đó không phải là điều chúng ta muốn.
 
-Open `FilterableList.svelte`. The `<slot>` is being rendered for each filtered item in the list. Pass the data into the slot:
+Mở tệp `FilterableList.svelte`. Thẻ `<slot>` được hiển thị cho mỗi mục đã được lọc trong danh sách. Truyền dữ liệu vào slot:
 
 ```svelte
 /// file: FilterableList.svelte
@@ -17,9 +17,9 @@ Open `FilterableList.svelte`. The `<slot>` is being rendered for each filtered i
 </div>
 ```
 
-(As in other contexts, `{item}` is shorthand for `item={item}`.)
+(Giống như ở các ngữ cảnh khác, `{item}` là cách rút gọn của `item={item}`.)
 
-Then, on the other side, expose the data to the slotted content with the `let:` directive:
+Sau đó, ở phía bên kia, tiếp cận dữ liệu trong nội dung được đặt vào thông qua hướng dẫn `let`::
 
 ```svelte
 /// file: App.svelte
@@ -38,7 +38,7 @@ Then, on the other side, expose the data to the slotted content with the `let:` 
 </FilterableList>
 ```
 
-Finally, get rid of the placeholder variable, which we no longer need:
+Cuối cùng, loại bỏ biến giữ chỗ, chúng ta không còn cần chúng nữa:
 
 ```svelte
 /// file: App.svelte
@@ -50,4 +50,4 @@ Finally, get rid of the placeholder variable, which we no longer need:
 </script>
 ```
 
-> Named slots can also have props; use the `let` directive on an element with a `slot="..."` attribute, instead of on the component itself.
+> Các slot được đặt tên cũng có thể có các thuộc tính _(props)_; sử dụng chỉ thị `let` trên một phần tử có thuộc tính `slot="..."`, thay vì trên chính thành phần của nó.
