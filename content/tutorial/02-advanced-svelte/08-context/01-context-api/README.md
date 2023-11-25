@@ -1,10 +1,11 @@
 ---
-title: setContext and getContext
+title: setContext và getContext
 ---
 
-The context API provides a mechanism for components to 'talk' to each other without passing around data and functions as props, or dispatching lots of events. It's an advanced feature, but a useful one. In this exercise, we're going to recreate [Schotter](https://collections.vam.ac.uk/item/O221321/schotter-print-nees-georg/) by George Nees — one of the pioneers of generative art — using the context API.
+API ngữ cảnh cung cấp cơ chế cho các thành phần 'trò chuyện' với nhau mà không cần truyền dữ liệu và hàm như là thuộc tính, hoặc phát ra nhiều sự kiện. Đây là một tính năng nâng cao, nhưng hữu ích. Trong bài tập này, chúng ta sẽ tái tạo [Schotter](https://collections.vam.ac.uk/item/O221321/schotter-print-nees-georg/) của George Nees — một trong những người tiên phong trong nghệ thuật tạo sinh — bằng cách sử dụng API ngữ cảnh.
 
-Inside `Canvas.svelte`, there's an `addItem` function that adds an item to the canvas. We can make it available to components inside `<Canvas>`, like `<Square>`, with `setContext`:
+
+Bên trong `Canvas.svelte`, có một hàm `addItem` thêm một mục vào canvas. Chúng ta có thể làm cho nó có sẵn cho các thành phần bên trong `<Canvas>`, như `<Square>`, với `setContext`:
 
 ```svelte
 /// file: Canvas.svelte
@@ -27,7 +28,7 @@ Inside `Canvas.svelte`, there's an `addItem` function that adds an item to the c
 </script>
 ```
 
-Inside child components, we can now get the context with, well, `getContext`:
+Bên trong các thành phần con, bây giờ chúng ta có thể lấy ngữ cảnh bằng cách sử dụng `getContext`:
 
 ```svelte
 /// file: Square.svelte
@@ -45,7 +46,7 @@ Inside child components, we can now get the context with, well, `getContext`:
 </script>
 ```
 
-So far, so... boring. Let's add some randomness to the grid:
+Cho đến giờ, rất là...nhàm chán. Hãy thêm một số yếu tố ngẫu nhiên vào lưới:
 
 ```svelte
 /// file: App.svelte
@@ -65,9 +66,9 @@ So far, so... boring. Let's add some randomness to the grid:
 </div>
 ```
 
-Like [lifecycle functions](/tutorial/onmount), `setContext` and `getContext` must be called during component initialisation. (The context key (`'canvas'` in this case) can be anything you like, including non-strings, which is useful for controlling who can access the context.)
+Giống như [các hàm vòng đời](/tutorial/onmount), `setContext` và `getContext` phải được gọi trong quá trình khởi tạo thành phần. (Khóa ngữ cảnh (`'canvas'` trong trường hợp này) có thể là bất cứ điều gì bạn thích, bao gồm dạng không phải là chuỗi, điều này hữu ích trong việc kiểm soát ai có thể truy cập ngữ cảnh.)
 
-Your context object can include anything, including stores. This allows you to pass values that change over time to child components:
+Đối tượng ngữ cảnh của bạn có thể bao gồm bất cứ điều gì, bao gồm cả các cửa hàng. Điều này cho phép bạn truyền các giá trị thay đổi theo thời gian đến các thành phần con:
 
 ```js
 /// no-file
