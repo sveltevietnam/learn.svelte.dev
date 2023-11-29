@@ -11,7 +11,7 @@ Bạn cũng có thể tham khảo [API docs](https://svelte.dev/docs) và [nhữ
 
 ## Svelte là gì?
 
-Svelte là một công cụ để xây dụng ứng dụng web. Như bao những framework về giao diện người dùng khác, nó cho phép bạn xây dụng ứng dụng _một cách khai báo_ _(declaratively)_ từ những thành phần _(components)_ kết hợp với đánh dấu _(markup)_, định dạng _(styles)_ và hành vi _(behaviours)_.
+Svelte là một công cụ để xây dụng ứng dụng web. Như bao những framework về giao diện người dùng khác, nó cho phép bạn xây dụng ứng dụng _một cách khai báo_ _(declaratively)_ từ những component kết hợp với đánh dấu _(markup)_, định dạng _(styles)_ và hành vi _(behaviours)_.
 
 Những component này được _dịch_ _(compile)_ thành những mô-đun JavaScript nhỏ mà hiệu quả, giúp loại bỏ những gánh nặng mà những UI framework khác thường mắc phải.
 

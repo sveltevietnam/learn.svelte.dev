@@ -2,7 +2,7 @@
 title: Sử dụng dữ liệu từ trang cha
 ---
 
-Như chúng ta đã thấy trong phần giới thiệu về [dữ liệu bố cục](/tutorial/layout-data), các thành phần `+page.svelte` và `+layout.svelte` có quyền truy cập vào tất cả mọi thứ được trả về từ các hàm `load` cha.
+Như chúng ta đã thấy trong phần giới thiệu về [dữ liệu bố cục](/tutorial/layout-data), component `+page.svelte` và `+layout.svelte` có quyền truy cập vào tất cả mọi thứ được trả về từ các hàm `load` cha.
 
 Đôi khi, việc cho các hàm `load` tự thân có quyền truy cập dữ liệu từ cha là hữu ích. Điều này có thể được thực hiện bằng cách sử dụng `await parent()`.
 
