@@ -2,9 +2,9 @@
 title: <svelte:head>
 ---
 
-The `<svelte:head>` element allows you to insert elements inside the `<head>` of your document. This is useful for things like `<title>` and `<meta>` tags, which are critical for good SEO.
+Phần tử `<svelte:head>` cho phép bạn chèn các phần tử vào trong thẻ `<head>` của tài liệu của bạn. Điều này hữu ích cho các thẻ `<title>` và `<meta>`, quan trọng để tối ưu hóa SEO.
 
-Since those are quite hard to show in the context of this tutorial, we'll use it for a different purpose — loading stylesheets.
+Vì những thẻ đó khá khó để hiển thị trong ngữ cảnh của bài hướng dẫn này, chúng ta sẽ sử dụng nó cho một mục đích khác — tải các stylesheets.
 
 ```svelte
 /// file: App.svelte
@@ -17,7 +17,7 @@ Since those are quite hard to show in the context of this tutorial, we'll use it
 	<link rel="stylesheet" href="/stylesheets/{selected}.css" />
 </svelte:head>+++
 
-<h1>Welcome to my site!</h1>
+<h1>Chào mừng đến với site của tôi!</h1>
 ```
 
-> In server-side rendering (SSR) mode, contents of `<svelte:head>` are returned separately from the rest of your HTML.
+> Trong chế độ render trên máy chủ (SSR), nội dung của <svelte:head> được trả về một cách riêng biệt so với phần còn lại của mã HTML của bạn.

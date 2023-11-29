@@ -2,7 +2,7 @@
 title: <svelte:element>
 ---
 
-Similarly, we don't always know in advance what kind of DOM element to render. `<svelte:element>` comes in handy here. As with the [previous exercise](svelte-component), we can replace a long sequence of `if` blocks with a single dynamic element:
+Tương tự, không phải lúc nào chúng ta cũng biết trước loại phần tử DOM nào sẽ hiển thị. `<svelte:element>` sẽ giúp ích cho điều này. Giống như trong [bài tập trước](svelte-component), chúng ta có thể thay thế một chuỗi dài các khối `if` bằng một phần tử động duy nhất:
 
 ```svelte
 /// file: App.svelte
@@ -13,8 +13,8 @@ Similarly, we don't always know in advance what kind of DOM element to render. `
 </select>
 
 +++<svelte:element this={selected}>
-	I'm a <code>&lt;{selected}&gt;</code> element
+	Tôi là một <code>&lt;{selected}&gt;</code> element
 </svelte:element>+++
 ```
 
-The `this` value can be any string, or a falsy value — if it's falsy, no element is rendered.
+Giá trị `this` có thể là bất kỳ chuỗi nào, hoặc giá trị falsy _(undefined, null, false, 0, -0, 0n, NaN)_ — nếu nó là falsy, không có phần tử nào được hiển thị.

@@ -2,9 +2,9 @@
 title: <svelte:self>
 ---
 
-Svelte provides a variety of built-in elements. The first, `<svelte:self>`, allows a component to contain itself recursively.
+Svelte cung cấp một loạt các phần tử tích hợp. Phần tử đầu tiên, `<svelte:self>`, cho phép một thành phần chứa chính nó một cách đệ quy.
 
-It's useful for things like this folder tree view, where folders can contain _other_ folders. In `Folder.svelte` we want to be able to do this...
+Nó hữu ích cho những thứ như cây thư mục, nơi các thư mục có thể chứa _các_ thư mục khác. Trong `Folder.svelte`, chúng ta muốn  làm điều này...
 
 ```svelte
 /// file: Folder.svelte
@@ -15,7 +15,7 @@ It's useful for things like this folder tree view, where folders can contain _ot
 {/if}
 ```
 
-...but that's impossible, because a module can't import itself. Instead, we use `<svelte:self>`:
+... nhưng điều đó là không thể, vì một module không thể nhập chính nó. Thay vào đó, chúng ta sử dụng <svelte:self>:
 
 ```svelte
 /// file: Folder.svelte

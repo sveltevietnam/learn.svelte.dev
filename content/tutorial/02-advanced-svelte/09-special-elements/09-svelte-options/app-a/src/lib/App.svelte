@@ -2,9 +2,9 @@
 	import Todo from './Todo.svelte';
 
 	let todos = [
-		{ id: 1, done: true, text: 'wash the car' },
-		{ id: 2, done: false, text: 'take the dog for a walk' },
-		{ id: 3, done: false, text: 'mow the lawn' }
+		{ id: 1, done: true, text: 'rửa xe' },
+		{ id: 2, done: false, text: 'dẫn chó đi dạo' },
+		{ id: 3, done: false, text: 'cắt cỏ' }
 	];
 
 	function toggle(toggled) {
