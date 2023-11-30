@@ -6,7 +6,7 @@ Phần tử `<svelte:options>` cho phép bạn chỉ định các tùy chọn tr
 
 Chúng ta sẽ sử dụng tùy chọn `immutable` như một ví dụ. Trong ứng dụng này, phần tử `<Todo>` nhấp nháy mỗi khi nó nhận dữ liệu mới. Bằng cách nhấp vào một trong các mục, nó sẽ chuyển đổi trạng thái `done` của nó bằng cách tạo một mảng `todos` được cập nhật. Điều này khiến các phần tử `<Todo>` _khác_ nhấp nháy, mặc dù chúng không thực sự tạo ra bất kỳ thay đổi nào trên DOM.
 
-Chúng ta có thể tối ưu hóa điều này bằng cách thông báo cho phần tử `<Todo>` mong đợi dữ liệu _immutable_. Điều này có nghĩa là chúng ta cam kết không bao giờ _mutate_ prop `todo`, mà thay vào đó sẽ tạo ra các đối tượng todo mới mỗi khi có thay đổi.
+Chúng ta có thể tối ưu hóa điều này bằng cách thông báo rằng phần tử `<Todo>` luôn nhận dữ liệu bất biến. Có nghĩa là ta cam kết không bao giờ _thay đổi_ prop `todo`, mà thay vào đó sẽ tạo ra các đối tượng todo mới mỗi khi có thay đổi.
 
 Thêm dòng sau vào đầu của `Todo.svelte`:
 
