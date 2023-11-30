@@ -7,7 +7,7 @@ Trong [bài tập trước](onmount), chúng ta đã học cách sử dụng hà
 Nhưng ví dụ có lỗi — nó đang sử dụng `document.querySelector('canvas')`, cái mà luôn trả về `<canvas>` đầu tiên được tìm thấy trên trang, có thể không phải là cái thuộc thành phần của chúng ta.
 
 
-Thay vào đó, chúng ta có thể sử dụng ràng buộc chỉ đọc `this` để có một tham chiếu đến phần tử:
+Thay vào đó, chúng ta có thể sử dụng phép bind chỉ đọc `this` để có một tham chiếu đến phần tử:
 
 ```js
 /// file: App.svelte
