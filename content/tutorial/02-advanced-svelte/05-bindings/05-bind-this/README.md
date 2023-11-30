@@ -4,7 +4,7 @@ title: This
 
 Trong [bài tập trước](onmount), chúng ta đã học cách sử dụng hàm vòng đời `onMount` để vẽ lên một canvas.
 
-Nhưng ví dụ có lỗi — nó đang sử dụng `document.querySelector('canvas')`, cái mà luôn trả về `<canvas>` đầu tiên được tìm thấy trên trang, có thể không phải là cái thuộc thành phần của chúng ta.
+Nhưng ví dụ đó có lỗi — nó đang sử dụng `document.querySelector('canvas')`. Đầu ra của hàm này luôn trả về `<canvas>` đầu tiên được tìm thấy trên trang mà chưa chắc là cái nằm trong component của chúng ta.
 
 
 Thay vào đó, chúng ta có thể sử dụng phép bind chỉ đọc `this` để có một tham chiếu đến phần tử:
