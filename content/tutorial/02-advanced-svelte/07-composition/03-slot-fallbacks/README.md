@@ -1,8 +1,9 @@
 ---
-title: Slot fallbacks
+title: Slot dự phòng
 ---
 
-A component can specify _fallbacks_ for any slots that are left empty, by putting content inside the `<slot>` element:
+Một component có thể chỉ định _dự phòng_ cho bất kỳ slot nào bị bỏ trống, bằng cách đặt nội dung vào phần tử `<slot>`:
+
 
 ```svelte
 /// file: Card.svelte

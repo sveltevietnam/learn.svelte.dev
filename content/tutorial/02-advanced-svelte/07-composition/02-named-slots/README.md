@@ -1,10 +1,10 @@
 ---
-title: Named slots
+title: Slot được đặt tên
 ---
 
-The previous example contained a _default slot_, which renders the direct children of a component. Sometimes you will need more control over placement. In those cases, we can use _named slots_.
+Ví dụ trước dùng _slot mặc định_ để hiển thị các phần tử con trực tiếp của component. Đôi khi bạn sẽ cần nhiều kiểm soát hơn về vị trí đặt. Trong những trường hợp đó, chúng ta có thể sử dụng _slot được đặt tên_.
 
-Inside `App.svelte`, we're rendering a `<Card>` component that contains `<span slot="telephone">` and others for `company` and `address`. Let's add the corresponding named slots in `Card.svelte`:
+Bên trong `App.svelte`, chúng ta đang hiển thị một component `<Card>` chứa `<span slot="telephone">` và các thành phần khác cho `company` và `address`. Hãy thêm các slot được đặt tên tương ứng trong `Card.svelte`:
 
 ```svelte
 /// file: Card.svelte
@@ -22,7 +22,7 @@ Inside `App.svelte`, we're rendering a `<Card>` component that contains `<span s
 </div>
 ```
 
-We need to add some styles to the `<small>` element in `App.svelte` so that it occupies its own line. The contents of `<Card>` inherit styles from `Card.svelte`, such as `font-family` (the lettering is something called ['Silian Rail'](https://www.youtube.com/watch?v=aZVkW9p-cCU)), but normal scoping rules apply — we need to add the styles to `App.svelte` because that's where the element is:
+Chúng ta cần thêm một số style cho phần tử `<small>` trong `App.svelte` để nó chiếm một dòng riêng. Nội dung của `<Card>` kế thừa style từ `Card.svelte`, như `font-family` (những chữ cái được gọi là ['Silian Rail'](https://www.youtube.com/watch?v=aZVkW9p-cCU)), nhưng các quy tắc phổ thông vẫn áp dụng — chúng ta cần thêm kiểu vào `App.svelte` vì đó là nơi chứa phần tử đó:
 
 ```svelte
 /// file: App.svelte
@@ -41,8 +41,7 @@ We need to add some styles to the `<small>` element in `App.svelte` so that it o
 	}+++
 </style>
 ```
-
-Alternatively, we could use the `:global` modifier inside `Card.svelte` to target all `small` elements inside `.card`:
+Hoặc, chúng ta có thể sử dụng bộ chỉnh `:global` bên trong `Card.svelte` để chọn tất cả các phần tử `small` bên trong `.card`:
 
 ```svelte
 /// file: Card.svelte

@@ -1,8 +1,8 @@
 ---
-title: Checking for slot content
+title: Kiểm tra nội dung slot
 ---
 
-In some cases, you may want to control parts of your component based on whether slotted content was passed in. For example, if we remove the `<header>` from `App.svelte`...
+Trong một số trường hợp, bạn có thể muốn kiểm soát các phần của thành phần dựa trên việc liệu nội dung được đặt vào thông qua slot hay không. Ví dụ, nếu chúng ta xóa `<header>` từ `App.svelte`...
 
 ```svelte
 /// file: App.svelte
@@ -23,9 +23,9 @@ In some cases, you may want to control parts of your component based on whether 
 </div>
 ```
 
-...we're left with an ugly double border because `FilterableList.svelte` is still rendering the `<div class="header">`.
+...chúng ta sẽ có một đường viền kép xấu xí vì `FilterableList.svelte` vẫn đang hiển thị `<div class="header">`.
 
-We can fix that by using the special `$$slots` variable in `FilterableList.svelte`:
+Chúng ta có thể sửa điều đó bằng cách sử dụng biến đặc biệt `$$slots` trong `FilterableList.svelte`:
 
 ```svelte
 /// file: FilterableList.svelte
