@@ -2,7 +2,7 @@
 title: Slot dự phòng
 ---
 
-Một thành phần có thể chỉ định _dự phòng_ cho bất kỳ slot nào bị bỏ trống, bằng cách đặt nội dung vào phần tử `<slot>`:
+Một component có thể chỉ định _dự phòng_ cho bất kỳ slot nào bị bỏ trống, bằng cách đặt nội dung vào phần tử `<slot>`:
 
 
 ```svelte
