@@ -1,8 +1,8 @@
 ---
-title: Exports
+title: Xuất
 ---
 
-Anything exported from a `context="module"` script block becomes an export from the module itself. Let's export a `stopAll` function:
+Bất cứ thứ gì được xuất từ khối mã nguồn `context="module"` sẽ trở thành một xuất từ mô-đun đó. Hãy xuất một hàm `stopAll`:
 
 ```svelte
 /// file: AudioPlayer.svelte
@@ -15,7 +15,7 @@ Anything exported from a `context="module"` script block becomes an export from 
 </script>
 ```
 
-We can now import `stopAll` in `App.svelte`...
+Bây giờ chúng ta có thể nhập `stopAll` trong `App.svelte`...
 
 ```svelte
 /// file: App.svelte
@@ -24,7 +24,7 @@ We can now import `stopAll` in `App.svelte`...
 </script>
 ```
 
-...and use it in an event handler:
+...và sử dụng nó trong một xử lý sự kiện:
 
 ```svelte
 /// file: App.svelte
@@ -39,4 +39,4 @@ We can now import `stopAll` in `App.svelte`...
 </div>
 ```
 
-> You can't have a default export, because the component _is_ the default export.
+> Bạn không thể có một xuất mặc định _(default export)_, vì thành phần _là_ xuất mặc định.

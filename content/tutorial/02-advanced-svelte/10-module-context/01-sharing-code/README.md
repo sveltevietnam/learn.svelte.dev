@@ -1,12 +1,12 @@
 ---
-title: Sharing code
+title: Chia sẽ mã
 ---
 
-In all the examples we've seen so far, the `<script>` block contains code that runs when each component instance is initialised. For the vast majority of components, that's all you'll ever need.
+Trong tất cả các ví dụ chúng ta đã thấy cho đến nay, khối `<script>` chứa mã nguồn chạy khi mỗi trường hợp của thành phần được khởi tạo. Đối với hầu hết các thành phần, đó sẽ là tất cả những gì bạn cần.
 
-Very occasionally, you'll need to run some code outside of an individual component instance. For example: returning to our custom audio player from a [previous exercise](media-elements), you can play all four tracks simultaneously. It would be better if playing one stopped all the others.
+Hiếm khi, bạn có thể cần chạy một số mã nguồn bên ngoài của một trường hợp cụ thể của thành phần. Ví dụ: trở lại với trình phát audio tùy chỉnh từ một [bài tập trước đó](media-elements), bạn có thể phát cả bốn bản đồ âm thanh cùng một lúc. Sẽ tốt hơn nếu  phát một bản còn tất cả các bản khác thì dừng.
 
-We can do that by declaring a `<script context="module">` block. Code contained inside it will run once, when the module first evaluates, rather than when a component is instantiated. Place this at the top of `AudioPlayer.svelte` (note that this is a _separate_ script tag):
+Chúng ta có thể thực hiện điều đó bằng cách khai báo một khối `<script context="module">`. Mã được chứa trong nó sẽ chạy một lần, khi mô-đun lần đầu được phản hồi, thay vì khi một thành phần được khởi tạo. Đặt nó ở đầu `AudioPlayer.svelte` (lưu ý đây là một thẻ `<script>` _riêng biệt_):
 
 ```svelte
 /// file: AudioPlayer.svelte
@@ -15,7 +15,7 @@ We can do that by declaring a `<script context="module">` block. Code contained 
 </script>+++
 ```
 
-It's now possible for the components to 'talk' to each other without any state management:
+Bây giờ có thể cho phép các thành phần 'nói chuyện' với nhau mà không cần quản lý trạng thái:
 
 ```svelte
 /// file: AudioPlayer.svelte
