@@ -1,5 +1,5 @@
 ---
-title: Ràng buộc thành phần với chính nó
+title: Phép bind thực thể component
 ---
 
 Tương tự như bạn có thể ràng buộc với các phần tử DOM, bạn cũng có thể ràng buộc với chính các instance của component với `bind:this`.
