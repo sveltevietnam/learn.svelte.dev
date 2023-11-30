@@ -23,4 +23,4 @@ Thậm chí bạn cũng có thể ràng buộc đến các thuộc tính bên tr
 {/each}
 ```
 
-> Lưu ý: tương tác với các phần tử `<input>` này sẽ thay đổi mảng. Nếu bạn muốn làm việc với dữ liệu không thay đổi, bạn nên tránh các ràng buộc này và thay vào đó, sử dụng các xử lý sự kiện.
+> Lưu ý: tương tác với các phần tử `<input>` này sẽ thay đổi mảng. Nếu bạn muốn làm việc với dữ liệu không thay đổi, bạn nên tránh các phép bind này và thay vào đó, sử dụng các hàm xử lý sự kiện.
