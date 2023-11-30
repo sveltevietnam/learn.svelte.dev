@@ -2,7 +2,7 @@
 title: <svelte:head>
 ---
 
-Phần tử `<svelte:head>` cho phép bạn chèn các phần tử vào trong thẻ `<head>` của tài liệu của bạn. Điều này hữu ích cho các thẻ `<title>` và `<meta>`, quan trọng để tối ưu hóa SEO.
+Phần tử `<svelte:head>` cho phép bạn chèn các phần tử vào trong thẻ `<head>` của document. Điều này hữu ích cho các thẻ `<title>` và `<meta>`, quan trọng để tối ưu hóa SEO.
 
 Vì những thẻ đó khá khó để hiển thị trong ngữ cảnh của bài hướng dẫn này, chúng ta sẽ sử dụng nó cho một mục đích khác — tải các stylesheets.
 
