@@ -1,16 +1,17 @@
 ---
-title: The @debug tag
+title: Thẻ @debug
 ---
 
-Occasionally, it's useful to inspect a piece of data as it flows through your app.
+Đôi khi, việc kiểm tra một dữ liệu khi nó chạy qua ứng dụng của bạn rất hữu ích.
 
-One approach is to use `console.log(...)` inside your markup. If you want to pause execution, though, you can use the `{@debug ...}` tag with a comma-separated list of values you want to inspect:
+Một cách tiếp cận là sử dụng `console.log(...)` bên trong đánh dấu của bạn. Tuy nhiên, nếu bạn muốn tạm dừng thực thi, bạn có thể sử dụng thẻ `{@debug ...}` với danh sách các giá trị bạn muốn kiểm tra được phân tách bằng dấu phẩy:
+
 
 ```svelte
 /// file: App.svelte
 {@debug user}
 
-<h1>Hello {user.firstname}!</h1>
+<h1>Chào {user.firstname}!</h1>
 ```
 
-If you now open your devtools and start interacting with the `<input>` elements, you'll trigger the debugger as the value of `user` changes. (Note that the call stack and local variables will be hidden in this tutorial, because of iframe security restrictions.)
+Nếu bạn mở công cụ phát triển của mình và bắt đầu tương tác với các phần tử `<input>`, bạn sẽ kích hoạt trình gỡ lỗi khi giá trị của `user` thay đổi. (Lưu ý rằng ngăn xếp cuộc gọi _(call stack)_ và các biến cục bộ sẽ bị ẩn trong bài hướng dẫn này do các ràng buộc an ninh iframe.)
