@@ -1,5 +1,5 @@
 ---
-title: Ràng buộc thành phần
+title: Phép bind với component
 ---
 
 Tương tự như bạn có thể ràng buộc với các thuộc tính của các phần tử DOM, bạn cũng có thể ràng buộc với các props của component _(thành phần)_. Ví dụ, chúng ta có thể ràng buộc với prop `value` của thành phần `<Keypad>` như là một phần tử biểu mẫu (form element):
