@@ -4,7 +4,7 @@ title: Slot được đặt tên
 
 Ví dụ trước dùng _slot mặc định_ để hiển thị các phần tử con trực tiếp của component. Đôi khi bạn sẽ cần nhiều kiểm soát hơn về vị trí đặt. Trong những trường hợp đó, chúng ta có thể sử dụng _slot được đặt tên_.
 
-Bên trong `App.svelte`, chúng ta đang hiển thị một thành phần `<Card>` chứa `<span slot="telephone">` và các thành phần khác cho `company` và `address`. Hãy thêm các slot được đặt tên tương ứng trong `Card.svelte`:
+Bên trong `App.svelte`, chúng ta đang hiển thị một component `<Card>` chứa `<span slot="telephone">` và các thành phần khác cho `company` và `address`. Hãy thêm các slot được đặt tên tương ứng trong `Card.svelte`:
 
 ```svelte
 /// file: Card.svelte
