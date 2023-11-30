@@ -11,4 +11,4 @@ Chúng ta đã có một hàm `handleKeydown` được khai báo — giờ đây
 <svelte:window +++on:keydown={handleKeydown}+++ />
 ```
 
-> Như với các phần tử DOM, bạn có thể thêm [các hàm xử lý sự kiện](/tutorial/event-modifiers) như `preventDefault`.
+> Như với các phần tử DOM, bạn có thể thêm [modifier cho sự kiện](/tutorial/event-modifiers) như `preventDefault`.
