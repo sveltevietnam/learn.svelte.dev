@@ -2,7 +2,7 @@
 title: Kích thước
 ---
 
-Mọi phần tử cấp khối đều có các ràng buộc `clientWidth`, `clientHeight`, `offsetWidth` và `offsetHeight`:
+Mọi phần tử cấp khối đều có các phép bind `clientWidth`, `clientHeight`, `offsetWidth` và `offsetHeight`:
 
 ```svelte
 /// file: App.svelte
