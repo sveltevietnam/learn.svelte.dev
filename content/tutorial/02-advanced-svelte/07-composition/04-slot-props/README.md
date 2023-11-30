@@ -19,7 +19,7 @@ Mở tệp `FilterableList.svelte`. Thẻ `<slot>` được hiển thị cho m�
 
 (Giống như ở các ngữ cảnh khác, `{item}` là cách rút gọn của `item={item}`.)
 
-Sau đó, ở phía bên kia, tiếp cận dữ liệu trong nội dung được đặt vào thông qua hướng dẫn `let`::
+Sau đó, ở phía bên kia, hãy cung cấp liệu cho nội dung được đặt vào thông qua chị thị `let`:
 
 ```svelte
 /// file: App.svelte
