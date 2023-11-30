@@ -17,7 +17,7 @@ export async function handle({ event, resolve }) {
 }
 ```
 
-Đối với trang (trái ngược với[API routes](get-handlers)), bạn có thể sửa đổi HTML được tạo ra bằng `transformPageChunk`:
+Đối với trang (trái ngược với [API routes](get-handlers)), bạn có thể sửa đổi HTML được tạo ra bằng `transformPageChunk`:
 
 ```js
 /// file: src/hooks.server.js
