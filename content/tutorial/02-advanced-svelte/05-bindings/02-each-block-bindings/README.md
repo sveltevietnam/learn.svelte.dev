@@ -2,7 +2,7 @@
 title: Phép bind trong khối each
 ---
 
-Thậm chí bạn cũng có thể ràng buộc đến các thuộc tính bên trong một khối `each`.
+Thậm chí bạn cũng có thể bind các thuộc tính bên trong một khối `each`.
 
 
 ```svelte
