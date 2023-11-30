@@ -1,8 +1,8 @@
 ---
-title: Component bindings
+title: Phép bind với component
 ---
 
-Just as you can bind to properties of DOM elements, you can bind to component props. For example, we can bind to the `value` prop of this `<Keypad>` component as though it were a form element:
+Tương tự như bạn có thể bind thuộc tính của phần tử DOM, bạn cũng có thể bind props của component. Ví dụ, chúng ta có thể bind prop `value` của component `<Keypad>` như là một phần tử biểu mẫu:
 
 ```svelte
 /// file: App.svelte
@@ -12,6 +12,6 @@ Just as you can bind to properties of DOM elements, you can bind to component pr
 />
 ```
 
-Now, when the user interacts with the keypad, the value of `pin` in the parent component is immediately updated.
+Bây giờ, khi người dùng tương tác với bàn phím, giá trị của `pin` trong component cha sẽ được cập nhật ngay lập tức.
 
-> Use component bindings sparingly. It can be difficult to track the flow of data around your application if you have too many of them, especially if there is no 'single source of truth'.
+> Hãy sử dụng phép bind với component một cách cẩn thận. Nó có thể khiến bạn khó theo dõi luồng dữ liệu trong ứng dụng nếu có quá nhiều phép bind, đặc biệt là nếu không có 'nguồn đáng tin cậy duy nhất' _(single source of truth)_.

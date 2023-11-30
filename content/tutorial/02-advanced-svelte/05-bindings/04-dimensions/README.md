@@ -1,8 +1,8 @@
 ---
-title: Dimensions
+title: Kích thước
 ---
 
-Every block-level element has `clientWidth`, `clientHeight`, `offsetWidth` and `offsetHeight` bindings:
+Mọi phần tử cấp khối đều có các phép bind `clientWidth`, `clientHeight`, `offsetWidth` và `offsetHeight`:
 
 ```svelte
 /// file: App.svelte
@@ -12,8 +12,8 @@ Every block-level element has `clientWidth`, `clientHeight`, `offsetWidth` and `
 </div>
 ```
 
-These bindings are readonly — changing the values of `w` and `h` won't have any effect on the element.
+Những phép bind này là chỉ đọc — việc thay đổi giá trị của `w` và `h` sẽ không có ảnh hưởng gì đối với phần tử.
 
-> Elements are measured using a technique similar to [this one](http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/). There is some overhead involved, so it's not recommended to use this for large numbers of elements.
+> Các phần tử được đo lường bằng một kỹ thuật tương tự như [kỹ thuật này](http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/). Việc này là tốn tài nguyên nên không khuyến khích sử dụng cho số lượng lớn phần tử.
 >
-> `display: inline` elements cannot be measured with this approach; nor can elements that can't contain other elements (such as `<canvas>`). In these cases you will need to measure a wrapper element instead.
+> Các phần tử có `display: inline` không thể được đo lường bằng cách tiếp cận này; cũng như các phần tử không thể chứa các phần tử khác (như `<canvas>`). Trong những trường hợp này, bạn sẽ cần đo một phần tử bọc ngoài.

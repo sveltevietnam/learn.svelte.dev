@@ -1,8 +1,8 @@
 <script>
 	let todos = [
-		{ done: false, text: 'finish Svelte tutorial' },
-		{ done: false, text: 'build an app' },
-		{ done: false, text: 'world domination' }
+		{ done: false, text: 'hoàn thành hướng dẫn svelte' },
+		{ done: false, text: 'xây dựng ứng dụng' },
+		{ done: false, text: 'thống trị thế giới' }
 	];
 
 	function add() {
@@ -32,21 +32,21 @@
 
 				<input
 					type="text"
-					placeholder="What needs to be done?"
+					placeholder="Việc cần hoàn thành?"
 					bind:value={todo.text}
 				/>
 			</li>
 		{/each}
 	</ul>
 
-	<p>{remaining} remaining</p>
+	<p>{remaining} còn lại</p>
 
 	<button on:click={add}>
-		Add new
+		Thêm mới
 	</button>
 
 	<button on:click={clear}>
-		Clear completed
+		Xóa việc đã hoàn thành
 	</button>
 </div>
 

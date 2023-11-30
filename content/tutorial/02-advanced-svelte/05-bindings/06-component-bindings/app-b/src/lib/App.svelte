@@ -4,10 +4,10 @@
 	let pin;
 	$: view = pin
 		? pin.replace(/\d(?!$)/g, '•')
-		: 'enter your pin';
+		: 'nhập mã pin';
 
 	function handleSubmit() {
-		alert(`submitted ${pin}`);
+		alert(`đã gửi: ${pin}`);
 	}
 </script>
 

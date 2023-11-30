@@ -2,7 +2,7 @@
 	let w;
 	let h;
 	let size = 42;
-	let text = 'edit this text';
+	let text = 'chỉnh sửa nội dung này';
 </script>
 
 <label>
