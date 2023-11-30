@@ -67,7 +67,7 @@ Cho đến giờ, rất là...nhàm chán. Hãy thêm một số yếu tố ng�
 
 Giống như [các hàm vòng đời](/tutorial/onmount), `setContext` và `getContext` phải được gọi trong quá trình khởi tạo component. (Khóa ngữ cảnh (`'canvas'` trong trường hợp này) có thể là bất cứ điều gì bạn thích không cần phải là chuỗi, điều này hữu ích trong việc kiểm soát ai có thể truy cập ngữ cảnh.)
 
-Đối tượng ngữ cảnh của bạn có thể bao gồm bất cứ điều gì, bao gồm cả các cửa hàng. Điều này cho phép bạn truyền các giá trị thay đổi theo thời gian đến các thành phần con:
+Đối tượng ngữ cảnh của bạn có thể bao gồm bất cứ điều gì, bao gồm cả store. Điều này cho phép bạn truyền các giá trị thay đổi theo thời gian đến các component con:
 
 ```js
 /// no-file
