@@ -11,7 +11,7 @@ Tương tự như các phần tử có thể có các phần tử con...
 </div>
 ```
 
-... thì các thành phần cũng có thể. Trước khi một thành phần có thể chấp nhận các phần tử con, nó cần biết nơi để đặt chúng. Chúng ta làm điều này với phần tử `<slot>`. Đặt nó bên trong `Card.svelte`:
+... thì các component cũng có thể. Trước khi một component có thể chấp nhận các phần tử con, nó cần biết nơi để đặt chúng. Chúng ta làm điều này với phần tử `<slot>`. Đặt nó bên trong `Card.svelte`:
 
 ```svelte
 /// file: Card.svelte
