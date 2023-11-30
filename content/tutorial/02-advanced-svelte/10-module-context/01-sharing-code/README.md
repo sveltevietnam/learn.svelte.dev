@@ -15,7 +15,7 @@ Chúng ta có thể thực hiện điều đó bằng cách khai báo một kh�
 </script>+++
 ```
 
-Bây giờ có thể cho phép các thành phần 'nói chuyện' với nhau mà không cần quản lý trạng thái:
+Bây giờ có thể cho phép các component 'nói chuyện' với nhau mà không cần quản lý trạng thái:
 
 ```svelte
 /// file: AudioPlayer.svelte
