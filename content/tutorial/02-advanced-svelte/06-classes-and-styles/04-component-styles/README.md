@@ -25,7 +25,7 @@ Một cách để làm điều này là sử dụng bộ điều chỉnh kiểu 
 
 Nhưng có nhiều lý do _không nên_ làm như vậy. Đầu tiên, nó rất dài dòng. Thứ hai, nó mong manh — bất kỳ thay đổi nào đối với các chi tiết triển khai của `Box.svelte` có thể làm hỏng bộ chọn.
 
-Nhưng hơn tất cả, nó khá thô sơ. Các thành phần nên có khả năng quyết định cho bản thân mình style nào có thể được kiểm soát từ 'bên ngoài', giống như cách chúng quyết định biến nào được tiết lộ dưới dạng thuộc tính. ``:global` nên được sử dụng như một cửa thoát - một phương án cuối cùng.
+Nhưng hơn hết, nó khá bất lịch sự. Các thành phần nên có khả năng tự quyết định style nào có thể được kiểm soát từ 'bên ngoài', giống như cách chúng quyết định biến nào được tiết lộ dưới dạng prop. `:global` nên được sử dụng như một cửa thoát - một phương án cuối cùng.
 
 Bên trong `Box.svelte`, hãy thay đổi `background-color` để nó được xác định bởi một [thuộc tính tùy chỉnh CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/--*):
 
