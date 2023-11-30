@@ -12,7 +12,6 @@ Tương tự như bạn có thể bind thuộc tính của phần tử DOM, bạ
 />
 ```
 
-Now, when the user interacts with the keypad, the value of `pin` in the parent component is immediately updated.
 Bây giờ, khi người dùng tương tác với bàn phím, giá trị của `pin` trong thành phần cha sẽ được cập nhật ngay lập tức.
 
 > Sử dụng ràng buộc thành phần một cách cẩn thận. Nó có thể khó theo dõi luồng dữ liệu trong ứng dụng của bạn nếu bạn có quá nhiều ràng buộc, đặc biệt là nếu không có 'nguồn đáng tin cậy duy nhất'.
