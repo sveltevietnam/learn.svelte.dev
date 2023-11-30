@@ -2,7 +2,7 @@
 title: Phép bind với component
 ---
 
-Tương tự như bạn có thể ràng buộc với các thuộc tính của các phần tử DOM, bạn cũng có thể ràng buộc với các props của component _(thành phần)_. Ví dụ, chúng ta có thể ràng buộc với prop `value` của thành phần `<Keypad>` như là một phần tử biểu mẫu (form element):
+Tương tự như bạn có thể bind thuộc tính của phần tử DOM, bạn cũng có thể bind props của component. Ví dụ, chúng ta có thể bind prop `value` của component `<Keypad>` như là một phần tử biểu mẫu:
 
 ```svelte
 /// file: App.svelte
