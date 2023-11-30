@@ -6,5 +6,5 @@
 
 <svelte:document />
 
-<h1>Select this text to fire events</h1>
-<p>Selection: {selection}</p>
+<h1>Chọn văn bản để kích hoạt sự kiện</h1>
+<p>Lựa chọn: {selection}</p>

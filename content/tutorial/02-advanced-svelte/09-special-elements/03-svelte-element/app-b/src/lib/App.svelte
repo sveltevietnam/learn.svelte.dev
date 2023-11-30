@@ -10,5 +10,5 @@
 </select>
 
 <svelte:element this={selected}>
-	I'm a <code>&lt;{selected}&gt;</code> element
+	Tôi là một <code>&lt;{selected}&gt;</code> element
 </svelte:element>

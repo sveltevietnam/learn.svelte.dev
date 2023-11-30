@@ -15,7 +15,7 @@
 		<kbd>{key === ' ' ? 'Space' : key}</kbd>
 		<p>{keyCode}</p>
 	{:else}
-		<p>Focus this window and press any key</p>
+		<p>Focus vào cửa sổ này và ấn phím bất kỳ</p>
 	{/if}
 </div>
 

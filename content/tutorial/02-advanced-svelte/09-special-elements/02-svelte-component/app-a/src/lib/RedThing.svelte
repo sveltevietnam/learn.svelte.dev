@@ -1,4 +1,4 @@
-<p>Red thing</p>
+<p>Những thứ màu đỏ</p>
 
 <style>
 	p {

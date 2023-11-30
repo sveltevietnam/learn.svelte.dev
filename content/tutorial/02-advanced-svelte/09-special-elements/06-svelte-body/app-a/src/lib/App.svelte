@@ -9,7 +9,7 @@
 <!-- creative commons BY-NC http://www.pngall.com/kitten-png/download/7247 -->
 <img
 	class:curious={hereKitty}
-	alt="Kitten wants to know what's going on"
+	alt="Mèo con muốn biết chuyện gì đang xảy ra"
 	src={kitten}
 />
 

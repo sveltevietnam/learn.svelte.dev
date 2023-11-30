@@ -1,4 +1,4 @@
-<p>Green thing</p>
+<p>Những thứ màu xanh lá cây</p>
 
 <style>
 	p {
