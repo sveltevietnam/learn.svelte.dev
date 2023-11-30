@@ -2,7 +2,7 @@
 title: Style thành phần
 ---
 
-Thường thì bạn cần ảnh hưởng đến kiểu dáng _(style)_ bên trong một thành phần con. Có lẽ chúng ta muốn làm cho những hộp này màu đỏ, xanh và xanh dương.
+Thường thì bạn cần thay đổi style bên trong một component con. Có lẽ chúng ta muốn làm cho những hộp này màu đỏ, xanh và xanh dương.
 
 Một cách để làm điều này là sử dụng bộ điều chỉnh kiểu CSS `:global`, cho phép bạn nhắm tùy ý đến các phần tử bên trong các thành phần khác:
 
