@@ -14,6 +14,6 @@ Mọi phần tử cấp khối đều có các phép bind `clientWidth`, `client
 
 Những phép bind này là chỉ đọc — việc thay đổi giá trị của `w` và `h` sẽ không có ảnh hưởng gì đối với phần tử.
 
-> Các phần tử được đo lường bằng một kỹ thuật tương tự như [kỹ thuật này](http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/). Sẽ tốn một số tài nguyên liên quan, vì vậy không khuyến khích sử dụng nó cho một lượng lớn các phần tử.
+> Các phần tử được đo lường bằng một kỹ thuật tương tự như [kỹ thuật này](http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/). Việc này là tốn tài nguyên nên không khuyến khích sử dụng cho số lượng lớn phần tử.
 >
 > Các phần tử có `display: inline` không thể được đo lường bằng cách tiếp cận này; cũng như các phần tử không thể chứa các phần tử khác (như `<canvas>`). Trong những trường hợp này, bạn sẽ cần đo một phần tử bọc ngoài.
