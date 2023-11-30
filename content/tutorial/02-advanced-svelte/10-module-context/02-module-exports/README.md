@@ -39,4 +39,4 @@ Bây giờ chúng ta có thể nhập `stopAll` trong `App.svelte`...
 </div>
 ```
 
-> Bạn không thể có một xuất mặc định _(default export)_, vì thành phần _là_ xuất mặc định.
+> Bạn không thể có một xuất mặc định _(default export)_, vì component _là_ xuất mặc định.
