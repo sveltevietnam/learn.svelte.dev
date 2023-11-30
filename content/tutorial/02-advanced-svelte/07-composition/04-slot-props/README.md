@@ -1,5 +1,5 @@
 ---
-title: Thuộc tính slot
+title:  Prop cho slot
 ---
 
 Các thành phần có thể truyền dữ liệu _trở lại_ cho nội dung được đặt vào thông qua _thuộc tính slot_. Trong ứng dụng này, chúng ta có một danh sách các màu CSS được đặt tên. Việc gõ vào ô `<input>` sẽ lọc danh sách.
