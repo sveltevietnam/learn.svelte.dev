@@ -22,7 +22,7 @@ Bên trong `App.svelte`, chúng ta đang hiển thị một component `<Card>` c
 </div>
 ```
 
-Chúng ta cần thêm một số kiểu _(styles)_ cho phần tử `<small>` trong `App.svelte` để nó chiếm một dòng riêng. Nội dung của `<Card>` kế thừa các kiểu từ `Card.svelte`, như `font-family` (những chữ cái được gọi là ['Silian Rail'](https://www.youtube.com/watch?v=aZVkW9p-cCU)), nhưng các quy tắc phổ thông vẫn áp dụng — chúng ta cần thêm kiểu vào `App.svelte` vì đó là nơi chứa phần tử đó:
+Chúng ta cần thêm một số style cho phần tử `<small>` trong `App.svelte` để nó chiếm một dòng riêng. Nội dung của `<Card>` kế thừa style từ `Card.svelte`, như `font-family` (những chữ cái được gọi là ['Silian Rail'](https://www.youtube.com/watch?v=aZVkW9p-cCU)), nhưng các quy tắc phổ thông vẫn áp dụng — chúng ta cần thêm kiểu vào `App.svelte` vì đó là nơi chứa phần tử đó:
 
 ```svelte
 /// file: App.svelte
