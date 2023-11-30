@@ -2,7 +2,7 @@
 title:  Prop cho slot
 ---
 
-Các thành phần có thể truyền dữ liệu _trở lại_ cho nội dung được đặt vào thông qua _thuộc tính slot_. Trong ứng dụng này, chúng ta có một danh sách các màu CSS được đặt tên. Việc gõ vào ô `<input>` sẽ lọc danh sách.
+Các thành phần có thể truyền dữ liệu _trở lại_ cho nội dung được đặt vào thông qua _slot prop_. Trong ứng dụng này, chúng ta có một danh sách các màu CSS được đặt tên. Việc gõ vào ô `<input>` sẽ lọc danh sách.
 
 Hiện tại, mỗi hàng hiển thị `AliceBlue`, và mặc dù màu này rất đẹp, nhưng đó không phải là điều chúng ta muốn.
 
