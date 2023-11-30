@@ -50,4 +50,4 @@ Cuối cùng, loại bỏ biến giữ chỗ, chúng ta không còn cần chúng
 </script>
 ```
 
-> Các slot được đặt tên cũng có thể có các thuộc tính _(props)_; sử dụng chỉ thị `let` trên một phần tử có thuộc tính `slot="..."`, thay vì trên chính thành phần của nó.
+> Các slot được đặt tên cũng có thể có prop; sử dụng chỉ thị `let` trên một phần tử có thuộc tính `slot="..."`, thay vì trên chính thành phần đó.
