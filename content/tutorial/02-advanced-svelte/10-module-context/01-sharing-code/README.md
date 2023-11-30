@@ -2,7 +2,7 @@
 title: Chia sẽ mã
 ---
 
-Trong tất cả các ví dụ chúng ta đã thấy cho đến nay, khối `<script>` chứa mã nguồn chạy khi mỗi trường hợp của thành phần được khởi tạo. Đối với hầu hết các thành phần, đó sẽ là tất cả những gì bạn cần.
+Trong tất cả các ví dụ chúng ta đã thấy cho đến nay, khối `<script>` chứa mã nguồn chạy khi mỗi trường hợp của thành phần được khởi tạo. Đối với hầu hết các component, đó sẽ là tất cả những gì bạn cần.
 
 Hiếm khi, bạn có thể cần chạy một số mã nguồn bên ngoài của một trường hợp cụ thể của thành phần. Ví dụ: trở lại với trình phát audio tùy chỉnh từ một [bài tập trước đó](media-elements), bạn có thể phát cả bốn bản đồ âm thanh cùng một lúc. Sẽ tốt hơn nếu  phát một bản còn tất cả các bản khác thì dừng.
 
