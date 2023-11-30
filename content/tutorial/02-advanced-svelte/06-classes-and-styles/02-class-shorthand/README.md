@@ -1,8 +1,8 @@
 ---
-title: Shorthand class directive
+title: Chỉ thị lớp viết tắt
 ---
 
-Often, the name of the class will be the same as the name of the value it depends on:
+Thường thì tên của lớp sẽ giống với tên của giá trị nó phụ thuộc:
 
 ```svelte
 /// no-file
@@ -13,7 +13,7 @@ Often, the name of the class will be the same as the name of the value it depend
 >
 ```
 
-In those cases we can use a shorthand form:
+Trong những trường hợp đó, chúng ta có thể sử dụng một biểu thức rút gọn:
 
 ```svelte
 /// file: App.svelte

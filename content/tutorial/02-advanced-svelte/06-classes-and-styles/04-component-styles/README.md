@@ -1,10 +1,10 @@
 ---
-title: Component styles
+title: Style thành phần
 ---
 
-Often, you need to influence the styles inside a child component. Perhaps we want to make these boxes red, green and blue.
+Thường thì bạn cần thay đổi style bên trong một component con. Có lẽ chúng ta muốn làm cho những hộp này màu đỏ, xanh và xanh dương.
 
-One way to do this is with the `:global` CSS modifier, which allows you to indiscriminately target elements inside other components:
+Một cách để làm điều này là sử dụng bộ điều chỉnh kiểu CSS `:global`, cho phép bạn nhắm tùy ý đến các phần tử bên trong các component khác:
 
 ```svelte
 /// file: App.svelte
@@ -23,11 +23,11 @@ One way to do this is with the `:global` CSS modifier, which allows you to indis
 </style>
 ```
 
-But there are lots of reasons _not_ to do that. For one thing, it's extremely verbose. For another, it's brittle — any changes to the implementation details of `Box.svelte` could break the selector.
+Nhưng có nhiều lý do _không nên_ làm như vậy. Đầu tiên, nó rất dài dòng. Thứ hai, nó mong manh — bất kỳ thay đổi nào đối với các chi tiết triển khai của `Box.svelte` có thể làm hỏng bộ chọn.
 
-Most of all though, it's rude. Components should be able to decide for themselves which styles can be controlled from 'outside', in the same way they decide which variables are exposed as props. `:global` should be used as an escape hatch — a last resort.
+Nhưng hơn hết, nó khá bất lịch sự. Các thành phần nên có khả năng tự quyết định style nào có thể được kiểm soát từ 'bên ngoài', giống như cách chúng quyết định biến nào được tiết lộ dưới dạng prop. `:global` nên được sử dụng như một cửa thoát - một phương án cuối cùng.
 
-Inside `Box.svelte`, change `background-color` so that it is determined by a [CSS custom property](https://developer.mozilla.org/en-US/docs/Web/CSS/--*):
+Bên trong `Box.svelte`, hãy thay đổi `background-color` để nó được xác định bởi một [thuộc tính tùy chỉnh CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/--*):
 
 ```svelte
 /// file: Box.svelte
@@ -42,7 +42,7 @@ Inside `Box.svelte`, change `background-color` so that it is determined by a [CS
 </style>
 ```
 
-Any parent element (such as `<div class="boxes">`) can set the value of `--color`, but we can also set it on individual components:
+Bất kỳ phần tử cha nào (như `<div class="boxes">`) có thể đặt giá trị của `--color`, nhưng chúng ta cũng có thể đặt nó trên các thành phần con:
 
 ```svelte
 /// file: App.svelte
@@ -53,6 +53,6 @@ Any parent element (such as `<div class="boxes">`) can set the value of `--color
 </div>
 ```
 
-The values can be dynamic, like any other attribute.
+Các giá trị có thể là động, giống như bất kỳ thuộc tính nào khác.
 
-This feature works by wrapping each component in a `<div style="display: contents">`, where needed, and applying the custom properties to it.
+Tính năng này hoạt động bằng cách bọc mỗi thành phần trong một `<div style="display: contents">` cần thiết, và áp dụng các thuộc tính tùy chỉnh cho nó.

@@ -3,7 +3,7 @@
 </script>
 
 <div class="container">
-	Flip the card
+	Lật cái thẻ
 	<button
 		class="card"
 		style:transform={flipped ? 'rotateY(0)' : ''}
