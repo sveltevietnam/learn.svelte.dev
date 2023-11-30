@@ -2,7 +2,7 @@
 title: Phép bind thực thể component
 ---
 
-Tương tự như bạn có thể ràng buộc với các phần tử DOM, bạn cũng có thể ràng buộc với chính các instance của component với `bind:this`.
+Tương tự như bạn có thể bind với phần tử DOM, bạn cũng có thể bind với chính thực thể của component với `bind:this`.
 
 Điều này hữu ích trong những trường hợp hiếm hoi bạn cần tương tác với một component theo cách máy móc (thay vì cung cấp cho nó các props được cập nhật). Quay lại ứng dụng canvas của chúng ta từ [một vài bài tập trước đó](actions), thật tốt nếu chúng ta có thể thêm một nút để xóa màn hình.
 
