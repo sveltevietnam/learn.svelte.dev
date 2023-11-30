@@ -19,7 +19,7 @@ export let size;
 }+++
 ```
 
-Sau đó, tạo một tham chiếu đến chính thành phần đó:
+Sau đó, tạo một tham chiếu đến chính component đó:
 
 ```svelte
 /// file: App.svelte
