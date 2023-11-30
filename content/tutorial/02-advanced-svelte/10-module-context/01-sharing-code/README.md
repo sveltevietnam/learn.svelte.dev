@@ -6,7 +6,7 @@ Trong tất cả các ví dụ chúng ta đã thấy cho đến nay, khối `<sc
 
 Hiếm khi, bạn có thể cần chạy một số mã nguồn bên ngoài của một trường hợp cụ thể của component. Ví dụ: trở lại với trình phát audio tùy chỉnh từ một [bài tập trước đó](media-elements), bạn có thể phát cả bốn bản đồ âm thanh cùng một lúc. Sẽ tốt hơn nếu  phát một bản còn tất cả các bản khác thì dừng.
 
-Chúng ta có thể thực hiện điều đó bằng cách khai báo một khối `<script context="module">`. Mã được chứa trong nó sẽ chạy một lần, khi mô-đun lần đầu được phản hồi, thay vì khi một thành phần được khởi tạo. Đặt nó ở đầu `AudioPlayer.svelte` (lưu ý đây là một thẻ `<script>` _riêng biệt_):
+Chúng ta có thể thực hiện điều đó bằng cách khai báo một khối `<script context="module">`. Mã được chứa trong nó sẽ chạy một lần, khi mô-đun lần đầu được phản hồi, thay vì khi một component được khởi tạo. Đặt nó ở đầu `AudioPlayer.svelte` (lưu ý đây là một thẻ `<script>` _riêng biệt_):
 
 ```svelte
 /// file: AudioPlayer.svelte
