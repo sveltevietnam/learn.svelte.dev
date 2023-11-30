@@ -63,7 +63,7 @@ Khi bản nhạc kết thúc, hãy lịch sự - tua lại:
 />
 ```
 
-Tổng số ràng buộc đầy đủ cho <audio> và <video> như sau - bảy ràng buộc _chỉ đọc_...
+Tổng số phép bind đầy đủ cho <audio> và <video> như sau - bảy phép bind _chỉ đọc_...
 
 - `duration` (chỉ đọc) — tổng thời lượng của video, tính bằng giây
 - `buffered`  (chỉ đọc) — một mảng các đối tượng `{start, end}`
