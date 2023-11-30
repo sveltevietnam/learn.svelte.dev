@@ -37,4 +37,4 @@ onMount(() => {
 ></canvas>
 ```
 
-Lưu ý: giá trị của `canvas` sẽ là `undefined` cho đến khi thành phần được gắn.
+Lưu ý: giá trị của `canvas` sẽ là `undefined` cho đến khi component được thiết lập.
