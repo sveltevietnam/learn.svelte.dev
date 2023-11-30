@@ -2,7 +2,7 @@
 title: <svelte:window> bindings
 ---
 
-Chúng ta cũng có thể kết nối với một số thuộc tính cụ thể của `window`, như `scrollY`:
+Chúng ta cũng có thể bind với một số thuộc tính cụ thể của `window`, như `scrollY`:
 
 ```svelte
 /// file: App.svelte
