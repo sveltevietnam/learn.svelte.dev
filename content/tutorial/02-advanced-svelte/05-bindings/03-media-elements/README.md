@@ -73,7 +73,7 @@ Tổng số phép bind đầy đủ cho <audio> và <video> như sau - bảy ph�
 - `ended` (chỉ đọc) — boolean
 - `readyState` (chỉ đọc) — số giữa (và bao gồm) 0 và 4
 
-...và năm ràng buộc hai chiều:
+...và năm phép bind hai chiều:
 
 - `currentTime` — the current point in the video, in seconds điểm hiện tại trong video, tính bằng giây
 - `playbackRate` — tốc độ phát video, với `1` là 'bình thường'
