@@ -81,4 +81,4 @@ Tổng số phép bind đầy đủ cho <audio> và <video> như sau - bảy ph�
 - `volume` — một giá trị giữa 0 và 1
 - `muted` — một giá trị boolean, trong đó true là tắt tiếng
 
-Video thêm vào đó các ràng buộc chỉ đọc `videoWidth` và `videoHeight`.
+Video còn có các phép bind chỉ đọc với `videoWidth` và `videoHeight`.
