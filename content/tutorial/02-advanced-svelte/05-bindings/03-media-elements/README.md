@@ -1,5 +1,5 @@
 ---
-title: Phần tử Media
+title: Phần tử media
 ---
 
 Bạn có thể ràng buộc đến các thuộc tính của các phần tử `<audio>` và `<video>`, giúp bạn dễ dàng xây dựng giao diện trình phát tùy chỉnh, chẳng hạn như `AudioPlayer.svelte`.
