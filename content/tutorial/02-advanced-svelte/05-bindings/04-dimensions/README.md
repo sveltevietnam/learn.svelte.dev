@@ -12,7 +12,7 @@ Mọi phần tử cấp khối đều có các phép bind `clientWidth`, `client
 </div>
 ```
 
-Những ràng buộc này chỉ đọc — việc thay đổi giá trị của `w` và `h` sẽ không có ảnh hưởng gì đối với phần tử.
+Những phép bind này là chỉ đọc — việc thay đổi giá trị của `w` và `h` sẽ không có ảnh hưởng gì đối với phần tử.
 
 > Các phần tử được đo lường bằng một kỹ thuật tương tự như [kỹ thuật này](http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/). Sẽ tốn một số tài nguyên liên quan, vì vậy không khuyến khích sử dụng nó cho một lượng lớn các phần tử.
 >
