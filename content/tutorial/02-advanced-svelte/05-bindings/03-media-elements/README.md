@@ -4,7 +4,7 @@ title: Phần tử media
 
 Bạn có thể bind thuộc tính của phần tử `<audio>` và `<video>`, giúp bạn dễ dàng xây dựng giao diện trình phát tùy chỉnh, chẳng hạn như `AudioPlayer.svelte`.
 
-Đầu tiên, thêm phần tử `<audio>` cùng với các ràng buộc của nó (chúng ta sẽ sử dụng dạng viết tắt cho `src`, `duration` và `paused`):
+Đầu tiên, thêm phần tử `<audio>` cùng với các phép bind của nó (chúng ta sẽ sử dụng dạng viết tắt cho `src`, `duration` và `paused`):
 
 ```svelte
 /// file: AudioPlayer.svelte
