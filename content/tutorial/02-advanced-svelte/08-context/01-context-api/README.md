@@ -4,7 +4,6 @@ title: setContext và getContext
 
 API ngữ cảnh cung cấp cơ chế cho các thành phần 'trò chuyện' với nhau mà không cần truyền dữ liệu và hàm thông qua prop, hoặc phát ra nhiều sự kiện. Đây là một tính năng nâng cao, nhưng hữu ích. Trong bài tập này, chúng ta sẽ tái tạo [Schotter](https://collections.vam.ac.uk/item/O221321/schotter-print-nees-georg/) của George Nees — một trong những người tiên phong trong nghệ thuật tạo sinh — bằng cách sử dụng API ngữ cảnh.
 
-
 Bên trong `Canvas.svelte`, có một hàm `addItem` thêm một mục vào canvas. Chúng ta có thể làm cho nó có sẵn cho các thành phần bên trong `<Canvas>`, như `<Square>`, với `setContext`:
 
 ```svelte
