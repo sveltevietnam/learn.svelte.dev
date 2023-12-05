@@ -14,4 +14,4 @@ Một cách tiếp cận là sử dụng `console.log(...)` bên trong phần đ
 <h1>Chào {user.firstname}!</h1>
 ```
 
-Nếu bạn mở công cụ phát triển của mình và bắt đầu tương tác với các phần tử `<input>`, bạn sẽ kích hoạt trình gỡ lỗi khi giá trị của `user` thay đổi. (Lưu ý rằng ngăn xếp cuộc gọi _(call stack)_ và các biến cục bộ sẽ bị ẩn trong bài hướng dẫn này do các ràng buộc an ninh iframe.)
+Nếu bạn mở công cụ phát triển của mình và bắt đầu tương tác với các phần tử `<input>`, bạn sẽ kích hoạt trình gỡ lỗi khi giá trị của `user` thay đổi. Call stack và các biến cục bộ sẽ bị ẩn trong bài hướng dẫn này do các ràng buộc an ninh với iframe.)
