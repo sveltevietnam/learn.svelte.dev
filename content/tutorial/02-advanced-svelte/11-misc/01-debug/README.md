@@ -4,7 +4,7 @@ title: Thẻ @debug
 
 Đôi khi, việc kiểm tra một dữ liệu khi nó chạy qua ứng dụng của bạn rất hữu ích.
 
-Một cách tiếp cận là sử dụng `console.log(...)` bên trong đánh dấu của bạn. Tuy nhiên, nếu bạn muốn tạm dừng thực thi, bạn có thể sử dụng thẻ `{@debug ...}` với danh sách các giá trị bạn muốn kiểm tra được phân tách bằng dấu phẩy:
+Một cách tiếp cận là sử dụng `console.log(...)` bên trong phần đánh dấu của bạn. Tuy nhiên, nếu bạn muốn tạm dừng thực thi, bạn có thể sử dụng thẻ `{@debug ...}` với danh sách các giá trị bạn muốn kiểm tra được phân tách bằng dấu phẩy:
 
 
 ```svelte
