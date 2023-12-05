@@ -1,10 +1,10 @@
 ---
-title: Auto-subscriptions
+title: Tự động subscriptions
 ---
 
-The app in the previous example works, but there's a subtle bug — the store is subscribed to, but never unsubscribed. If the component was instantiated and destroyed many times, this would result in a _memory leak_.
+Ứng dụng trong ví dụ trước đó hoạt động, nhưng có một lỗi nhỏ — store được subscribed, nhưng không bao giờ được unsubscribed. Nếu component được khởi tạo và hủy nhiều lần, điều này sẽ dẫn đến _rò rỉ bộ nhớ (memory leak)_.
 
-Start by declaring `unsubscribe` in `App.svelte`:
+Bắt đầu bằng cách khai báo `unsubscribe` trong `App.svelte`:
 
 ```js
 /// file: App.svelte
@@ -13,9 +13,9 @@ Start by declaring `unsubscribe` in `App.svelte`:
 });
 ```
 
-> Calling a `subscribe` method returns an `unsubscribe` function.
+> Gọi một phương thức `subscribe` trả về một hàm `unsubscribe`.
 
-You now declared `unsubscribe`, but it still needs to be called, for example through the `onDestroy` lifecycle hook:
+Bạn đã khai báo `unsubscribe`, nhưng nó vẫn cần được gọi, ví dụ thông qua lifecycle hook `onDestroy`:
 
 ```svelte
 /// file: App.svelte
@@ -35,10 +35,10 @@ You now declared `unsubscribe`, but it still needs to be called, for example thr
 	+++onDestroy(unsubscribe);+++
 </script>
 
-<h1>The count is {count_value}</h1>
+<h1>Số lượng là {count_value}</h1>
 ```
 
-It starts to get a bit boilerplatey though, especially if your component subscribes to multiple stores. Instead, Svelte has a trick up its sleeve — you can reference a store value by prefixing the store name with `$`:
+Tuy nhiên, đoạn mã trở nên hơi khó hiểu, đặc biệt là nếu component của bạn đăng ký nhiều stores. Thay vào đó, Svelte có một mẹo nhỏ — bạn có thể tham chiếu đến một giá trị store bằng cách thêm tiền tố tên store với `$`:
 
 ```svelte
 /// file: App.svelte
@@ -58,11 +58,11 @@ It starts to get a bit boilerplatey though, especially if your component subscri
 	---onDestroy(unsubscribe);---
 </script>
 
-<h1>The count is {+++$count+++}</h1>
+<h1>Số lượng là {+++$count+++}</h1>
 ```
 
-> Auto-subscription only works with store variables that are declared (or imported) at the top-level scope of a component.
+> Auto-subscription chỉ hoạt động với các biến store được khai báo (hoặc được import) ở cấp độ trên cùng của một component.
 
-You're not limited to using `$count` inside the markup, either — you can use it anywhere in the `<script>` as well, such as in event handlers or reactive declarations.
+Bạn không bị giới hạn trong việc sử dụng `$count` trong đánh giá cú pháp, bạn có thể sử dụng nó bất cứ nơi nào trong <script>, chẳng hạn như trong xử lý sự kiện hoặc khai báo linh hoạt _(reactive)_.
 
-> Any name beginning with `$` is assumed to refer to a store value. It's effectively a reserved character — Svelte will prevent you from declaring your own variables with a `$` prefix.
+> Bất kỳ tên nào bắt đầu bằng `$` đều được giả sử là đề cập đến một giá trị store. Nó là một ký tự  hiệu quả được dành riêng — Svelte sẽ ngăn bạn khai báo các biến của riêng mình với tiền tố `$`.

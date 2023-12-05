@@ -1,14 +1,14 @@
 ---
-title: Writable stores
+title: Các stores có thể ghi
 ---
 
-Not all application state belongs inside your application's component hierarchy. Sometimes, you'll have values that need to be accessed by multiple unrelated components, or by a regular JavaScript module.
+Không phải tất cả trạng thái của ứng dụng đều nằm bên trong cấu trúc component của ứng dụng của bạn. Đôi khi, bạn sẽ có các giá trị cần được truy cập bởi nhiều component không liên quan, hoặc bởi một module JavaScript thông thường.
 
-In Svelte, we do this with _stores_. A store is simply an object with a `subscribe` method that allows interested parties to be notified whenever the store value changes. In `App.svelte`, `count` is a store, and we're setting `count_value` in the `count.subscribe` callback.
+Trong Svelte, chúng ta làm điều này bằng cách sử dụng _stores_. Một store đơn giản là một đối tượng với một phương thức `subscribe` cho phép những bên quan tâm nhận thông báo mỗi khi giá trị của store thay đổi. Trong `App.svelte`, `count` là một store, và chúng ta đang thiết lập `count_value` trong hàm gọi lại `count.subscribe`.
 
-Open `stores.js` to see the definition of `count`. It's a _writable_ store, which means it has `set` and `update` methods in addition to `subscribe`.
+Mở tệp `stores.js` để xem định nghĩa của `count`. Đây là một store _có thể ghi_, có nghĩa là nó có các phương thức `set` và `update` ngoài `subscribe`.
 
-Now, in `Incrementer.svelte`, wire up the `+` button:
+Bây giờ, trong `Incrementer.svelte`, kết nối nút `+`:
 
 ```js
 /// file: Incrementer.svelte
@@ -17,9 +17,9 @@ function increment() {
 }
 ```
 
-Clicking the `+` button should now update the count. Do the inverse for `Decrementer.svelte`.
+Bấm vào nút `+` sẽ cập nhật giá trị đếm. Thực hiện điều ngược lại cho `Decrementer.svelte`.
 
-Finally, in `Resetter.svelte`, implement `reset`:
+Cuối cùng, trong `Resetter.svelte`, triển khai hàm `reset`:
 
 ```js
 /// file: Resetter.svelte

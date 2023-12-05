@@ -2,7 +2,8 @@
 title: Derived stores
 ---
 
-You can create a store whose value is based on the value of one or more _other_ stores with `derived`. Building on our previous example, we can create a store that derives the time the page has been open:
+Bạn có thể tạo ra một store mà giá trị của nó dựa trên giá trị của một hoặc nhiều store _khác_ bằng cách sử dụng `derived`. Theo ví dụ trước đó của chúng ta, chúng ta có thể tạo ra một store lấy thời gian trang đã mở:
+
 
 ```js
 /// file: stores.js
@@ -12,4 +13,4 @@ export const elapsed = derived(
 );
 ```
 
-> It's possible to derive a store from multiple input stores, and to explicitly `set` a value instead of returning it (which is useful for deriving values asynchronously). Consult the [API reference](https://svelte.dev/docs#run-time-svelte-store-derived) for more information.
+> Bạn có thể lấy một store từ nhiều store đầu vào và cũng có thể `set` một giá trị một cách tường minh thay vì trả về nó (điều này hữu ích khi lấy các giá trị một cách bất đồng bộ). Tham khảo [tài liệu API](https://svelte.dev/docs#run-time-svelte-store-derived) để biết thêm thông tin.

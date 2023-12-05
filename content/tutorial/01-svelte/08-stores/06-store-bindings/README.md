@@ -2,24 +2,25 @@
 title: Store bindings
 ---
 
-If a store is writable — i.e. it has a `set` method — you can bind to its value, just as you can bind to local component state.
+Nếu một store có thể ghi - tức là nó có một phương thức `set` - bạn có thể bind giá trị của nó, giống như bạn có thể bind với trạng thái cục bộ của component.
 
-In this example we're exporting a writable store `name` and a derived store `greeting` from `stores.js`. Update the `<input>` element in `App.svelte`:
+Trong ví dụ này, chúng ta xuất một writable store `name` và một derived store `greeting` từ `stores.js`. Cập nhật phần tử `<input>` trong `App.svelte`:
+
 
 ```svelte
 /// file: App.svelte
 <input +++bind:+++value={$name}>
 ```
 
-Changing the input value will now update `name` and all its dependents.
+Việc thay đổi giá trị đầu vào sẽ cập nhật `name` và tất cả các phần phụ thuộc của nó.
 
-We can also assign directly to store values inside a component. Add an `on:click` event handler to update `name`:
+Chúng ta cũng có thể gán trực tiếp giá trị vào store trong một component. Thêm một xử lý sự kiện `on:click` để cập nhật `name`:
 
 ```svelte
 /// file: App.svelte
 <button +++on:click={() => $name += '!'}+++>
-	Add exclamation mark!
+	Thêm dấu chấm than!
 </button>
 ```
 
-The `$name += '!'` assignment is equivalent to `name.set($name + '!')`.
+`$name += '!'` thì tương đương với `name.set($name + '!')`.

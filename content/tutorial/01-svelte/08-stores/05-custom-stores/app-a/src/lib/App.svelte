@@ -2,7 +2,7 @@
 	import { count } from './stores.js';
 </script>
 
-<h1>The count is {$count}</h1>
+<h1>Số lượng là {$count}</h1>
 
 <button on:click={count.increment}>+</button>
 <button on:click={count.decrement}>-</button>
