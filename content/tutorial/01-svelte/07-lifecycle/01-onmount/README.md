@@ -2,9 +2,9 @@
 title: onMount
 ---
 
-Every component has a _lifecycle_ that starts when it is created, and ends when it is destroyed. There are a handful of functions that allow you to run code at key moments during that lifecycle. The one you'll use most frequently is `onMount`, which runs after the component is first rendered to the DOM.
+Mỗi component đều có một _vòng đời_ bắt đầu khi nó được tạo ra và kết thúc khi nó bị hủy. Có một số hàm cho phép bạn chạy mã tại những thời điểm quan trọng trong vòng đời đó. Hàm mà bạn sẽ sử dụng thường xuyên nhất là `onMount`, chạy sau khi component được lần đầu tiên hiển thị trên DOM.
 
-In this exercise, we have a `<canvas>` that we'd like to animate, using the `paint` function in `gradient.js`. Begin by importing the function from `svelte`:
+Trong bài tập này, chúng ta có một `<canvas>` mà chúng ta muốn tạo hiệu ứng chuyển động, sử dụng hàm `paint` trong `gradient.js`. Bắt đầu bằng cách import hàm từ `svelte`:
 
 ```svelte
 /// file: App.svelte
@@ -14,7 +14,7 @@ In this exercise, we have a `<canvas>` that we'd like to animate, using the `pai
 </script>
 ```
 
-Then, add a function that runs when the component mounts:
+Sau đó, thêm một hàm chạy khi component được thêm vào _(mount)_:
 
 ```svelte
 /// file: App.svelte
@@ -34,9 +34,9 @@ Then, add a function that runs when the component mounts:
 </script>
 ```
 
-> In a [later exercise](bind-this), we'll learn how to get an element reference without using `document.querySelector`.
+> Trong [bài tập sau](bind-this), chúng ta sẽ tìm hiểu cách lấy một tham chiếu đến phần tử mà không sử dụng `document.querySelector`.
 
-So far so good — you should see gently undulating colours in the shape of the Svelte logo. But there's one problem — the loop will continue even after the component has been destroyed. To fix that, we need to return a cleanup function from `onMount`:
+Hiện tại, mọi thứ đều tốt — bạn nên thấy các màu sắc nhẹ nhàng di chuyển theo hình dạng biểu tượng Svelte. Nhưng có một vấn đề — vòng lặp sẽ tiếp tục ngay cả sau khi thành phần đã bị hủy. Để khắc phục điều đó, chúng ta cần trả về một hàm làm sạch từ `onMount`:
 
 ```js
 /// file: App.svelte

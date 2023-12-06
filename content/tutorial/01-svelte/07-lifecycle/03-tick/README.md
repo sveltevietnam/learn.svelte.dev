@@ -2,20 +2,22 @@
 title: tick
 ---
 
-The `tick` function is unlike other lifecycle functions in that you can call it any time, not just when the component first initialises. It returns a promise that resolves as soon as any pending state changes have been applied to the DOM (or immediately, if there are no pending state changes).
+Hàm `tick` khác biệt so với các hàm vòng đời khác vì bạn có thể gọi nó bất cứ lúc nào, không chỉ khi component được khởi tạo ban đầu. Nó trả về một promise giải quyết ngay lập tức khi mọi thay đổi trạng thái đang chờ được áp dụng vào DOM (hoặc ngay lập tức nếu không có thay đổi trạng thái đang chờ).
 
-When you update component state in Svelte, it doesn't update the DOM immediately. Instead, it waits until the next _microtask_ to see if there are any other changes that need to be applied, including in other components. Doing so avoids unnecessary work and allows the browser to batch things more effectively.
+Khi bạn cập nhật trạng thái component trong Svelte, nó không cập nhật DOM ngay lập tức. Thay vào đó, nó đợi đến _microtask_ tiếp theo để kiểm tra xem có bất kỳ thay đổi nào khác cần được áp dụng, bao gồm trong các component khác. Hành vi này giúp tránh tác vụ không cần thiết và cho phép trình duyệt nhóm các tác vụ hiệu quả hơn.
 
-You can see that behaviour in this example. Select a range of text and hit the tab key. Because the `<textarea>` value changes, the current selection is cleared and the cursor jumps, annoyingly, to the end. We can fix this by importing `tick`...
+
+Bạn có thể thấy hành vi đó trong ví dụ này. Chọn một dải văn bản và nhấn phím tab. Bởi vì giá trị của `<textarea>` thay đổi, việc chọn hiện tại sẽ bị xóa và con trỏ nhảy, phiền phức cho đến cuối. Chúng ta có thể sửa điều này bằng cách nhập `tick`...
+
 
 ```js
 /// file: App.svelte
 +++import { tick } from 'svelte';+++
 
-let text = `Select some text and hit the tab key to toggle uppercase`;
+let text = `Chọn một số văn bản và nhấn phím tab để chuyển đổi sang chữ hoa`;
 ```
 
-...and running it immediately before we set `this.selectionStart` and `this.selectionEnd` at the end of `handleKeydown`:
+...và chạy nó ngay trước khi chúng ta đặt `this.selectionStart` và `this.selectionEnd` ở cuối hàm `handleKeydown`:
 
 ```js
 /// file: App.svelte
