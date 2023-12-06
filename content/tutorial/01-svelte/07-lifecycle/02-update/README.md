@@ -1,12 +1,12 @@
 ---
-title: beforeUpdate and afterUpdate
+title: beforeUpdate và afterUpdate
 ---
 
-The `beforeUpdate` function schedules work to happen immediately before the DOM is updated. `afterUpdate` is its counterpart, used for running code once the DOM is in sync with your data.
+Hàm `beforeUpdate` lên lịch công việc để thực hiện ngay trước khi DOM được cập nhật. `afterUpdate` là hàm tương ứng, được sử dụng để chạy mã sau khi DOM đã đồng bộ với dữ liệu của bạn.
 
-Together, they're useful for doing things imperatively that are difficult to achieve in a purely state-driven way, like updating the scroll position of an element.
+Cả hai đều hữu ích để thực hiện những tác vụ theo các mệnh lệnh mà khó có thể đạt được theo cách hoàn toàn dựa trên trạng thái, như cập nhật vị trí cuộn của một phần tử.
 
-This [Eliza](https://en.wikipedia.org/wiki/ELIZA) chatbot is annoying to use, because you have to keep scrolling the chat window. Let's fix that.
+Chatbot [Eliza](https://en.wikipedia.org/wiki/ELIZA) này khi dùng hơi khó chịu, vì bạn phải liên tục cuộn thanh trò chuyện. Hãy sửa điều đó.
 
 ```js
 /// file: App.svelte
@@ -27,4 +27,4 @@ afterUpdate(() => {
 });
 ```
 
-Note that `beforeUpdate` will first run before the component has mounted, so we need to check for the existence of `div` before reading its properties.
+Lưu ý rằng `beforeUpdate` sẽ chạy trước khi component được gắn vào, nên chúng ta cần kiểm tra xem `div` có tồn tại trước khi đọc các thuộc tính của nó.

@@ -1,5 +1,5 @@
 <script>
-	let text = `Select some text and hit the tab key to toggle uppercase`;
+	let text = `Chọn một số văn bản và nhấn phím tab để chuyển đổi sang chữ hoa`;
 
 	async function handleKeydown(event) {
 		if (event.key !== 'Tab') return;
