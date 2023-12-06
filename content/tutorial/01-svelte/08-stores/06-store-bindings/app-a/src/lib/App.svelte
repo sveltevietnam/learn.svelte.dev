@@ -6,5 +6,5 @@
 <input value={$name} />
 
 <button>
-	Add exclamation mark!
+	Thêm dấu chấm than!
 </button>

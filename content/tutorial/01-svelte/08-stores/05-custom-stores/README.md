@@ -1,10 +1,10 @@
 ---
-title: Custom stores
+title: Stores tùy chỉnh
 ---
 
-As long as an object correctly implements the `subscribe` method, it's a store. Beyond that, anything goes. It's very easy, therefore, to create custom stores with domain-specific logic.
+Miễn là một đối tượng triển khai đúng phương thức `subscribe`, nó sẽ là một store. Ngoài ra không có ràng buộc gì. Do đó, việc tạo ra các store tùy chỉnh với logic cụ thể cho miền rất dễ dàng.
 
-For example, the `count` store from our earlier example could include `increment`, `decrement` and `reset` methods and avoid exposing `set` and `update`:
+Ví dụ, store `count` từ ví dụ trước của chúng ta có thể bao gồm các phương thức `increment`, `decrement` và `reset` và tránh việc tiết lộ `set` và `update`:
 
 ```js
 /// file: stores.js

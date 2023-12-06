@@ -6,5 +6,5 @@
 <input bind:value={$name} />
 
 <button on:click={() => $name += '!'}>
-	Add exclamation mark!
+	Thêm dấu chấm than!
 </button>

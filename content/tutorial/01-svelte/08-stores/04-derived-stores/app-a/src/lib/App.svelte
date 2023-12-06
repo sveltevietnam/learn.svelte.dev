@@ -12,10 +12,10 @@
 	);
 </script>
 
-<h1>The time is {formatter.format($time)}</h1>
+<h1>Thời gian là {formatter.format($time)}</h1>
 
 <p>
-	This page has been open for
+	Trang này đã được mở trong
 	{$elapsed}
 	{$elapsed === 1 ? 'second' : 'seconds'}
 </p>
