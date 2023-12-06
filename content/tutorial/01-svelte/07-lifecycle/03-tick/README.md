@@ -6,8 +6,7 @@ Hàm `tick` khác biệt so với các hàm vòng đời khác vì bạn có th�
 
 Khi bạn cập nhật trạng thái component trong Svelte, nó không cập nhật DOM ngay lập tức. Thay vào đó, nó đợi đến _microtask_ tiếp theo để kiểm tra xem có bất kỳ thay đổi nào khác cần được áp dụng, bao gồm trong các component khác. Hành vi này giúp tránh tác vụ không cần thiết và cho phép trình duyệt nhóm các tác vụ hiệu quả hơn.
 
-
-Bạn có thể thấy hành vi đó trong ví dụ này. Chọn một dải văn bản và nhấn phím tab. Bởi vì giá trị của `<textarea>` thay đổi, việc chọn hiện tại sẽ bị xóa và con trỏ nhảy, phiền phức cho đến cuối. Chúng ta có thể sửa điều này bằng cách nhập `tick`...
+Bạn có thể thấy hành vi đó trong ví dụ này. Hãy chọn một đoạn văn bản và nhấn phím tab. Bởi vì giá trị của `<textarea>` thay đổi, vùng chọn hiện tại sẽ bị xóa và con trỏ nhảy sẽ nhảy về cuối. Chúng ta có thể sửa điều này bằng cách nhập hàm `tick`...
 
 
 ```js
