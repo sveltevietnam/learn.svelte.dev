@@ -1,8 +1,8 @@
 ---
-title: Tự động subscriptions
+title: Subscription tư động
 ---
 
-Ứng dụng trong ví dụ trước đó hoạt động, nhưng có một lỗi nhỏ — store được subscribed, nhưng không bao giờ được unsubscribed. Nếu component được khởi tạo và hủy nhiều lần, điều này sẽ dẫn đến _rò rỉ bộ nhớ (memory leak)_.
+Ứng dụng trong ví dụ trước vẫn hoạt động, nhưng có một lỗi nhỏ — ta subscribe vào store nhưng chưa unsubscribe. Nếu component được khởi tạo và hủy nhiều lần, điều này sẽ dẫn đến _rò rỉ bộ nhớ (memory leak)_.
 
 Bắt đầu bằng cách khai báo `unsubscribe` trong `App.svelte`:
 
@@ -38,7 +38,7 @@ Bạn đã khai báo `unsubscribe`, nhưng nó vẫn cần được gọi, ví d
 <h1>Số lượng là {count_value}</h1>
 ```
 
-Tuy nhiên, đoạn mã trở nên hơi khó hiểu, đặc biệt là nếu component của bạn đăng ký nhiều stores. Thay vào đó, Svelte có một mẹo nhỏ — bạn có thể tham chiếu đến một giá trị store bằng cách thêm tiền tố tên store với `$`:
+Tuy nhiên, đoạn mã trở nên hơi khó hiểu, đặc biệt là nếu component của bạn subscribe vào nhiều stores. Thay vào đó, Svelte có một mẹo nhỏ — bạn có thể tham chiếu đến một giá trị store bằng cách thêm trước tên store kí hiệu `$`:
 
 ```svelte
 /// file: App.svelte
@@ -61,8 +61,8 @@ Tuy nhiên, đoạn mã trở nên hơi khó hiểu, đặc biệt là nếu com
 <h1>Số lượng là {+++$count+++}</h1>
 ```
 
-> Auto-subscription chỉ hoạt động với các biến store được khai báo (hoặc được import) ở cấp độ trên cùng của một component.
+> Subscription tự động chỉ hoạt động với các biến store được khai báo (hoặc được import) ở cấp trên cùng của một component.
 
-Bạn không bị giới hạn trong việc sử dụng `$count` trong đánh giá cú pháp, bạn có thể sử dụng nó bất cứ nơi nào trong <script>, chẳng hạn như trong xử lý sự kiện hoặc khai báo linh hoạt _(reactive)_.
+'$count' cũng không bắt buộc phải được dùng trong phần đánh dấu - bạn có thể dùng nó ở thẻ `<script>`, như trong hàm xử lý sự kiện hoặc ở các khai báo phản ứng.
 
-> Bất kỳ tên nào bắt đầu bằng `$` đều được giả sử là đề cập đến một giá trị store. Nó là một ký tự  hiệu quả được dành riêng — Svelte sẽ ngăn bạn khai báo các biến của riêng mình với tiền tố `$`.
+> Bất kỳ tên nào bắt đầu bằng `$` đều được giả định là đề cập đến một giá trị store. Nó là một ký tự hiệu dành riêng — Svelte sẽ ngăn bạn khai báo các biến của riêng mình với tiền tố `$`.

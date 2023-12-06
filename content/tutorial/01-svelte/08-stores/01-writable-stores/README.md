@@ -1,8 +1,8 @@
 ---
-title: Các stores có thể ghi
+title: Store có thể ghi
 ---
 
-Không phải tất cả trạng thái của ứng dụng đều nằm bên trong cấu trúc component của ứng dụng của bạn. Đôi khi, bạn sẽ có các giá trị cần được truy cập bởi nhiều component không liên quan, hoặc bởi một module JavaScript thông thường.
+Không phải lúc nào trạng thái ứng dụng cũng đi theo đúng phân cấp component. Đôi khi bạn sẽ có các giá trị cần được truy cập bởi nhiều component không liên quan nhau, hoặc bởi một module Javscript thông thường.
 
 Trong Svelte, chúng ta làm điều này bằng cách sử dụng _stores_. Một store đơn giản là một đối tượng với một phương thức `subscribe` cho phép những bên quan tâm nhận thông báo mỗi khi giá trị của store thay đổi. Trong `App.svelte`, `count` là một store, và chúng ta đang thiết lập `count_value` trong hàm gọi lại `count.subscribe`.
 
