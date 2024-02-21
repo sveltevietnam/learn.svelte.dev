@@ -38,8 +38,9 @@ Có một nguyên tắc đơn giản là: tên của biến được cập nhậ
 
 ```js
 /// no-file
+const obj = { foo: { bar: 1 } };
 const foo = obj.foo;
-foo.bar = 'baz';
+foo.bar = 2;
 ```
 <!-- FIXME: dùng từ khác cho "tiếp nối" (follow up) -->
 ...sẽ không kích hoạt tính phản ứng _(reactivity)_ với `obj.foo.bar`, trừ khi bạn tiếp nối với `obj = obj`.

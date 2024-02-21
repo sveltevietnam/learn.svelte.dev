@@ -45,6 +45,6 @@ Bây giờ, ta hãy thêm một cột trong bố cục cho trang bài viết:
 </style>
 ```
 
-Bố cục (và trang dưới nó) kế thừa `data.summaries` từ `+layout.server.js` cha.
+Bố cục (và tất cả các trang dưới nó) kế thừa `data.summaries` từ `+layout.server.js` cha.
 
 Khi chúng ta chuyển từ một bài viết này sang bài viết khác, chúng ta chỉ cần tải dữ liệu cho bài viết đó — layout data _(dữ liệu bố cục)_ vẫn giữ nguyên. Xem tài liệu về [invalidation _(vô hiệu hóa)_](https://kit.svelte.dev/docs/load#rerunning-load-functions) để biết thêm thông tin.

@@ -11,14 +11,14 @@
 			type="text"
 			autocomplete="off"
 			on:keydown={async (e) => {
-				if (e.key === 'Enter') {
-					const input = e.currentTarget;
-					const description = input.value;
-					
-					// xử lý TODO submit
+				if (e.key !== 'Enter') return;
 
-					input.value = '';
-				}
+				const input = e.currentTarget;
+				const description = input.value;
+				
+				// TODO xử lý submit
+
+				input.value = '';
 			}}
 		/>
 	</label>

@@ -21,6 +21,7 @@ Bây giờ chúng ta có thể nhập `stopAll` trong `App.svelte`...
 /// file: App.svelte
 <script>
 	import AudioPlayer, +++{ stopAll }+++ from './AudioPlayer.svelte';
+	import { tracks } from './tracks.js';
 </script>
 ```
 

@@ -4,7 +4,7 @@ title: onMount
 
 Mỗi component đều có một _vòng đời_ bắt đầu khi nó được tạo ra và kết thúc khi nó bị hủy. Có một số hàm cho phép bạn chạy mã tại những thời điểm quan trọng trong vòng đời đó. Hàm mà bạn sẽ sử dụng thường xuyên nhất là `onMount`, chạy sau khi component lần đầu tiên hiển thị trên DOM.
 
-Trong bài tập này, chúng ta muốn tạo hiệu ứng chuyển động cho một `<canvas>` bằng cách sử dụng hàm `paint` trong `gradient.js`. Hãy bắt đầu bằng cách import hàm từ `svelte`:
+Trong bài tập này, chúng ta muốn tạo hiệu ứng chuyển động cho một `<canvas>` bằng cách sử dụng hàm `paint` trong `gradient.js`. Hãy bắt đầu bằng cách import hàm `onMount` từ `svelte`:
 
 ```svelte
 /// file: App.svelte

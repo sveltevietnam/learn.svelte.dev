@@ -7,7 +7,7 @@ Về cơ bản, những chức năng của SvelteKit có thể tóm gọn thành
 
 1. **Routing** — xác định route nào phù hợp với một incoming request _(yêu cầu đến)_
 2. **Loading** — lấy dữ liệu cần thiết cho route _(định tuyến)_
-3. **Rendering** - tạo ra một số HTML (trên server _(máy chủ)_) hoặc cập nhật DOM (ở browser _(trình duyệt)_)
+3. **Rendering** — tạo ra một số HTML (trên server _(máy chủ)_) hoặc cập nhật DOM (ở browser _(trình duyệt)_)
 
 Chúng ta đã biết cách route và render hoạt động. Bây giờ hãy nói về phần giữa — loading _(tải)_.
 

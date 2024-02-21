@@ -12,20 +12,20 @@ Bên trong event handler `keydown` của phần tử `<input>` 'thêm todo', ch�
 	type="text"
 	autocomplete="off"
 	on:keydown={async (e) => {
-		if (e.key === 'Enter') {
-			const input = e.currentTarget;
-			const description = input.value;
+		if (e.key !== 'Enter') return;
 
-+++			const response = await fetch('/todo', {
-				method: 'POST',
-				body: JSON.stringify({ description }),
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			});+++
+		const input = e.currentTarget;
+		const description = input.value;
 
-			input.value = '';
-		}
++++		const response = await fetch('/todo', {
+			method: 'POST',
+			body: JSON.stringify({ description }),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});+++
+
+		input.value = '';
 	}}
 />
 ```
@@ -50,7 +50,7 @@ export async function POST({ request, cookies }) {
 ```
 Tương tự như với các hàm `load` và form actions, `request` là một đối tượng [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) tiêu chuẩn; `await request.json()` trả về dữ liệu mà chúng ta đã gửi từ event handler _(bộ xử lý sự kiện)_.
 
-Chúng ta đang trả về một phản hồi với trạng thái [201 Created](https://httpstatusdogs.com/201-created) và `id` của todo mới được tạo trong cơ sở dữ liệu của chúng ta. Trong event handler, chúng ta có thể sử dụng nó để cập nhật trang:
+Chúng ta đang trả về một phản hồi với trạng thái [201 Created](https://http.dog/201) và `id` của todo mới được tạo trong cơ sở dữ liệu của chúng ta. Trong event handler, chúng ta có thể sử dụng nó để cập nhật trang:
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -58,27 +58,27 @@ Chúng ta đang trả về một phản hồi với trạng thái [201 Created](
 	type="text"
 	autocomplete="off"
 	on:keydown={async (e) => {
-		if (e.key === 'Enter') {
-			const input = e.currentTarget;
-			const description = input.value;
+		if (e.key !== 'Enter') return;
 
-			const response = await fetch('/todo', {
-				method: 'POST',
-				body: JSON.stringify({ description }),
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			});
+		const input = e.currentTarget;
+		const description = input.value;
 
-+++			const { id } = await response.json();
+		const response = await fetch('/todo', {
+			method: 'POST',
+			body: JSON.stringify({ description }),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
 
-			data.todos = [...data.todos, {
-				id,
-				description
-			}];+++
++++		const { id } = await response.json();
 
-			input.value = '';
-		}
+		data.todos = [...data.todos, {
+			id,
+			description
+		}];+++
+
+		input.value = '';
 	}}
 />
 ```

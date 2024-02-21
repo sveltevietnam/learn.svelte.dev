@@ -65,7 +65,7 @@ Khi bản nhạc kết thúc, hãy lịch sự - tua lại:
 
 Tổng số phép bind đầy đủ cho <audio> và <video> như sau - bảy phép bind _chỉ đọc_...
 
-- `duration` (chỉ đọc) — tổng thời lượng của video, tính bằng giây
+- `duration` (chỉ đọc) — tổng thời tính bằng giây
 - `buffered`  (chỉ đọc) — một mảng các đối tượng `{start, end}`
 - `seekable` (chỉ đọc) — như trên
 - `played` (chỉ đọc) — như trên
@@ -75,8 +75,8 @@ Tổng số phép bind đầy đủ cho <audio> và <video> như sau - bảy ph�
 
 ...và năm phép bind hai chiều:
 
-- `currentTime` — the current point in the video, in seconds điểm hiện tại trong video, tính bằng giây
-- `playbackRate` — tốc độ phát video, với `1` là 'bình thường'
+- `currentTime` — điểm đang phát hiện tại của video, tính bằng giây
+- `playbackRate` — phát nhanh hơn hoặc chậm lại (`1` là 'bình thường')
 - `paused` — dừng
 - `volume` — một giá trị giữa 0 và 1
 - `muted` — một giá trị boolean, trong đó true là tắt tiếng

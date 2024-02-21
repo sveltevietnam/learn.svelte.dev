@@ -79,27 +79,27 @@ Trong `src/routes/+page.svelte`, chúng ta có thể truy cập giá trị đư�
 ```svelte
 /// file: src/routes/+page.svelte
 <script>
-	export let data;
 	+++export let form;+++
 </script>
 
-<h1>todos</h1>
-
-+++{#if form?.error}
-	<p class="error">{form.error}</p>
-{/if}+++
-
-<form method="POST" action="?/create">
-	<label>
-		thêm a todo:
-		<input
-			name="description"
-			+++value={form?.description ?? ''}+++
-			autocomplete="off"
-			required
-		/>
-	</label>
-</form>
+<div class="centered">
+	<h1>todos</h1>
+	
+	+++{#if form?.error}
+		<p class="error">{form.error}</p>
+	{/if}+++
+	
+	<form method="POST" action="?/create">
+		<label>
+			add a todo:
+			<input
+				name="description"
+				+++value={form?.description ?? ''}+++
+				autocomplete="off"
+				required
+			/>
+		</label>
+	</form>
 ```
 
 > Bạn cũng có thể trả về dữ liệu từ một action _mà không cần_ bao nó trong `fail`, ví dụ như để hiển thị một thông báo 'thành công!' khi đã lưu trữ thành công. Ta truy cập dữ liệu này thông qua prop `form`.

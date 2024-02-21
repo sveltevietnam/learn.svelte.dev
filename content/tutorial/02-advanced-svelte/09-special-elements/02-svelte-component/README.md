@@ -27,7 +27,7 @@ Chúng ta _có thể_ làm điều này với một chuỗi các khối `if`...
 	{/each}
 </select>
 
-+++<svelte:component this={selected.component}/>+++
++++<svelte:component this={selected.component} />+++
 ```
 
 Giá trị `this` có thể là bất kỳ hàm tạo thành phần nào, hoặc là một giá trị falsy _(undefined, null, false, 0, -0, 0n, NaN)_ — nếu nó là falsy, không có thành phần nào được hiển thị.

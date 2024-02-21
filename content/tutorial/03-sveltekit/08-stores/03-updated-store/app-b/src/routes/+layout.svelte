@@ -1,5 +1,5 @@
 <script>
-	import { page, navigating } from '$app/stores';
+	import { page, navigating, updated } from '$app/stores';
 </script>
 
 <nav>
@@ -12,21 +12,23 @@
 	</a>
 
 	{#if $navigating}
-		đang chuyển tới {$navigating.to.url.pathname}
+		navigating to {$navigating.to.url.pathname}
 	{/if}
 </nav>
 
 <slot />
 
-<div class="toast">
-	<p>
-		Ứng dụng có phiên bản mới sẳn sàng để cập nhật
+{#if $updated}
+	<div class="toast">
+		<p>
+			A new version of the app is available
 
-		<button on:click={() => location.reload()}>
-			Tải lại trang
-		</button>
-	</p>
-</div>
+			<button on:click={() => location.reload()}>
+				reload the page
+			</button>
+		</p>
+	</div>
+{/if}
 
 <style>
 	.toast {

@@ -6,8 +6,7 @@ Sau khi đã đi qua những kiến thức cơ bản, giờ là lúc để ta h�
 
 Việc đặt giá trị và theo dõi cập nhật DOM tự động là tuyệt vời. Bạn biết cái gì còn tuyệt vời hơn không? Tween (biến đổi) những giá trị đó. Svelte bao gồm các công cụ để giúp bạn xây dựng giao diện người dùng tuyệt vời sử dụng hiệu ứng chuyển động _(animation)_ để truyền đạt các thay đổi.
 
-Hãy bắt đầu bằng cách thay đổi `progress` store thành một giá trị `tweened`:
-
+Hãy bắt đầu bằng cách thay đổi store `progress` thành một store `tweened`:
 
 ```svelte
 /// file: App.svelte

@@ -15,7 +15,7 @@ Tương tự như các phần tử có thể có các phần tử con...
 
 ```svelte
 /// file: Card.svelte
-<div class="card ">
+<div class="card">
 	+++<slot />+++
 </div>
 ```
