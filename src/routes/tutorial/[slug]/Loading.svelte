@@ -1,7 +1,8 @@
 <script>
-	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { Icon } from '@sveltejs/site-kit/components';
+	import { load_webcontainer, reset } from './adapter';
+	import { files } from './state';
 
 	/** @type {boolean} */
 	export let initial;
@@ -59,6 +60,23 @@
 						trong thanh URL hoặc vào 
 						<code>chrome://settings/cookies</code> và thêm <code>learn.svelte.dev</code> vào 'Trang web luôn được sử dụng cookie'.
 					</p>
+					<!-- TODO: remove this when webcontainers are properly supported on iOS
+				see https://github.com/stackblitz/webcontainer-core/issues/1120 -->
+				{:else if /iphone/i.test(navigator.userAgent)}
+					<p>
+						We couldn't start the app. It seems that you're using iOS, which does not support
+						WebContainers.
+					</p>
+					<p>
+						If this is not the case, you can try loading it by <button
+							type="button"
+							on:click={async () => {
+								error = null;
+								load_webcontainer();
+								await reset($files);
+							}}>clicking here</button
+						>.
+					</p>
 				{:else}
 					<p>
 						Mình không thể chạy ứng dụng. Hãy chắc chắn rằng cookie bên thứ ba được kích hoạt cho trang web này.
@@ -88,7 +106,7 @@
 
 		{#if initial}
 			<div class="progress-container">
-				<div class="progress" style="width: {progress * 100}%;" />
+				<div class="progress" style="width: {progress * 100}%;"></div>
 			</div>
 			<span>{status}</span>
 		{/if}
@@ -145,6 +163,16 @@
 		margin: 0 0 1em 0;
 	}
 
+	button {
+		color: var(--sk-theme-1);
+		padding: 0 0 1px;
+		position: relative;
+	}
+
+	button:hover {
+		text-decoration: underline;
+	}
+
 	small {
 		font-size: var(--sk-text-xs);
 		color: var(--sk-text-3);
@@ -160,11 +188,9 @@
 		height: 10rem;
 	}
 
-	@media (prefers-color-scheme: dark) {
-		.loading {
-			--faded: #444;
-			--progress: #555;
-			--cutout: var(--sk-back-2);
-		}
+	:global(.dark) .loading {
+		--faded: #444;
+		--progress: #555;
+		--cutout: var(--sk-back-2);
 	}
 </style>

@@ -41,7 +41,7 @@ Hiện tại, mọi thứ đều tốt — bạn nên thấy các màu sắc nh�
 ```js
 /// file: App.svelte
 onMount(() => {
-	const canvas = document.querySelector('canvas')
+	const canvas = document.querySelector('canvas');
 	const context = canvas.getContext('2d');
 
 	+++let frame =+++ requestAnimationFrame(function loop(t) {

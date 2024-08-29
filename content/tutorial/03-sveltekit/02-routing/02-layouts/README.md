@@ -14,7 +14,7 @@ src/routes/
 └ +page.svelte
 ```
 
-...và di chuyển nội dung trùng lặp từ các file `+page.svelte` vào file mới `+layout.svelte`. Phần tử `<slot />` là nơi nội dung của trang sẽ được render:
+...và di chuyển nội dung trùng lặp từ các file `+page.svelte` vào file mới `+layout.svelte`. Phần tử `<slot></slot>` là nơi nội dung của trang sẽ được render:
 
 ```svelte
 /// file: src/routes/+layout.svelte
@@ -23,7 +23,7 @@ src/routes/
 	<a href="/about">about</a>
 </nav>
 
-<slot />
+<slot></slot>
 ```
 
 Một file `+layout.svelte` áp dụng cho mọi child route (định tuyến con hay route con), bao gồm cả `+page.svelte` cùng cấp (nếu nó tồn tại). Bạn có thể lồng layouts (các bố cục) theo bất kỳ độ sâu nào.

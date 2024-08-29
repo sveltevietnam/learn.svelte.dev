@@ -12,7 +12,7 @@ Mở tệp `FilterableList.svelte`. Thẻ `<slot>` được hiển thị cho m�
 /// file: FilterableList.svelte
 <div class="content">
 	{#each data.filter(matches) as item}
-		<slot +++{item}+++ />
+		<slot +++{item}+++></slot>
 	{/each}
 </div>
 ```

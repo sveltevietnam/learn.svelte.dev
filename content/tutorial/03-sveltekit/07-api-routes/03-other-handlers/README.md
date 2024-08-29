@@ -56,6 +56,6 @@ Bây giờ, chúng ta có thể tương tác với endpoint này trong các even
 
 			data.todos = data.todos.filter((t) => t !== todo);+++
 		}}
-	/>
+	></button>
 </label>
 ```

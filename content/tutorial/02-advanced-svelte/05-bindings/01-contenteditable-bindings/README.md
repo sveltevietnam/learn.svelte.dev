@@ -6,5 +6,5 @@ Các phần tử có thuộc tính `contenteditable` hỗ trợ phép bind cho `
 
 ```svelte
 /// file: App.svelte
-<div +++bind:innerHTML={html}+++ contenteditable />
+<div +++bind:innerHTML={html}+++ contenteditable></div>
 ```

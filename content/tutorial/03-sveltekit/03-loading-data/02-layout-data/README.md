@@ -19,7 +19,7 @@ Bây giờ, ta hãy thêm một cột trong bố cục cho trang bài viết:
 
 <div class="layout">
 	<main>
-		<slot />
+		<slot></slot>
 	</main>
 
 +++	<aside>

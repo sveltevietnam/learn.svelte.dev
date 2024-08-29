@@ -20,8 +20,8 @@ Nó hữu ích cho những thứ như cây thư mục, nơi các thư mục có 
 ```svelte
 /// file: Folder.svelte
 {#if file.files}
-	+++<svelte:self {...file}/>+++
+	+++<svelte:self {...file} />+++
 {:else}
-	<File {...file}/>
+	<File {...file} />
 {/if}
 ```

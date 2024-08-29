@@ -2,7 +2,7 @@
 title: navigating
 ---
 
-Store `navigating` đại diện cho quá trình điều hướng hiện tại. Khi một quá trình điều hướng bắt đầu — do việc nhấp vào liên kết, quá trình điều hướng lùi/tiến, hoặc một lệnh `goto` — giá trị của `navigating` sẽ trở thành một đối tượng với các thuộc tính sau:
+Store `navigating` đại diện cho quá trình điều hướng hiện tại. Khi một quá trình điều hướng bắt đầu — do việc nhấp chuột vào liên kết hoặc điều hướng trang tới/lui, hoặc một lệnh `goto` — giá trị của `navigating` sẽ trở thành một đối tượng với các thuộc tính sau:
 
 - `from` và `to` — các đối tượng với thuộc tính `params`, `route` và `url`
 - `type` — type của điều hướng, ví dụ `link`, `popstate` hay `goto`
@@ -32,5 +32,5 @@ Store `navigating` đại diện cho quá trình điều hướng hiện tại. 
 	{/if}+++
 </nav>
 
-<slot />
+<slot></slot>
 ```

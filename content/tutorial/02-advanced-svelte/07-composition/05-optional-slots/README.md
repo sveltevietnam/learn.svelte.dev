@@ -7,7 +7,7 @@ Trong một số trường hợp, bạn có thể muốn kiểm soát các phầ
 ```svelte
 /// file: App.svelte
 ---<header slot="header" class="row">
-	<span class="color" />
+	<span class="color"></span>
 	<span class="name">name</span>
 	<span class="hex">hex</span>
 	<span class="rgb">rgb</span>
@@ -31,7 +31,7 @@ Chúng ta có thể sửa điều đó bằng cách sử dụng biến đặc bi
 /// file: FilterableList.svelte
 +++{#if $$slots.header}+++
 	<div class="header">
-		<slot name="header"/>
+		<slot name="header"></slot>
 	</div>
 +++{/if}+++
 ```

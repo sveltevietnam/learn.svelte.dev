@@ -32,5 +32,5 @@ Tương tự như bất kỳ store nào khác, bạn có thể tham chiếu đ�
 	</a>
 </nav>
 
-<slot />
+<slot></slot>
 ```

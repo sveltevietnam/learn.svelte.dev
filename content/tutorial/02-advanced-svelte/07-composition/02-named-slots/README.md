@@ -10,14 +10,14 @@ Bên trong `App.svelte`, chúng ta đang hiển thị một component `<Card>` c
 /// file: Card.svelte
 <div class="card">
 +++	<header>
-		<slot name="telephone" />
-		<slot name="company" />
+		<slot name="telephone"></slot>
+		<slot name="company"></slot>
 	</header>+++
 
-	<slot />
-		
+	<slot></slot>
+
 +++	<footer>
-		<slot name="address" />
+		<slot name="address"></slot>
 	</footer>+++
 </div>
 ```
@@ -46,7 +46,7 @@ Hoặc, chúng ta có thể sử dụng bộ chỉnh `:global` bên trong `Card.
 ```svelte
 /// file: Card.svelte
 <style>
-	/* ... */ 
+	/* ... */
 
 	+++.card :global(small) {
 		display: block;

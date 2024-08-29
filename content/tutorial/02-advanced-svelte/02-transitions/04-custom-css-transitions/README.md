@@ -53,7 +53,7 @@ Chúng ta có thể sáng tạo nhiều hơn. Hãy tạo ra điều gì đó th�
 	function spin(node, { duration }) {
 		return {
 			duration,
-			css: t => +++{
+			css: (t) => +++{
 				const eased = elasticOut(t);
 
 				return `
@@ -62,7 +62,7 @@ Chúng ta có thể sáng tạo nhiều hơn. Hãy tạo ra điều gì đó th�
 						${Math.trunc(t * 360)},
 						${Math.min(100, 1000 * (1 - t))}%,
 						${Math.min(50, 500 * (1 - t))}%
-					);`
+					);`;
 			}+++
 		};
 	}

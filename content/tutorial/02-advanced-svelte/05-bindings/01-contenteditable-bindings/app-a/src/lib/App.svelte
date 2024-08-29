@@ -2,7 +2,7 @@
 	let html = '<p>Viết vài từ!</p>';
 </script>
 
-<div contenteditable />
+<div contenteditable></div>
 
 <pre>{html}</pre>
 

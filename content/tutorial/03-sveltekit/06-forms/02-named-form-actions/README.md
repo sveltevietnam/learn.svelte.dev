@@ -50,7 +50,7 @@ Tiếp theo, chúng ta muốn tạo một form cho mỗi todo, kèm theo một `
 +++			<form method="POST" action="?/delete">
 				<input type="hidden" name="id" value={todo.id} />
 				<span>{todo.description}</span>
-				<button aria-label="Mark as complete" />
+				<button aria-label="Mark as complete"></button>
 			</form>+++
 		</li>
 	{/each}

@@ -14,7 +14,7 @@
 	/** @type {boolean} */
 	export let renaming;
 
-	/** @type {import('./ContextMenu.svelte').MenuItem[]} */
+	/** @type {import('$lib/types').MenuItem[]} */
 	export let actions = [];
 
 	const dispatch = createEventDispatcher();
@@ -39,6 +39,7 @@
 	}
 </script>
 
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <li
 	aria-current={selected ? 'true' : undefined}
 	style="--depth: {depth}; --icon: url('{icon}');"
@@ -86,7 +87,7 @@
 		{#if actions.length > 0}
 			<div class="actions">
 				{#each actions as action}
-					<button aria-label={action.label} class="icon {action.icon}" on:click={action.fn} />
+					<button aria-label={action.label} class="icon {action.icon}" on:click={action.fn}></button>
 				{/each}
 			</div>
 		{/if}

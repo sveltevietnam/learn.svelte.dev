@@ -14,12 +14,12 @@ Bạn có thể bind thuộc tính của phần tử `<audio>` và `<video>`, gi
 		bind:currentTime={time}
 		bind:duration
 		bind:paused
-	/>+++
+	></audio>+++
 
 	<button
 		class="play"
 		aria-label={paused ? 'play' : 'pause'}
-	/>
+	></button>
 ```
 
 Tiếp theo, thêm một trình xử lý sự kiện cho <button> để chuyển đổi `paused`:
@@ -30,7 +30,7 @@ Tiếp theo, thêm một trình xử lý sự kiện cho <button> để chuyển
 	class="play"
 	aria-label={paused ? 'play' : 'pause'}
 	+++on:click={() => paused = !paused}+++
-/>
+></button>
 ```
 
 Bây giờ, trình phát audio của chúng ta đã có chức năng cơ bản. Hãy thêm khả năng tua đến một phần cụ thể của bản nhạc bằng cách kéo thanh trượt. Bên trong trình xử lý `pointerdown` của thanh trượt có một hàm `seek`, nơi chúng ta có thể cập nhật `time`:
@@ -60,7 +60,7 @@ Khi bản nhạc kết thúc, hãy lịch sự - tua lại:
 +++	on:ended={() => {
 		time = 0;
 	}}+++
-/>
+></audio>
 ```
 
 Tổng số phép bind đầy đủ cho <audio> và <video> như sau - bảy phép bind _chỉ đọc_...
